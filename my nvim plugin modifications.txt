@@ -1,0 +1,5 @@
+~/.local/share/nvim/site/pack/packer/start/Comment.nvim/lua/Comment/utils.lua
++204 local scol = 0
+
+~/.local/share/nvim/site/pack/packer/start/nvim-autopairs/lua/nvim-autopairs/rule.lua
+~116 return '<CR><Esc>==O'

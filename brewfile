@@ -1,0 +1,52 @@
+brew "fish"           # shell but rust
+brew "neovim"         # vim   but... NOT RUST???
+brew "lsd"            # ls    but rust
+brew "jj"             # git   but rust
+brew "bat"            # cat   but rust
+brew "hexyl"          # xxd   but rust
+brew "ripgrep"        # grep  but rust
+brew "tokei"          # cloc  but rust
+
+# maybe...
+brew "difftastic"     # diff  but rust
+# brew "helix"          # vim   but rust
+# brew "nushell"        # shell but rust
+
+# not rust but ~~perfect~~ good enough as-is
+brew "neofetch"
+brew "sl"
+
+mas "Apple Developer", id: 640199958
+mas "Auto HD + FPS for YouTube", id: 1546729687
+mas "Focus (for YouTube)", id: 1514703160
+mas "Ivory", id: 6444602274
+mas "Noir", id: 1592917505
+mas "Pixen", id: 525180431
+mas "Textual", id: 1262957439
+mas "Userscripts", id: 1463298887
+mas "Wipr 2", id: 1662217862
+
+mas "Xcode", id: 497799835
+mas "Pages", id: 409201541
+mas "Numbers", id: 409203825
+# mas "Keynote", id: 409183694 # almost 800MB
+
+# other apps not in mac app store
+# - discord
+# - ghidra
+# - netnewswire
+# - obsidian
+# - raycast
+# - steam
+# - vlc?
+
+# possible additions
+# aria2
+# http-server
+# vbindiff
+# ffmpeg
+# icdiff
+# imagemagick
+# periphery
+# pipx
+
