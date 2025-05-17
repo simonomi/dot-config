@@ -1,18 +1,22 @@
 #!/opt/homebrew/bin/fish
 
-link ~/Documents/dot\ config/config.fish ~/.config/fish/config.fish
+link config.fish ~/.config/fish/config.fish
 
 mkdir ~/.config/nvim
-link ~/Documents/dot\ config/init.vim ~/.config/nvim/init.vim
-link ~/Documents/dot\ config/coc-settings.json ~/.config/nvim/coc-settings.json
+link init.vim ~/.config/nvim/init.vim
+link coc-settings.json ~/.config/nvim/coc-settings.json
 mkdir -p ~/.config/nvim/syntax
-link ~/Documents/dot\ config/dex.vim ~/.config/nvim/syntax/dex.vim
-link ~/Documents/dot\ config/kbd.vim ~/.config/nvim/syntax/kbd.vim
-link ~/Documents/dot\ config/my_hex.vim ~/.config/nvim/syntax/my_hex.vim
-link ~/Documents/dot\ config/config.nu ~/Library/Application\ Support/nushell/config.nu
+link dex.vim ~/.config/nvim/syntax/dex.vim
+link kbd.vim ~/.config/nvim/syntax/kbd.vim
+link my_hex.vim ~/.config/nvim/syntax/my_hex.vim
+
+# TODO: change this path
+link config.nu ~/Library/Application\ Support/nushell/config.nu
+
 mkdir -p ~/.config/jj
-link ~/Documents/dot\ config/jj\ config.toml ~/.config/jj/config.toml
+link jj\ config.toml ~/.config/jj/config.toml
+
 mkdir -p ~/.config/helix/themes
-link ~/Documents/dot\ config/helix\ config.toml ~/.config/helix/config.toml
-link ~/Documents/dot\ config/helix_theme.toml ~/.config/helix/themes/helix_theme.toml
+link helix\ config.toml ~/.config/helix/config.toml
+link helix_theme.toml ~/.config/helix/themes/helix_theme.toml
 
