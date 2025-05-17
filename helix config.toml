@@ -1,0 +1,159 @@
+theme = "helix_theme"
+
+[editor]
+scrolloff = 3
+shell = ["fish", "-c"]
+line-number = "relative"
+bufferline = "multiple"
+color-modes = true
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics", "file-base-name", "read-only-indicator", "file-modification-indicator"]
+right = ["register", "position-percentage", "position"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+
+[editor.whitespace.characters]
+tab = "╶"
+tabpad = "─" # TODO: make "─" continue, and "╴" end
+
+[editor.gutters]
+layout = ["line-numbers", "diff"]
+
+[editor.gutters.line-numbers]
+min-width = 1
+
+# TODO: change diff symbol to │ or ┃, then remove spacer
+
+[editor.soft-wrap]
+enable = true
+max-indent-retain = 0
+wrap-indicator = ""
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[keys.normal]
+j = "move_char_left"
+k = "move_visual_line_down"
+i = "move_visual_line_up"
+
+w = "move_next_sub_word_start"
+e = "move_next_sub_word_end"
+b = "move_prev_sub_word_start"
+
+0 = ["collapse_selection", "extend_to_first_nonwhitespace"]
+"^" = ["collapse_selection", "extend_to_line_start"]
+"$" = ["collapse_selection", "extend_to_line_end"]
+
+tab = "jump_view_up"
+C-j = "jump_view_left"
+C-k = "jump_view_down"
+C-l = "jump_view_right"
+
+h = "insert_mode"
+H = "insert_at_line_start"
+C-h = "jump_forward"
+
+"∆" = "goto_previous_buffer"
+"¬" = "goto_next_buffer"
+
+"'" = "extend_line_below"
+X = "extend_line_above"
+
+G = "goto_last_line"
+q = "record_macro"
+Q = "replay_macro"
+
+# fix Alt- keybinds
+"≥" = "repeat_last_motion"
+# todo: alt-`, alt=u
+"¨" = "later"
+"∂" = "delete_selection_noyank"
+"ç" = "change_selection_noyank"
+"»" = "shell_pipe_to"
+"⁄" = "shell_append_output"
+"ß" = "split_selection_on_newline"
+"–" = "merge_selections"
+"—" = "merge_consecutive_selections"
+"…" = "flip_selections"
+"Ú" = "ensure_selections_forward"
+"≤" = "remove_primary_selection"
+"Ç" = "copy_selection_on_prev_line"
+"·" = "rotate_selection_contents_backward"
+"‚" = "rotate_selection_contents_forward"
+"≈" = "shrink_to_line_bounds"
+"Ô" = "join_selections_space"
+"" = "remove_selections"
+"ø" = "expand_selection"
+# todo: alt-i
+
+[keys.normal.space]
+w = ":update"
+q = ":quit"
+c = ":config-reload"
+x = [":update", ":quit"]
+
+[keys.normal.g]
+i = "move_line_up"
+j = "goto_line_start"
+k = "move_line_down"
+l = "goto_line_end"
+
+w = "move_next_word_start"
+e = "move_next_word_end"
+b = "move_prev_word_start"
+
+s = "goto_word"
+h = "goto_implementation"
+c = "toggle_comments"
+
+[keys.normal.m]
+h = "select_textobject_inner"
+
+[keys.normal.z]
+i = "scroll_up"
+k = "scroll_down"
+
+[keys.normal.C-w]
+i = "jump_view_up"
+j = "jump_view_left"
+k = "jump_view_down"
+
+[keys.select]
+i = "extend_visual_line_up"
+j = "extend_char_left"
+k = "extend_visual_line_down"
+
+w = "extend_next_sub_word_start"
+e = "extend_next_sub_word_end"
+b = "extend_prev_sub_word_start"
+
+0 = "extend_to_first_nonwhitespace"
+"^" = "extend_to_line_start"
+"$" = "extend_to_line_end"
+
+G = "goto_last_line"
+
+[keys.select.g]
+c = "toggle_comments"
+
+i = "extend_line_up"
+j = "extend_to_line_start"
+k = "extend_line_down"
+l = "extend_to_line_end"
+
+w = "extend_next_word_start"
+e = "extend_next_word_end"
+b = "extend_prev_word_start"

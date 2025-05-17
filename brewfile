@@ -9,7 +9,7 @@ brew "tokei"          # cloc  but rust
 
 # maybe...
 brew "difftastic"     # diff  but rust
-# brew "helix"          # vim   but rust
+brew "helix"          # vim   but rust
 # brew "nushell"        # shell but rust
 
 # not rust but ~~perfect~~ good enough as-is
@@ -22,7 +22,6 @@ mas "Focus (for YouTube)", id: 1514703160
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
-mas "Textual", id: 1262957439
 mas "Userscripts", id: 1463298887
 mas "Wipr 2", id: 1662217862
 
@@ -32,13 +31,18 @@ mas "Numbers", id: 409203825
 # mas "Keynote", id: 409183694 # almost 800MB
 
 # other apps not in mac app store
+# - blender
 # - discord
 # - ghidra
+# - godot
 # - netnewswire
 # - obsidian
 # - raycast
 # - steam
+# - textual
 # - vlc?
+
+# also rustup
 
 # possible additions
 # aria2
@@ -49,4 +53,9 @@ mas "Numbers", id: 409203825
 # imagemagick
 # periphery
 # pipx
+
+# for resume
+brew "fswatch"
+# cask "mactex-no-gui" # this keeps failing to install...
+# brew "texlive" # ?
 

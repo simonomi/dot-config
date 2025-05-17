@@ -10,5 +10,9 @@ link ~/Documents/dot\ config/dex.vim ~/.config/nvim/syntax/dex.vim
 link ~/Documents/dot\ config/kbd.vim ~/.config/nvim/syntax/kbd.vim
 link ~/Documents/dot\ config/my_hex.vim ~/.config/nvim/syntax/my_hex.vim
 link ~/Documents/dot\ config/config.nu ~/Library/Application\ Support/nushell/config.nu
+mkdir -p ~/.config/jj
 link ~/Documents/dot\ config/jj\ config.toml ~/.config/jj/config.toml
+mkdir -p ~/.config/helix/themes
+link ~/Documents/dot\ config/helix\ config.toml ~/.config/helix/config.toml
+link ~/Documents/dot\ config/helix_theme.toml ~/.config/helix/themes/helix_theme.toml
 
