@@ -139,6 +139,8 @@
 	</data>
 	<key>BackgroundAlphaInactive</key>
 	<real>0.80000000000000004</real>
+	<key>BackgroundBlur</key>
+	<real>0.19688378107011989</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
@@ -154,16 +156,27 @@
 	<string></string>
 	<key>ConvertNewlinesOnPaste</key>
 	<false/>
+	<key>CursorColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
+	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC41NDUwOTgwMzkyIDAuNTQ1MDk4MDM5
+	MiAwLjU0NTA5ODAzOTIAEAGAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
+	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
+	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	</data>
 	<key>CursorType</key>
 	<integer>2</integer>
+	<key>EastAsianAmbiguousWide</key>
+	<false/>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKAAAAAAAABAQgAKAA15TRk1v
-	bm8tUmVndWxhctIXGBkaWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohkbWE5TT2Jq
-	ZWN0CBEaJCkyN0lMUVNYXmdud36FjpCSlKOos7zDxgAAAAAAAAEBAAAAAAAAABwAAAAA
-	AAAAAAAAAAAAAADP
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKAAAAAAAABAQgAKAA18QEFNG
+	TW9ub05GLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIZG1hO
+	U09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpSnrLfAx8oAAAAAAAABAQAAAAAAAAAc
+	AAAAAAAAAAAAAAAAAAAA0w==
 	</data>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
@@ -180,6 +193,8 @@
 	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>SetLanguageEnvironmentVariables</key>
+	<true/>
 	<key>ShowActiveProcessArgumentsInTitle</key>
 	<false/>
 	<key>ShowActiveProcessInTabTitle</key>
@@ -221,10 +236,12 @@
 	<dict>
 		<key>#F739</key>
 		<string>toggleNumLock:</string>
+		<key>$007F</key>
+		<string></string>
 		<key>$F702</key>
-		<string>[1;2D</string>
+		<string></string>
 		<key>$F703</key>
-		<string>[1;2C</string>
+		<string></string>
 		<key>$F708</key>
 		<string>[25~</string>
 		<key>$F709</key>
@@ -242,7 +259,7 @@
 		<key>$F70F</key>
 		<string>[34~</string>
 		<key>$F728</key>
-		<string>[3;2~</string>
+		<string></string>
 		<key>F704</key>
 		<string>OP</string>
 		<key>F705</key>
@@ -291,6 +308,8 @@
 		<string>[1;5C</string>
 		<key>^F728</key>
 		<string>[3;5~</string>
+		<key>~007F</key>
+		<string></string>
 		<key>~F702</key>
 		<string>b</string>
 		<key>~F703</key>
@@ -344,10 +363,18 @@
 			<key>ProcessName</key>
 			<string>fish</string>
 		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>-fish</string>
+		</dict>
 	</array>
+	<key>rowCount</key>
+	<integer>25</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<false/>
 </dict>
 </plist>

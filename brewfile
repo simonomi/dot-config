@@ -10,7 +10,7 @@ brew "tokei"          # cloc  but rust
 # maybe...
 brew "difftastic"     # diff  but rust
 brew "helix"          # vim   but rust
-# brew "nushell"        # shell but rust
+brew "nushell"        # shell but rust
 
 # not rust but ~~perfect~~ good enough as-is
 brew "neofetch"
@@ -22,6 +22,7 @@ mas "Focus (for YouTube)", id: 1514703160
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
+mas "Unwatched", id: 6477287463
 mas "Userscripts", id: 1463298887
 mas "Wipr 2", id: 1662217862
 

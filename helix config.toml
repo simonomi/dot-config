@@ -78,7 +78,7 @@ Q = "replay_macro"
 
 # fix Alt- keybinds
 "≥" = "repeat_last_motion"
-# todo: alt-`, alt=u
+# TODO: alt-`, alt=u
 "¨" = "later"
 "∂" = "delete_selection_noyank"
 "ç" = "change_selection_noyank"
