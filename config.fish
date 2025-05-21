@@ -33,19 +33,18 @@ set dot_config_dir "$homedr/Documents/dot\ config"
 
 alias frc "nvim $dot_config_dir/config.fish"
 alias fishrc "nvim $dot_config_dir/config.fish"
+alias src "source $dot_config_dir/config.fish"
 
-alias nrc "nvim $dot_config_dir/init.vim"
-alias nvimrc "nvim $dot_config_dir/init.vim"
+alias nrc "nvim $dot_config_dir/nvim/init.vim"
+alias nvimrc "nvim $dot_config_dir/nvim/init.vim"
 
-alias nvimlua "nvim $dot_config_dir/nvim.lua"
-alias nlua "nvim $dot_config_dir/nvim.lua"
+alias nvimlua "nvim $dot_config_dir/nvim/nvim.lua"
+alias nlua "nvim $dot_config_dir/nvim/nvim.lua"
 
-alias hxrc "hx \"$dot_config_dir/helix config.toml\""
-alias hrc "hx \"$dot_config_dir/helix config.toml\""
+alias hxrc "hx \"$dot_config_dir/helix/helix config.toml\""
+alias hrc "hx \"$dot_config_dir/helix/helix config.toml\""
 
 alias nurc "nvim $dot_config_dir/config.nu"
-
-alias src "source $dot_config_dir/config.fish"
 
 alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"

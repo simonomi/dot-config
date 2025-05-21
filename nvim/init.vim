@@ -463,16 +463,6 @@ map <Leader>mff <Leader>mfr32ggdGgg
 " \mfc format charliecard data (compacct)
 map <Leader>mfc <Leader>mfr32ggdGiiiddiiiiddiiiiddiiiiddiiiiddiiiiddiiiiddgg
 
-augroup firshrc_syntax_highlighting
-	autocmd!
-	autocmd BufNewFile,BufRead *.fishrc set ft=fish
-augroup END
-
-augroup nurc_syntax_highlighting
-	autocmd!
-	autocmd BufNewFile,BufRead *.nurc set ft=nu
-augroup END
-
 augroup dex_syntax_highlighting
 	autocmd!
 	autocmd BufNewFile,BufRead *.dex.txt,*.dep.txt set ft=dex
@@ -586,3 +576,4 @@ inoremap <Esc> x<Backspace><Esc>
 
 " start plugins
 luafile ~/.config/nvim/nvim.lua
+
