@@ -41,8 +41,8 @@ alias nvimrc "nvim $dot_config_dir/nvim/init.vim"
 alias nvimlua "nvim $dot_config_dir/nvim/nvim.lua"
 alias nlua "nvim $dot_config_dir/nvim/nvim.lua"
 
-alias hxrc "hx \"$dot_config_dir/helix/helix config.toml\""
-alias hrc "hx \"$dot_config_dir/helix/helix config.toml\""
+alias hxrc "hx $dot_config_dir/helix/helix\ config.toml"
+alias hrc "hx $dot_config_dir/helix/helix\ config.toml"
 
 alias nurc "nvim $dot_config_dir/config.nu"
 
