@@ -502,7 +502,7 @@ highlight Operator cterm=none ctermfg=none
 highlight DiffAdd ctermbg=22
 highlight DiffChange ctermbg=17
 highlight DiffDelete ctermbg=52
-highlight DiffText ctermbg=58
+highlight DiffText ctermbg=58 cterm=none
 
 " swift syntax highlighting
 highlight swiftCoreTypes ctermfg=blue

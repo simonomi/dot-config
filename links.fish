@@ -20,3 +20,4 @@ mkdir -p ~/.config/helix/themes
 ln -fw helix/helix\ config.toml ~/.config/helix/config.toml
 ln -fw helix/helix_theme.toml ~/.config/helix/themes/helix_theme.toml
 
+ln -fw starship.toml ~/.config/starship.toml

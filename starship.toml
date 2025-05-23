@@ -1,0 +1,52 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = "${custom.directory}$status$character"
+right_format = "$cmd_duration$git_metrics$package$hostname$time"
+
+add_newline = false
+
+[character]
+format = "$symbol"
+# success_symbol = "[►](bright-white)"
+success_symbol = "[❯](bright-white)"
+# error_symbol = "[►](red)"
+error_symbol = "[❯](red)"
+
+[cmd_duration]
+format = "[⏱ $duration]($style) "
+style = "bright-white"
+min_time = 500
+show_milliseconds = true
+
+[custom.directory]
+format = "$output"
+command = "\"$swdr/custom directory prompt/custom directory prompt\""
+when = true
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)"
+truncation_length = 1
+read_only = " 󰌾"
+fish_style_pwd_dir_length = 1
+
+[git_metrics]
+disabled = false
+
+[hostname]
+format = "[$ssh_symbol$hostname]($style) "
+ssh_symbol = " "
+
+[package]
+format = "[$symbol$version]($style) "
+symbol = "󰏗 "
+
+[status]
+format = "[\\[$status\\]]($style)"
+disabled = false
+
+[time]
+format = "[$time]($style)"
+time_format = "%H:%M"
+style = "bright-black"
+disabled = false
+

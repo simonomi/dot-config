@@ -76,6 +76,10 @@ G = "goto_last_line"
 q = "record_macro"
 Q = "replay_macro"
 
+# TODO: these are ok but id rather they didnt select the entire line
+I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+
 # fix Alt- keybinds
 "≥" = "repeat_last_motion"
 # TODO: alt-`, alt=u

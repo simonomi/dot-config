@@ -15,6 +15,9 @@ export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
 export XDG_CONFIG_HOME="/Users/simonomi/.config"
 
+starship init fish | source
+zoxide init fish | source
+
 set fish_greeting
 
 if status is-interactive
@@ -61,6 +64,8 @@ alias h hx
 alias j jj
 alias n nvim
 alias s swift
+
+alias kondo "kondo --default --ignored-dirs $cardr"
 
 # FIXME: once helix fixes its own cursor, delete this
 function hx

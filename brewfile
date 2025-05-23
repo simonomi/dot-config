@@ -1,16 +1,28 @@
-brew "fish"           # shell but rust
-brew "neovim"         # vim   but... NOT RUST???
-brew "lsd"            # ls    but rust
-brew "jj"             # git   but rust
-brew "bat"            # cat   but rust
-brew "hexyl"          # xxd   but rust
-brew "ripgrep"        # grep  but rust
-brew "tokei"          # cloc  but rust
+brew "fish"                 # shell but rust
+brew "neovim"          # vim but... NOT RUST???
+brew "lsd"                     # ls but rust
+brew "jj"                     # git but rust
+brew "bat"                    # cat but rust
+brew "hexyl"                  # xxd but rust
+brew "ripgrep"               # grep but rust
+brew "tokei"                 # cloc but rust
+brew "difftastic"            # diff but rust
+brew "helix"                  # vim but rust
+brew "nushell"              # shell but rust
+brew "uutils-coreutils" # coreutils but rust
+brew "xh"                    # curl but rust
+brew "starship"            # prompt but rust
+brew "hyperfine"     # benchmarking but rust
+brew "zoxide"                  # cd but rust
+brew "just"                  # meke but rust
 
-# maybe...
-brew "difftastic"     # diff  but rust
-brew "helix"          # vim   but rust
-brew "nushell"        # shell but rust
+brew "kondo" # cleanup build files
+brew "ripgrep-all" # ripgrep for zips and epubs
+
+# no boilerplate recommended
+# brew "espanso" # text expander but rust
+# brew "bacon" # fswatch but rust (for latex?)
+# wiki-tui if added to homebrew
 
 # not rust but ~~perfect~~ good enough as-is
 brew "neofetch"
