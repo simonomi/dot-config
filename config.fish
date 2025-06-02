@@ -5,6 +5,8 @@ fish_add_path ~/.cargo/bin
 # pipx installs here
 fish_add_path ~/.local/bin
 
+source ~/.swiftly/env.fish
+
 export HOMEBREW_NO_ENV_HINTS=true
 export SHELL=/opt/homebrew/bin/fish
 export EDITOR=nvim
@@ -65,7 +67,7 @@ alias j jj
 alias n nvim
 alias s swift
 
-alias kondo "kondo --default --ignored-dirs $cardr"
+alias kondo "kondo --default --ignored-dirs \$cardr"
 
 # FIXME: once helix fixes its own cursor, delete this
 function hx

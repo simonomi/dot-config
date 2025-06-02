@@ -21,3 +21,10 @@ ln -fw helix/helix\ config.toml ~/.config/helix/config.toml
 ln -fw helix/helix_theme.toml ~/.config/helix/themes/helix_theme.toml
 
 ln -fw starship.toml ~/.config/starship.toml
+
+# TODO: remove original espanso path in application support?
+mkdir -p ~/.config/espanso/config
+mkdir -p ~/.config/espanso/match
+ln -fw espanso/config/default.yml ~/.config/espanso/config/default.yml
+ln -fw espanso/match/base.yml ~/.config/espanso/match/base.yml
+

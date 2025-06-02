@@ -20,7 +20,7 @@ brew "kondo" # cleanup build files
 brew "ripgrep-all" # ripgrep for zips and epubs
 
 # no boilerplate recommended
-# brew "espanso" # text expander but rust
+cask "espanso" # text expander but rust
 # brew "bacon" # fswatch but rust (for latex?)
 # wiki-tui if added to homebrew
 
@@ -34,7 +34,7 @@ mas "Focus (for YouTube)", id: 1514703160
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
-mas "Unwatched", id: 6477287463
+# mas "Unwatched", id: 6477287463 # disabled bc im using testflight version
 mas "Userscripts", id: 1463298887
 mas "Wipr 2", id: 1662217862
 
