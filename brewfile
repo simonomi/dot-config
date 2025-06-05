@@ -18,6 +18,7 @@ brew "just"                  # meke but rust
 
 brew "kondo" # cleanup build files
 brew "ripgrep-all" # ripgrep for zips and epubs
+brew "pandoc" # dependancy for ripgrep-all for epubs
 
 # no boilerplate recommended
 cask "espanso" # text expander but rust
