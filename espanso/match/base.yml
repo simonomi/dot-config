@@ -15,3 +15,11 @@ matches:
         params:
           format: "%H:%M"
 
+  - trigger: ":now"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+

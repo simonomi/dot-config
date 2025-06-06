@@ -154,6 +154,7 @@ abbr -a be "b bundle edit"
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste
 
+alias lorem "cat $homedr/Documents/misc/lorem\ ipsum.txt"
 alias box "nvim -R $homedr/Documents/misc/box\ drawing\ characters.txt"
 
 alias fix_cursor "printf '\033[6 q'"
