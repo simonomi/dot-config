@@ -15,6 +15,9 @@ let g:vimtex_compiler_latexmk = {
 let g:vimtex_compiler_latexmk_engines = {
 	\"_": "-xelatex"
 \}
+let g:python3_host_prog = expand('~/python_virtual_environment/bin/python')
+
+let g:coc_global_extensions = ["coc-html", "coc-sourcekit", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css"]
 
 syntax on
 try
@@ -168,8 +171,8 @@ noremap <Leader>= <C-w>=
 
 " \q quit
 noremap <Leader>q <Cmd>quit<CR>
-" \Q force quit
-noremap <Leader>Q <Cmd>quit!<CR>
+" \Q force quit all
+noremap <Leader>Q <Cmd>quitall!<CR>
 
 " \w update
 noremap <Leader>w <Cmd>update<CR>
@@ -213,6 +216,15 @@ set backupcopy=yes " to preserve creation date
 set formatoptions+=ro/ " to enable comment continuation
 
 set spelllang=en_us " spell checking language
+set spelloptions+=camel " check camelCase words separately
+set spellcapcheck="" " disable requiring capital letters at the beginning of sentences
+set spellsuggest=best,3 " sets the limit for spell suggestions to 3
+
+" TODO: change spell check highlight colors
+highlight SpellBad ctermfg=black
+highlight SpellCap ctermfg=black
+highlight SpellRare ctermfg=black
+highlight SpellLocal ctermfg=black
 
 set smoothscroll " allow scrolling through long single lines
 
@@ -439,7 +451,7 @@ command -bar EnableASCII silent call EnableASCII()
 
 augroup hex_editing
 	autocmd!
-	autocmd BufReadPost *.bin,*.nds ParseHex
+	autocmd BufReadPost *.bin,*.nds,*.sav ParseHex
 	autocmd BufWritePre * if &ft == "my_hex" | let win_view = winsaveview() | UnParseHex | setlocal ft=my_hex | endif
 	autocmd BufWritePost * if &ft == "my_hex" | ParseHex | call winrestview(win_view) | endif
 augroup END
@@ -560,6 +572,7 @@ augroup END
 
 " indentation
 set tabstop=4
+set noexpandtab
 set shiftwidth=0
 set copyindent
 set preserveindent
@@ -569,6 +582,7 @@ set shiftround " make < and > round to tab levels
 augroup disable_auto_spaces
 	autocmd!
 	autocmd FileType * set noexpandtab
+	autocmd FileType * set shiftwidth=0
 augroup END
 
 " fix vim wanting to remove my blank line indents !!

@@ -6,6 +6,7 @@ email = "thesimonpellerin@gmail.com"
 default-command = "log"
 log-word-wrap = false
 pager = "less --quit-if-one-screen --RAW-CONTROL-CHARS --incsearch --ignore-case"
+diff-editor = ":builtin"
 
 [revsets]
 log = "ancestors(@::, 4):: | ancestors(present(main)::, 2):: | ancestors(present(master)::, 2)::"

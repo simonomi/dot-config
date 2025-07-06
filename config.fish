@@ -6,6 +6,7 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/.local/bin
 
 source ~/.swiftly/env.fish
+source ~/python_virtual_environment/bin/activate.fish
 
 export HOMEBREW_NO_ENV_HINTS=true
 export SHELL=/opt/homebrew/bin/fish
@@ -16,6 +17,7 @@ export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
 export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
 export XDG_CONFIG_HOME="/Users/simonomi/.config"
+export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
 
 starship init fish | source
 zoxide init fish | source
@@ -51,6 +53,8 @@ alias hrc "hx $dot_config_dir/helix/helix\ config.toml"
 
 alias nurc "nvim $dot_config_dir/config.nu"
 
+alias cd z
+
 alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
 
@@ -61,6 +65,7 @@ abbr -a opsw "open Package.swift"
 # alias j "export CARGO_MOMMYS_ACTUAL=jj; cargo-mommy"
 alias b brew
 alias c cargo
+alias d "nvim -d"
 alias g git
 alias h hx
 alias j jj
@@ -90,20 +95,6 @@ set -g bookdr $homedr/Documents/books
 set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/Documents/main"
 set -g cardr $swdr/carbonizer
 set -g magedr $swdr/mage
-
-abbr -a cdpr "cd $prdr"
-abbr -a cdpy "cd $pydr"
-abbr -a cdrs "cd $rsdr"
-abbr -a cdsw "cd $swdr"
-abbr -a cdhs "cd $hsdr"
-abbr -a cdtex "cd $texdr"
-abbr -a cdweb "cd $webdr"
-abbr -a cdwit "cd $witdr"
-abbr -a cdicl "cd $icldr"
-abbr -a cdbook "cd $bookdr"
-abbr -a cdobs "cd $obsdr"
-abbr -a cdcar "cd $cardr"
-abbr -a cdmage "cd $magedr"
 
 alias plan "nvim -c \"normal G\\\$\" $prdr/my\ lang\ planning.swift"
 
@@ -161,19 +152,16 @@ alias fix_cursor "printf '\033[6 q'"
 
 abbr -a xcode_file_templates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"'
 
-# autocomplete breaks for some reason :/
-# it only selects dirs and executables???
-# function watch
-# 	fswatch -o "$argv[1]" | xargs -L1 -I{} $argv[2..]
-# end
-abbr -a watch --set-cursor "fswatch -o % | xargs -L1 -I{} \"\""
-
 function brew_size
 	brew leaves | xargs -n1 -P8 -I {} fish -c "brew info {} | rg '[0-9]* files, ' | sed 's/^.*[0-9]* files, \\(.*\\)).*\$/{} \\1/'" | sort -h -r -k2 | column -t
 end
 
 function brew_size_all
 	brew list | xargs -n1 -P8 -I {} fish -c "brew info {} | rg '[0-9]* files, ' | sed 's/^.*[0-9]* files, \\(.*\\)).*\$/{} \\1/'" | sort -h -r -k2 | column -t
+end
+
+function brew_not_in_bundle
+	nu -c "let bundle = brew bundle list | lines; brew leaves | lines | where \$it not-in \$bundle | collect | to text --no-newline"
 end
 
 function convert_all_bmps

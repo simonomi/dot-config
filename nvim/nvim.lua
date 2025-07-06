@@ -1,12 +1,11 @@
 vim.cmd.packadd("packer.nvim")
-	
+
 require("packer").startup(function()
 	-- plugin manager
 	use { "wbthomason/packer.nvim" }
 	
 	-- lsp integration
 	use { "neoclide/coc.nvim", branch = "release" }
-	-- html, sourcekit, rust-analyzer, python, json, css
 	
 	-- file tree view
 	use {

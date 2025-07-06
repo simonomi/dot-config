@@ -1,0 +1,10 @@
+matches:
+  - trigger: "4"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "screencapture -i -u ignore"
+          shell: "sh"
+

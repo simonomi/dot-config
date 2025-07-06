@@ -11,7 +11,9 @@ ln -fw nvim/syntax/kbd.vim ~/.config/nvim/syntax/kbd.vim
 ln -fw nvim/syntax/my_hex.vim ~/.config/nvim/syntax/my_hex.vim
 
 mkdir -p ~/.config/nushell
-ln -fw config.nu ~/.config/nushell/config.nu
+ln -fw nushell/config.nu ~/.config/nushell/config.nu
+ln -fw nushell/starship.nu ~/.config/nushell/starship.nu
+ln -fw nushell/zoxide.nu ~/.config/nushell/zoxide.nu
 
 mkdir -p ~/.config/jj
 ln -fw jj\ config.toml ~/.config/jj/config.toml
@@ -22,9 +24,12 @@ ln -fw helix/helix_theme.toml ~/.config/helix/themes/helix_theme.toml
 
 ln -fw starship.toml ~/.config/starship.toml
 
+ln -fw bacon.toml ~/.config/bacon.toml
+
 # TODO: remove original espanso path in application support?
-mkdir -p ~/.config/espanso/config
-mkdir -p ~/.config/espanso/match
-ln -fw espanso/config/default.yml ~/.config/espanso/config/default.yml
-ln -fw espanso/match/base.yml ~/.config/espanso/match/base.yml
+mkdir -p ~/.config/espanso
+for file in espanso/**.*;
+	mkdir -p ~/.config/(dirname $file)
+	ln -fw $file ~/.config/$file
+end
 

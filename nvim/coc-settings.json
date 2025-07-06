@@ -1,6 +1,7 @@
 {
-	"colors.enable": true,
+	"extensions.updateCheck": "daily",
 	"codeLens.enable": true,
+	"colors.enable": true,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.messageDelay": 0,
 	"diagnostic.virtualText": true,
@@ -38,5 +39,5 @@
 		"default": ""
 	},
 	"suggest.removeDuplicateItems": true,
-	"suggest.snippetIndicator": ""
+	"suggest.snippetIndicator": "",
 }

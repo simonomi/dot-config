@@ -6,7 +6,6 @@ brew "bat"                    # cat but rust
 brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
 brew "tokei"                 # cloc but rust
-brew "difftastic"            # diff but rust
 brew "helix"                  # vim but rust
 brew "nushell"              # shell but rust
 brew "uutils-coreutils" # coreutils but rust
@@ -15,24 +14,25 @@ brew "starship"            # prompt but rust
 brew "hyperfine"     # benchmarking but rust
 brew "zoxide"                  # cd but rust
 brew "just"                  # meke but rust
+cask "espanso"      # text expander but rust
+brew "bacon"              # fswatch but rust
+brew "typst"                  # tex but rust
 
 brew "kondo" # cleanup build files
-brew "ripgrep-all" # ripgrep for zips and epubs
-brew "pandoc" # dependancy for ripgrep-all for epubs
+brew "http-server" # convenience utility
+brew "periphery" # find unused swift code
+brew "neofetch" # terminal info
+brew "sl" # steam locomotive!
+# TODO: rustup?
+brew "pipx"
+brew "swiftly"
 
-# no boilerplate recommended
-cask "espanso" # text expander but rust
-# brew "bacon" # fswatch but rust (for latex?)
-# wiki-tui if added to homebrew
+# possible additions
+# aria2
+# ffmpeg
+# imagemagick
 
-# find unused swift code
-brew "periphery"
-
-# not rust but ~~perfect~~ good enough as-is
-brew "neofetch"
-brew "sl"
-
-# command-line tool for mac app store
+### MARK: mac app store
 brew "mas"
 
 mas "Apple Developer", id: 640199958
@@ -41,6 +41,7 @@ mas "Focus (for YouTube)", id: 1514703160
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
+mas "Telegram", id: 747648890
 # mas "Unwatched", id: 6477287463 # disabled bc im using testflight version
 mas "Userscripts", id: 1463298887
 mas "Wipr 2", id: 1662217862
@@ -50,32 +51,16 @@ mas "Pages", id: 409201541
 mas "Numbers", id: 409203825
 # mas "Keynote", id: 409183694 # almost 800MB
 
-# other apps not in mac app store (all have casks)
-# - blender
-# - discord
-# - ghidra
-# - godot
-# - netnewswire
-# - obsidian
-# - raycast
-# - steam
-# - textual
-# - vlc?
-# - iina?
-
-# also rustup
-
-# possible additions
-# aria2
-# ffmpeg
-# imagemagick
-brew "pipx"
-
-# for resume
-brew "fswatch"
-# cask "mactex-no-gui" # this keeps failing to install...
-brew "texlive" # ?
-
-# convenience utility
-brew "http-server"
+### MARK: other apps
+cask "blender"
+cask "calibre"
+cask "discord"
+cask "ghidra"
+cask "godot"
+cask "netnewswire"
+cask "obsidian"
+cask "raycast"
+cask "steam"
+cask "textual"
+cask "iina" # vlc but swift
 

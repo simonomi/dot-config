@@ -20,7 +20,7 @@ show_milliseconds = true
 
 [custom.directory]
 format = "$output"
-command = "\"$swdr/custom directory prompt/custom directory prompt\""
+shell = "/Users/simonomi/Documents/programming/swift/custom directory prompt/custom directory prompt"
 when = true
 
 [directory]
