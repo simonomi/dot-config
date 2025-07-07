@@ -17,6 +17,8 @@ brew "just"                  # meke but rust
 cask "espanso"      # text expander but rust
 brew "bacon"              # fswatch but rust
 brew "typst"                  # tex but rust
+brew "fd"                    # find but rust
+brew "bottom"                 # top but rust
 
 brew "kondo" # cleanup build files
 brew "http-server" # convenience utility
