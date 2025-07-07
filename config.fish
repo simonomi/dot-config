@@ -1,12 +1,20 @@
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ (uname) = Darwin ]
+	# Set PATH, MANPATH, etc., for Homebrew.
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+end
 
 fish_add_path ~/.cargo/bin
 # pipx installs here
 fish_add_path ~/.local/bin
 
-source ~/.swiftly/env.fish
 source ~/python_virtual_environment/bin/activate.fish
+
+switch (uname)
+	case Darwin
+		source ~/.swiftly/env.fish
+	case Linux
+		source ~/.local/share/swiftly/env.fish
+end
 
 export HOMEBREW_NO_ENV_HINTS=true
 export SHELL=/opt/homebrew/bin/fish
@@ -16,8 +24,15 @@ export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color"
 export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
 export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
-export XDG_CONFIG_HOME="/Users/simonomi/.config"
 export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
+export XDG_CONFIG_HOME="/Users/simonomi/.config"
+
+switch (uname)
+	case Darwin
+		export XDG_CONFIG_HOME="/Users/simonomi/.config"
+	case Linux
+		export XDG_CONFIG_HOME="/home/simonomi/.config"
+end
 
 starship init fish | source
 zoxide init fish | source
