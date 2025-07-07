@@ -1,15 +1,13 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
-format = "${custom.directory}$status$character"
+format = "${custom.directory}${custom.directory_linux}$status$character"
 right_format = "$cmd_duration$git_metrics$package$hostname$time"
 
 add_newline = false
 
 [character]
 format = "$symbol"
-# success_symbol = "[►](bright-white)"
 success_symbol = "[❯](bright-white)"
-# error_symbol = "[►](red)"
 error_symbol = "[❯](red)"
 
 [cmd_duration]
@@ -20,14 +18,15 @@ show_milliseconds = true
 
 [custom.directory]
 format = "$output"
-shell = "/Users/simonomi/Documents/programming/swift/custom directory prompt/custom directory prompt"
+shell = "/Users/simonomi/Documents/swift/custom-directory-prompt/custom directory prompt"
 when = true
+os="macos"
 
-[directory]
-format = "[$path]($style)[$read_only]($read_only_style)"
-truncation_length = 1
-read_only = " 󰌾"
-fish_style_pwd_dir_length = 1
+[custom.directory_linux]
+format = "$output"
+shell = "/home/simonomi/custom-directory-prompt/custom directory prompt"
+when = true
+os="linux"
 
 [git_metrics]
 disabled = false
