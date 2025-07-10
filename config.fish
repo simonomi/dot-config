@@ -122,7 +122,7 @@ function update
 	brew bundle check || brew bundle install --verbose
 	brew upgrade
 	brew autoremove
-	brew cleanup
+	brew cleanup --scrub
 end
 
 alias ascii "cat $icldr/Documents/misc/ascii.txt"
@@ -167,12 +167,21 @@ alias fix_cursor "printf '\033[6 q'"
 
 abbr -a xcode_file_templates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"'
 
+# TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
+# - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
+# - manually listing out brew --cellar kinda works, but that doesnt work for installed-only, and casks doesnt work because of symlinks
+# - running du -shL on casks breaks bc calibre has an infinite loop
+# - brew info --json --installed doesnt include sizes, or it'd be perfect
 function brew_size
-	brew leaves | xargs -n1 -P8 -I {} fish -c "brew info {} | rg '[0-9]* files, ' | sed 's/^.*[0-9]* files, \\(.*\\)).*\$/{} \\1/'" | sort -h -r -k2 | column -t
+	export HOMEBREW_NO_ANALYTICS=true
+	export HOMEBREW_NO_GITHUB_API=true
+	brew info (brew leaves; brew list --casks) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brew_size_all
-	brew list | xargs -n1 -P8 -I {} fish -c "brew info {} | rg '[0-9]* files, ' | sed 's/^.*[0-9]* files, \\(.*\\)).*\$/{} \\1/'" | sort -h -r -k2 | column -t
+	export HOMEBREW_NO_ANALYTICS=true
+	export HOMEBREW_NO_GITHUB_API=true
+	brew info (brew list) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brew_not_in_bundle
