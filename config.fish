@@ -118,8 +118,8 @@ alias swpl "cd $homedr/Desktop; nvim test.swift"
 abbr -a u update
 
 function update
-	brew update
-	brew bundle check || brew bundle install --verbose
+	brew update-if-needed
+	set output (brew bundle check) && echo $output || brew bundle install --verbose
 	brew upgrade
 	brew autoremove
 	brew cleanup --scrub
@@ -185,7 +185,7 @@ function brew_size_all
 end
 
 function brew_not_in_bundle
-	nu -c "let bundle = brew bundle list | lines; brew leaves | lines | where \$it not-in \$bundle | collect | to text --no-newline"
+	nu -c "let bundle = brew bundle list | lines; (brew leaves) ++ (brew list --casks) | lines | where \$it not-in \$bundle | collect | to text --no-newline"
 end
 
 function convert_all_bmps
