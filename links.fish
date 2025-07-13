@@ -26,6 +26,9 @@ ln -fw starship.toml ~/.config/starship.toml
 
 ln -fw bacon.toml ~/.config/bacon.toml
 
+mkdir -p ~/.config/macchina
+ln -fw macchina.toml ~/.config/macchina/macchina.toml
+
 # TODO: remove original espanso path in application support?
 mkdir -p ~/.config/espanso
 for file in espanso/**.*;
