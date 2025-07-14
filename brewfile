@@ -34,6 +34,10 @@ brew "swiftly"
 # ffmpeg
 # imagemagick
 
+# proxmark
+tap "proxamrk/proxmark3", "git@github.com:Proxmark/homebrew-proxmark3.git"
+brew "proxmark3"
+
 ### MARK: mac app store
 brew "mas"
 

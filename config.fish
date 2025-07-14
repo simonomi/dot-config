@@ -186,7 +186,7 @@ function brew_size_all
 end
 
 function brew_not_in_bundle
-	nu -c "let bundle = brew bundle list | lines; (brew leaves) ++ (brew list --casks) | lines | where \$it not-in \$bundle | collect | to text --no-newline"
+	nu -c "let bundle = brew bundle list --all | lines; (brew leaves) ++ \"\n\" ++ (brew list --casks) | lines | where \$it not-in \$bundle | collect | to text --no-newline"
 end
 
 function convert_all_bmps
