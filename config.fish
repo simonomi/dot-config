@@ -12,12 +12,13 @@ source ~/python_virtual_environment/bin/activate.fish
 switch (uname)
 	case Darwin
 		source ~/.swiftly/env.fish
+		export SHELL=/opt/homebrew/bin/fish
 	case Linux
-		source ~/.local/share/swiftly/env.fish
+		source /usr/bin/fish
+		export SHELL=/opt/homebrew/bin/fish
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
-export SHELL=/opt/homebrew/bin/fish
 export EDITOR=nvim
 export VISUAL=nvim
 export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color"
