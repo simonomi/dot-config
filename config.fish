@@ -14,8 +14,8 @@ switch (uname)
 		source ~/.swiftly/env.fish
 		export SHELL=/opt/homebrew/bin/fish
 	case Linux
-		source /usr/bin/fish
-		export SHELL=/opt/homebrew/bin/fish
+		source ~/.local/share/swiftly/env.fish
+		export SHELL=/usr/bin/fish
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
