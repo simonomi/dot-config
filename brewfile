@@ -34,10 +34,6 @@ brew "swiftly"
 # ffmpeg
 # imagemagick
 
-# proxmark
-tap "proxmark/proxmark3"
-brew "proxmark3"
-
 ### MARK: mac app store
 brew "mas"
 
