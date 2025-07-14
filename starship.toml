@@ -45,7 +45,7 @@ disabled = false
 
 [time]
 format = "[$time]($style)"
-time_format = "%H:%M"
+time_format = "%H:%M:%S"
 style = "bright-black"
 disabled = false
 
