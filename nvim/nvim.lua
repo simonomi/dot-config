@@ -274,16 +274,24 @@ require("packer").startup(function()
 					select = {
 						enable = true,
 						keymaps = {
-							["af"] = "@function.outer",
-							["hf"] = "@function.inner",
+							["a="] = "@assignment.outer",
+							["h="] = "@assignment.inner",
+							["l="] = "@assignment.lhs",
+							["r="] = "@assignment.rhs",
 							["ac"] = "@call.outer",
 							["hc"] = "@call.inner",
 							["a/"] = "@comment.outer",
 							["h/"] = "@comment.inner",
+							["af"] = "@function.outer",
+							["hf"] = "@function.inner",
 							["aa"] = "@parameter.outer",
 							["ha"] = "@parameter.inner",
-						}
-						-- TODO: include_surrounding_whitespace
+							["ar"] = "@regex.outer",
+							["hr"] = "@regex.inner",
+						},
+						include_surrounding_whitespace = function(textobject)
+							(textobject.query_string):find("outer")
+						end
 					}
 				}
 			}
@@ -295,7 +303,7 @@ require("packer").startup(function()
 		ensure_installed = { "swift", "rust", "json", "markdown", "nu", "lua", "typst" },
 		highlight = {
 			enable = true,
-			disable = { "swift" }
+			disable = { "swift", "typst" }
 		}
 	}
 end)
