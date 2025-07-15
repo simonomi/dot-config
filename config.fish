@@ -1,6 +1,9 @@
-if [ (uname) = Darwin ]
-	# Set PATH, MANPATH, etc., for Homebrew.
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+# Set PATH, MANPATH, etc., for Homebrew.
+switch (uname)
+	case Darwin
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	case Linux
+		eval "$(/home/linuxbrew/.linuxbrew/Homebrew/bin/brew shellenv)"
 end
 
 fish_add_path ~/.cargo/bin
