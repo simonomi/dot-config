@@ -22,6 +22,7 @@ brew "bottom"                 # top but rust
 brew "macchina"          # neofetch but rust
 
 brew "kondo" # cleanup build files
+brew "node" # needed for coc-nvim, among others
 brew "http-server" # convenience utility
 brew "periphery" # find unused swift code
 brew "sl" # steam locomotive!
