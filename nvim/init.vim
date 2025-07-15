@@ -186,6 +186,8 @@ noremap <Leader>_ <C-w>_
 " ^s enable spell checking
 noremap <C-s> <Cmd>call ToggleSpellChecking()<CR>
 
+" note to self because i always come here, z= to correct misspelled word
+
 function ToggleSpellChecking()
 	if &spell
 		setlocal nospell

@@ -229,21 +229,6 @@ require("packer").startup(function()
 	-- undo tree
 	use "mbbill/undotree"
 	
-	-- leap
-	use {
-		"ggandor/leap.nvim",
-		config = function()
-			vim.keymap.set("n", "s", "<Plug>(leap)")
-			
-			require("leap").opts.case_sensitive = true
-			
-			require("leap").opts.special_keys.prev_target = "<Backspace>"
-			require("leap").opts.special_keys.prev_group = "<Backspace>"
-			
-			require("leap.user").set_repeat_keys("<Enter>", "<Backspace>")
-		end
-	}
-	
 	-- idris2-nvim
 -- 	use {
 -- 		"ShinKage/idris2-nvim",
@@ -257,7 +242,7 @@ require("packer").startup(function()
 	-- note: needs `:TSInstall html` to work
 	use {
 		"windwp/nvim-ts-autotag",
-		requires = { "nvim-treesitter/nvim-treesitter" },
+		requires = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-ts-autotag").setup {}
 		end
@@ -266,7 +251,7 @@ require("packer").startup(function()
 	-- sticky headers
 	use {
 		"nvim-treesitter/nvim-treesitter-context",
--- 		requires = { "nvim-treesitter/nvim-treesitter" },
+		requires = "nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("treesitter-context").setup {
 				multiwindow = true,
@@ -278,12 +263,40 @@ require("packer").startup(function()
 		end
 	}
 	
+	-- treesitter text objects
+	use {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.configs").setup {
+				textobjects = {
+					select = {
+						enable = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["hf"] = "@function.inner",
+							["ac"] = "@call.outer",
+							["hc"] = "@call.inner",
+							["a/"] = "@comment.outer",
+							["h/"] = "@comment.inner",
+							["aa"] = "@parameter.outer",
+							["ha"] = "@parameter.inner",
+						}
+						-- TODO: include_surrounding_whitespace
+					}
+				}
+			}
+		end
+	}
+	
 	-- custom treesitter config
 	require("nvim-treesitter.configs").setup {
-		ensure_installed = { "swift", "rust", "json", "markdown", "nu" },
+		ensure_installed = { "swift", "rust", "json", "markdown", "nu", "lua", "typst" },
 		highlight = {
 			enable = true,
 			disable = { "swift" }
 		}
 	}
 end)
+
