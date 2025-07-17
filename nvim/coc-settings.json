@@ -40,4 +40,5 @@
 	},
 	"suggest.removeDuplicateItems": true,
 	"suggest.snippetIndicator": "",
+	"rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer"
 }

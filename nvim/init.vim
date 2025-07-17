@@ -21,7 +21,7 @@ let g:python3_host_prog = expand('~/python_virtual_environment/bin/python')
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 
-let g:coc_global_extensions = ["coc-html", "coc-sourcekit", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css"]
+let g:coc_global_extensions = ["coc-html", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css"]
 
 syntax on
 try

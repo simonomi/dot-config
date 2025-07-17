@@ -232,6 +232,13 @@ return {
 			}
 		end
 	},
+	-- TODO: switch to built-in lsp over coc (?)
+	{ -- lsp
+		"neovim/nvim-lspconfig",
+		config = function()
+			vim.lsp.enable("sourcekit")
+		end
+	}
 	-- TODO: coqtail and idris2 should be lazy-loaded
 	-- { "whonore/Coqtail" },
 	-- {
