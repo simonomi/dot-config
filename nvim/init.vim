@@ -17,6 +17,10 @@ let g:vimtex_compiler_latexmk_engines = {
 \}
 let g:python3_host_prog = expand('~/python_virtual_environment/bin/python')
 
+" disable netrw for nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 let g:coc_global_extensions = ["coc-html", "coc-sourcekit", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css"]
 
 syntax on
