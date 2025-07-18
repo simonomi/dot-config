@@ -21,7 +21,8 @@ let g:python3_host_prog = expand('~/python_virtual_environment/bin/python')
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 
-let g:coc_global_extensions = ["coc-html", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css"]
+"let g:coc_global_extensions = ["coc-html", "coc-rust-analyzer", "coc-python", "coc-json", "coc-css", "coc-vimlsp"]
+let g:coc_global_extensions = ["coc-python", "coc-vimlsp"]
 
 syntax on
 try
@@ -82,6 +83,9 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 " because ^I is the control code for tab
 tnoremap <Tab> <C-i>
+
+" use M instead of m to place marks
+noremap M m
 
 " swap ' <-> ` (for jumping to marks)
 noremap ` '
@@ -340,11 +344,21 @@ nnoremap <Leader>p <Plug>(coc-diagnostic-prev)
 
 " make autopairs play nice with coc
 " AND fix vim wanting to remove my blank line indents !!
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
 	\ "x<Backspace>\<CMD>call feedkeys(v:lua.require'nvim-autopairs'.autopairs_cr(), 'in')\<CR>"
 
-inoremap <silent><expr> <C-Space> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
-nnoremap <expr> <C-Space> CocHasProvider("hover") ? "\<Cmd>call CocAction('doHover')\<CR>" : "\<Cmd>lua vim.lsp.buf.hover()\<CR>"
+"inoremap <silent><expr> <C-Space> coc#pum#visible() ? coc#pum#stop() : coc#refresh()
+"nnoremap <expr> <C-Space> CocHasProvider("hover") ? "\<Cmd>call CocAction('doHover')\<CR>" : "\<Cmd>lua vim.lsp.buf.hover()\<CR>"
+
+" TODO: move this someone else
+" coq keybinds
+nnoremap <C-Space> <Cmd>lua vim.lsp.buf.hover()<CR>
+"inoremap <silent><expr> <C-Space> pumvisible() ? "\<C-x>\<C-z>" : "\<Cmd>lua vim.lsp.completion.get()\<CR>"
+inoremap <silent><expr> <C-Space> pumvisible() ? "\<C-x>\<C-z>" : "\<C-x>\<C-o>"
+
+"set completeitemalign=abbr
+set completeopt=menu,menuone,noinsert,popup
+"inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "x<Backspace>\<CMD>call feedkeys(v:lua.require'nvim-autopairs'.autopairs_cr(), 'in')\<CR>"
 
 " TODO: why are <C-i> and <Tab> the same :(
 inoremap <C-S-i> <Cmd>call CocActionAsync("showSignatureHelp")<CR>
@@ -515,6 +529,15 @@ highlight Boolean cterm=bold ctermfg=magenta
 highlight Statement cterm=bold ctermfg=magenta
 highlight Operator cterm=none ctermfg=none
 
+" pop-up menu colors
+highlight NormalFloat ctermbg=237
+highlight! link Pmenu NormalFloat
+highlight PmenuSel ctermfg=white ctermbg=238
+
+" TODO: this should link to comment in code, but lightgrey in pmenu
+highlight @markup.raw ctermfg=lightgrey
+" TODO: comments in pop up menus are horrible to read
+
 " change diff highlighting colors
 " i know its bad, but these really are the best
 highlight DiffAdd ctermbg=22
@@ -594,6 +617,7 @@ augroup END
 " fix vim wanting to remove my blank line indents !!
 inoremap <Esc> x<Backspace><Esc>
 
+" TODO: at some point, customize lazy.nvim config
 " start plugins
 luafile ~/.config/nvim/nvim.lua
 

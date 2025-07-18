@@ -3,11 +3,9 @@
 ln -sfw "$(pwd)/config.fish" ~/.config/fish/config.fish
 
 mkdir -p ~/.config/nvim/syntax
-mkdir -p ~/.config/nvim/lua/config
 mkdir -p ~/.config/nvim/lua/plugins
 ln -sfw "$(pwd)/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sfw "$(pwd)/nvim/nvim.lua" ~/.config/nvim/nvim.lua
-ln -sfw "$(pwd)/nvim/lazy.lua" ~/.config/nvim/lua/config/lazy.lua
 ln -sfw "$(pwd)/nvim/plugins.lua" ~/.config/nvim/lua/plugins/plugins.lua
 ln -sfw "$(pwd)/nvim/coc-settings.json" ~/.config/nvim/coc-settings.json
 ln -sfw "$(pwd)/nvim/syntax/dex.vim" ~/.config/nvim/syntax/dex.vim

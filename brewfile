@@ -30,6 +30,11 @@ brew "sl" # steam locomotive!
 brew "pipx"
 brew "swiftly"
 
+# lsps
+brew "tinymist" # typst
+brew "lua-language-server" # lua
+brew "vscode-langservers-extracted" # html, css, javascript, json
+
 # possible additions
 # aria2
 # ffmpeg
@@ -40,7 +45,6 @@ brew "mas"
 
 mas "Apple Developer", id: 640199958
 mas "Auto HD + FPS for YouTube", id: 1546729687
-mas "Focus (for YouTube)", id: 1514703160
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
@@ -66,4 +70,5 @@ cask "raycast"
 cask "steam"
 cask "textual"
 cask "iina" # vlc but swift
+cask "inkscape"
 
