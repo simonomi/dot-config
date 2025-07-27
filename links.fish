@@ -22,6 +22,7 @@ ln -sfw "$(pwd)/jj config.toml" ~/.config/jj/config.toml
 
 mkdir -p ~/.config/helix/themes
 ln -sfw "$(pwd)/helix/helix config.toml" ~/.config/helix/config.toml
+ln -swf "$(pwd)/helix/languages.toml" ~/.config/helix/languages.toml
 ln -sfw "$(pwd)/helix/helix_theme.toml" ~/.config/helix/themes/helix_theme.toml
 
 ln -sfw "$(pwd)/starship.toml" ~/.config/starship.toml
@@ -31,10 +32,12 @@ ln -sfw "$(pwd)/bacon.toml" ~/.config/bacon.toml
 mkdir -p ~/.config/macchina
 ln -sfw "$(pwd)/macchina.toml" ~/.config/macchina/macchina.toml
 
+mkdir -p ~/.config/rustfmt
+ln -swf "$(pwd)/rustfmt.toml" ~/.config/rustfmt/rustfmt.toml
+
 # TODO: remove original espanso path in application support?
 mkdir -p ~/.config/espanso
 for file in espanso/**.*;
 	mkdir -p ~/.config/(dirname $file)
 	ln -sfw "$(pwd)/$file" ~/.config/$file
 end
-

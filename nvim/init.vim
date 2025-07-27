@@ -217,6 +217,8 @@ set ignorecase
 set incsearch
 set smartcase
 
+" if a file doesn't end in a newline, don't force it to
+" note that nvim DOES NOT show a trailing newline
 set nofixeol
 
 set timeoutlen=1000000
@@ -622,4 +624,3 @@ inoremap <Esc> x<Backspace><Esc>
 " TODO: at some point, customize lazy.nvim config
 " start plugins
 luafile ~/.config/nvim/nvim.lua
-

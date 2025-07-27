@@ -1,0 +1,53 @@
+[[language]]
+name = "rust"
+auto-format = false # rustfmt doesn't have an option to leave trailing whitespace
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "fish"
+auto-format = false # fish_indent doesnt have a flag for using tabs
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "nu"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "typst"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "html"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "css"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "javascript"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "typescript"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "python"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "java"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "zig"
+indent = { tab-width = 4, unit = "\t" }

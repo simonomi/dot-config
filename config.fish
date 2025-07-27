@@ -22,8 +22,8 @@ switch (uname)
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=hx
+export VISUAL=$EDITOR
 export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color"
 export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
 export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
@@ -57,8 +57,8 @@ set homedr "/Users/simonomi"
 
 set dot_config_dir "$homedr/Documents/dot\ config"
 
-alias frc "nvim $dot_config_dir/config.fish"
-alias fishrc "nvim $dot_config_dir/config.fish"
+alias frc "$VISUAL $dot_config_dir/config.fish"
+alias fishrc "$VISUAL $dot_config_dir/config.fish"
 alias src "source $dot_config_dir/config.fish"
 
 alias nrc "nvim $dot_config_dir/nvim/init.vim"
@@ -70,7 +70,7 @@ alias nlua "nvim $dot_config_dir/nvim/plugins.lua"
 alias hxrc "hx $dot_config_dir/helix/helix\ config.toml"
 alias hrc "hx $dot_config_dir/helix/helix\ config.toml"
 
-alias nurc "nvim $dot_config_dir/config.nu"
+alias nurc "$VISUAL $dot_config_dir/config.nu"
 
 alias cd z
 
@@ -78,18 +78,6 @@ alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
 
 abbr -a opsw "open Package.swift"
-
-# alias c "export CARGO_MOMMYS_ACTUAL=cargo; cargo-mommy"
-# alias s "export CARGO_MOMMYS_ACTUAL=swift; cargo-mommy"
-# alias j "export CARGO_MOMMYS_ACTUAL=jj; cargo-mommy"
-alias b brew
-alias c cargo
-alias d "nvim -d"
-alias g git
-alias h hx
-alias j jj
-alias n nvim
-alias s swift
 
 alias kondo "kondo --default --ignored-dirs \$cardr"
 
@@ -115,9 +103,9 @@ set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/
 set -g cardr $swdr/carbonizer
 set -g magedr $swdr/mage
 
-alias plan "nvim -c \"normal G\\\$\" $prdr/my\ lang\ planning.swift"
+alias plan "$VISUAL -c \"normal G\\\$\" $prdr/my\ lang\ planning.swift"
 
-alias swpl "cd $homedr/Desktop; nvim test.swift"
+alias swpl "cd $homedr/Desktop; $VISUAL test.swift"
 
 abbr -a u update
 
@@ -139,10 +127,21 @@ alias jfmt "python $pydr/json_formatter.py"
 alias :q exit
 alias q exit
 
-abbr -a js "j status"
-abbr -a jd --set-cursor "j describe -m \"%\""
-abbr -a jn --set-cursor "j new -m \"%\""
-abbr -a jl "j log -r \"..\""
+abbr -a b brew
+abbr -a c cargo
+abbr -a d "nvim -d"
+abbr -a g git
+abbr -a h hx
+abbr -a j jj
+abbr -a n nvim
+abbr -a s swift
+
+abbr -a js "jj status"
+abbr -a jd --set-cursor "jj describe -m \"%\""
+abbr -a jn --set-cursor "jj new -m \"%\""
+abbr -a jl "jj log -r \"..\""
+abbr -a main "jj bookmark move main --to @"
+abbr -a push "jj git push"
 
 abbr -a ga "git add"
 abbr -a gc --set-cursor "git commit -m \"%\""
@@ -197,4 +196,3 @@ function convert_all_bmps
 		magick "$file" "$(string sub -e -4 $file).png"
 	end
 end
-
