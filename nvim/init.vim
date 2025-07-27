@@ -146,6 +146,8 @@ noremap <Leader>a ggVG
 noremap gg gg^
 noremap G G$
 
+nnoremap == m`Ax<Esc>==$x``
+
 " set register to clipboard
 noremap <Leader>c "*
 
@@ -358,7 +360,7 @@ inoremap <silent><expr> <C-Space> pumvisible() ? "\<C-x>\<C-z>" : "\<C-x>\<C-o>"
 
 "set completeitemalign=abbr
 set completeopt=menu,menuone,noinsert,popup
-"inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "x<Backspace>\<CMD>call feedkeys(v:lua.require'nvim-autopairs'.autopairs_cr(), 'in')\<CR>"
+inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "x<Backspace>\<CMD>call feedkeys(v:lua.require'nvim-autopairs'.autopairs_cr(), 'in')\<CR>"
 
 " TODO: why are <C-i> and <Tab> the same :(
 inoremap <C-S-i> <Cmd>call CocActionAsync("showSignatureHelp")<CR>

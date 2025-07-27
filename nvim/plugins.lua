@@ -23,7 +23,9 @@ return {
 	},
 	{ -- automatically adds closing deliminators
 		"windwp/nvim-autopairs",
-		config = true
+		config = {
+			map_cr = false
+		}
 	},
 	{ -- tab bar
 		"akinsho/bufferline.nvim",
@@ -232,7 +234,6 @@ return {
 			}
 		}
 	},
-	-- TODO: switch to built-in lsp over coc (?)
 	{ -- lsp
 		"neovim/nvim-lspconfig",
 		config = function()

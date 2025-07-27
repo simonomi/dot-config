@@ -20,12 +20,12 @@ brew "typst"                  # tex but rust
 brew "fd"                    # find but rust
 brew "bottom"                 # top but rust
 brew "macchina"          # neofetch but rust
-brew "http-server-rs" # http server but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
 brew "periphery" # find unused swift code
 brew "sl" # steam locomotive!
+brew "http-server"
 # TODO: rustup?
 brew "pipx"
 brew "swiftly"
