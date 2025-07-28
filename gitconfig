@@ -1,0 +1,9 @@
+[user]
+	name = alice pellerin
+	email = thesimonpellerin@gmail.com
+[pull]
+	rebase = true
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+[commit]
+	gpgsign = true

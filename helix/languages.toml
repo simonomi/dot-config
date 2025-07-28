@@ -51,3 +51,11 @@ indent = { tab-width = 4, unit = "\t" }
 [[language]]
 name = "zig"
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "gas" # some kind of assembly
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "toml"
+indent = { tab-width = 4, unit = "\t" }
