@@ -70,6 +70,9 @@ alias nlua "nvim $dot_config_dir/nvim/plugins.lua"
 alias hxrc "hx $dot_config_dir/helix/helix\ config.toml"
 alias hrc "hx $dot_config_dir/helix/helix\ config.toml"
 
+alias hxlang "hx $dot_config_dir/helix/languages.toml"
+alias hlang "hx $dot_config_dir/helix/languages.toml"
+
 alias nurc "$VISUAL $dot_config_dir/config.nu"
 
 alias cd z
