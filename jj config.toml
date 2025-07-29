@@ -1,7 +1,6 @@
 [user]
 name = "alice pellerin"
-# must be thesimonpellerin for github to work right :/
-email = "thesimonpellerin@gmail.com"
+email = "thealicepellerin@gmail.com"
 
 [ui]
 default-command = "log"

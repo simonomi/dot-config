@@ -142,7 +142,7 @@ abbr -a s swift
 abbr -a js "jj status"
 abbr -a jd --set-cursor "jj describe -m \"%\""
 abbr -a jn --set-cursor "jj new -m \"%\""
-abbr -a jl "jj log -r \"..\""
+abbr -a jl "jj log -r \"all()\""
 abbr -a main "jj bookmark move main --to @"
 abbr -a push "jj git push"
 

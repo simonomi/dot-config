@@ -1,7 +1,9 @@
 [user]
 	name = alice pellerin
-	email = thesimonpellerin@gmail.com
+	email = thealicepellerin@gmail.com
 [pull]
 	rebase = true
 [url "git@github.com:"]
 	insteadOf = "https://github.com/"
+[core]
+	quotepath = off

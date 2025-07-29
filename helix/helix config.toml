@@ -108,7 +108,7 @@ K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 w = ":update"
 q = ":quit"
 c = ":config-reload"
-x = [":update", ":quit"]
+x = ":write-quit"
 
 [keys.normal.g]
 i = "move_line_up"
