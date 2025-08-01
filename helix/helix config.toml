@@ -77,6 +77,8 @@ G = "goto_last_line"
 q = "record_macro"
 Q = "replay_macro"
 
+J = "join_selections_space"
+
 # TODO: these are ok but id rather they didnt select the entire line
 I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
@@ -99,7 +101,7 @@ K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 "·" = "rotate_selection_contents_backward"
 "‚" = "rotate_selection_contents_forward"
 "≈" = "shrink_to_line_bounds"
-"Ô" = "join_selections_space"
+"Ô" = "join_selections"
 "" = "remove_selections"
 "ø" = "expand_selection"
 # todo: alt-i

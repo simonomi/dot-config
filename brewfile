@@ -29,7 +29,8 @@ brew "http-server"
 # TODO: rustup?
 brew "pipx"
 brew "swiftly"
-brew "gpg-suite" # could i use gpg instead?
+
+cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
 
 # lsps
@@ -61,11 +62,11 @@ mas "Numbers", id: 409203825
 # mas "Keynote", id: 409183694 # almost 800MB
 
 ### MARK: other apps
-cask "blender"
+# cask "blender"
 cask "calibre"
 cask "discord"
 cask "ghidra"
-cask "godot"
+# cask "godot"
 cask "netnewswire"
 cask "obsidian"
 cask "raycast"

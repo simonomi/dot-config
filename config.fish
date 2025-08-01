@@ -38,6 +38,15 @@ switch (uname)
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
 end
 
+switch (hostname)
+	case saphira.local
+		set signingKey (git config --system user.signingKey)
+		if test -z $signingKey
+			echo "setting git signing key, sudo required"
+			sudo git config --system user.signingKey 375A7BA7
+		end
+end
+
 starship init fish | source
 zoxide init fish | source
 
@@ -75,7 +84,7 @@ alias hlang "hx $dot_config_dir/helix/languages.toml"
 
 alias nurc "$VISUAL $dot_config_dir/config.nu"
 
-alias cd z
+abbr -a cd z
 
 alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
@@ -161,7 +170,7 @@ abbr -a gv "git-visit"
 alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift | xargs -r open"
 
 abbr -a bi "brew install"
-abbr -a be "brew bundle edit"
+abbr -a be "brew bundle edit; fix_cursor"
 
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste
