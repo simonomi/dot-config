@@ -160,8 +160,8 @@ abbr -a gd "git diff"
 abbr -a gv "git-visit"
 alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift | xargs -r open"
 
-abbr -a bi "b install"
-abbr -a be "b bundle edit"
+abbr -a bi "brew install"
+abbr -a be "brew bundle edit"
 
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste

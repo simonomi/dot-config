@@ -29,6 +29,8 @@ brew "http-server"
 # TODO: rustup?
 brew "pipx"
 brew "swiftly"
+brwe "gpg-suite" # could i use gpg instead?
+                 # gpg-suite is suppost to work with keychain...
 
 # lsps
 brew "tinymist" # typst
