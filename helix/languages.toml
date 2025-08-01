@@ -18,10 +18,12 @@ indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "html"
+auto-format = false
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "css"
+auto-format = false
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
