@@ -11,3 +11,7 @@ merge-editor = ":builtin"
 
 [revsets]
 log = "ancestors(@::, 4):: | ancestors(present(main)::, 2):: | ancestors(present(master)::, 2)::"
+
+[signing]
+behavior = "own"
+backend = "gpg"
