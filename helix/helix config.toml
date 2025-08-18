@@ -1,3 +1,6 @@
+# TODO: add custom languages
+# see https://docs.helix-editor.com/guides/adding_languages.html
+
 theme = "helix_theme"
 
 [editor]

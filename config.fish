@@ -24,7 +24,7 @@ end
 export HOMEBREW_NO_ENV_HINTS=true
 export EDITOR=hx
 export VISUAL=$EDITOR
-export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color"
+export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
 export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
@@ -115,7 +115,7 @@ set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/
 set -g cardr $swdr/carbonizer
 set -g magedr $swdr/mage
 
-alias plan "$VISUAL -c \"normal G\\\$\" $prdr/my\ lang\ planning.swift"
+alias plan "$VISUAL $prdr/my\ lang\ planning.swift"
 
 alias swpl "cd $homedr/Desktop; $VISUAL test.swift"
 
