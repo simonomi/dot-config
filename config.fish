@@ -22,7 +22,7 @@ switch (uname)
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
-export EDITOR=hx
+export EDITOR=nvim
 export VISUAL=$EDITOR
 export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
