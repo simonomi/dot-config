@@ -117,7 +117,7 @@ return {
 	{ "mbbill/undotree" },
 	{ -- treesitter
 		"nvim-treesitter/nvim-treesitter",
-		branch = "main",
+		branch = "master",
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs",
 		opts = {
@@ -184,6 +184,7 @@ return {
 			renderer = {
 				group_empty = true,
 				root_folder_label = false,
+				symlink_destination = false,
 				highlight_opened_files = "all",
 				decorators = {},
 				indent_markers = {

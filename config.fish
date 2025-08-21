@@ -9,6 +9,8 @@ end
 fish_add_path ~/.cargo/bin
 # pipx installs here
 fish_add_path ~/.local/bin
+# ruby gems install here
+fish_add_path (gem environment home)/bin
 
 source ~/python_virtual_environment/bin/activate.fish
 
@@ -205,6 +207,6 @@ end
 
 function convert_all_bmps
 	for file in (l **.bmp)
-		magick "$file" "$(string sub -e -4 $file).png"
+		magick "$file" "$(path basename --no-extension $file).png"
 	end
 end

@@ -1,6 +1,6 @@
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
-  finish
+	finish
 endif
 
 setlocal commentstring=;;%s

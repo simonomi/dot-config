@@ -1,6 +1,6 @@
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
-  finish
+	finish
 endif
 
 syntax match my_hexByte00 "00"
@@ -61,4 +61,3 @@ syntax match my_hexFFCharacter "╳" contained
 highlight my_hexFFCharacter ctermfg=white
 
 let b:current_syntax = "my_hex"
-

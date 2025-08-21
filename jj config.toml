@@ -5,7 +5,7 @@ email = "thealicepellerin@gmail.com"
 [ui]
 default-command = "log"
 log-word-wrap = false
-pager = "less --quit-if-one-screen --RAW-CONTROL-CHARS --incsearch --ignore-case"
+pager = "less --quit-if-one-screen"
 diff-editor = ":builtin"
 merge-editor = ":builtin"
 
