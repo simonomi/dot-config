@@ -29,6 +29,7 @@ brew "http-server"
 # TODO: rustup?
 brew "pipx"
 brew "swiftly"
+brew "optipng" # optimize png file sizes
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...

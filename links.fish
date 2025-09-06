@@ -8,9 +8,9 @@ ln -sfw "$(pwd)/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sfw "$(pwd)/nvim/nvim.lua" ~/.config/nvim/nvim.lua
 ln -sfw "$(pwd)/nvim/plugins.lua" ~/.config/nvim/lua/plugins/plugins.lua
 ln -sfw "$(pwd)/nvim/coc-settings.json" ~/.config/nvim/coc-settings.json
-ln -sfw "$(pwd)/nvim/syntax/dex.vim" ~/.config/nvim/syntax/dex.vim
-ln -sfw "$(pwd)/nvim/syntax/kbd.vim" ~/.config/nvim/syntax/kbd.vim
-ln -sfw "$(pwd)/nvim/syntax/my_hex.vim" ~/.config/nvim/syntax/my_hex.vim
+for file in (l "$(pwd)/nvim/syntax")
+	ln -sfw "$(pwd)/nvim/syntax/$file" ~/.config/nvim/syntax/$file
+end
 
 mkdir -p ~/.config/nushell
 ln -sfw "$(pwd)/nushell/config.nu" ~/.config/nushell/config.nu

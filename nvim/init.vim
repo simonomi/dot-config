@@ -504,6 +504,11 @@ augroup dex_syntax_highlighting
 	autocmd BufNewFile,BufRead *.dex.txt,*.dep.txt set ft=dex
 augroup END
 
+augroup grd_syntax_highlighting
+	autocmd!
+	autocmd BufNewFile,BufRead *.grd.txt set ft=grd
+augroup END
+
 augroup kbd_syntax_highlighting
 	autocmd!
 	autocmd BufNewFile,BufRead *.kbd set ft=kbd
