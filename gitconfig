@@ -3,9 +3,8 @@
 	email = thealicepellerin@gmail.com
 [pull]
 	rebase = true
-[url "git@github.com:"]
-	insteadOf = "https://github.com/"
 [core]
 	quotepath = off
 [commit]
 	gpgsign = true
+# do NOT redirect https to ssh. it breaks xcode

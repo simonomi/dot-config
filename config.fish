@@ -16,10 +16,10 @@ source ~/python_virtual_environment/bin/activate.fish
 
 switch (uname)
 	case Darwin
-		source ~/.swiftly/env.fish
+		# source ~/.swiftly/env.fish
 		export SHELL=/opt/homebrew/bin/fish
 	case Linux
-		source ~/.local/share/swiftly/env.fish
+		# source ~/.local/share/swiftly/env.fish
 		export SHELL=/usr/bin/fish
 end
 
@@ -27,8 +27,6 @@ export HOMEBREW_NO_ENV_HINTS=true
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
-export CARGO_MOMMYS_MOODS="chill/ominous/thirsty/yikes"
-export CARGO_MOMMYS_PARTS="milk/cum/feet/fingers/tongue/ass"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
 export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
 export XDG_CONFIG_HOME="/Users/simonomi/.config"
@@ -206,7 +204,7 @@ function brew_not_in_bundle
 end
 
 function convert_all_bmps
-	for file in (l **.bmp)
-		magick "$file" "$(path basename --no-extension $file).png"
+	for file in (fd --extension bmp)
+		magick "$file" "$(path change-extension png $file)"
 	end
 end

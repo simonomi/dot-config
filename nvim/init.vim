@@ -142,10 +142,6 @@ noremap <silent> <Leader>t <Cmd>below new\|terminal<CR>
 " select all
 noremap <Leader>a ggVG
 
-" make gg/G go to the beginning/end of line too
-noremap gg gg^
-noremap G G$
-
 nnoremap == m`Ax<Esc>==$x``
 
 " set register to clipboard
