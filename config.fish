@@ -1,3 +1,8 @@
+# TODO: add custom fish_title function
+# - if not running command, show path
+# - if running nvim, show file name
+# - if running other command... show everything?
+
 # Set PATH, MANPATH, etc., for Homebrew.
 switch (uname)
 	case Darwin
@@ -17,10 +22,10 @@ source ~/python_virtual_environment/bin/activate.fish
 switch (uname)
 	case Darwin
 		# source ~/.swiftly/env.fish
-		export SHELL=/opt/homebrew/bin/fish
+		export SHELL=(which fish)
 	case Linux
 		# source ~/.local/share/swiftly/env.fish
-		export SHELL=/usr/bin/fish
+		export SHELL=(which fish)
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
@@ -37,6 +42,13 @@ switch (uname)
 	case Linux
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
 end
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export ANDROID_HOME="/Users/simonomi/Library/Android/sdk"
+export ANDROID_NDK_HOME="/Users/simonomi/Library/Android/sdk/ndk/29.0.14033849"
+fish_add_path "$JAVA_HOME/bin" # jdk tools dir
+fish_add_path "$ANDROID_HOME/platform-tools" # sdk platform tools
+fish_add_path "$ANDROID_HOME/build-tools" # sdk tools ?
 
 switch (hostname)
 	case saphira.local

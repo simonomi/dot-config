@@ -35,7 +35,7 @@ return {
 		opts = function()
 			return {
 				options = {
-					style_preset = require("bufferline").style_preset.minimal,
+					-- style_preset = require("bufferline").style_preset.minimal,
 					numbers = "buffer_id",
 					indicator = { style = "underline" },
 					modified_icon = "●",

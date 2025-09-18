@@ -152,6 +152,7 @@ noremap <Leader>y "*y
 noremap \c "*y
 
 " put from clipboard
+noremap <Leader>p "*p
 noremap \p "*p
 
 " cut to clipboard
@@ -339,8 +340,8 @@ augroup END
 let g:coc_snippet_next="<Tab>"
 let g:coc_snippet_prev="<S-Tab>"
 
-nnoremap <Leader>n <Plug>(coc-diagnostic-next)
-nnoremap <Leader>p <Plug>(coc-diagnostic-prev)
+"nnoremap <Leader>n <Plug>(coc-diagnostic-next)
+"nnoremap <Leader>p <Plug>(coc-diagnostic-prev)
 
 " make autopairs play nice with coc
 " AND fix vim wanting to remove my blank line indents !!
@@ -380,17 +381,17 @@ nnoremap <silent> <Leader>e <Cmd>NvimTreeFindFileToggle<CR>
 " TODO: figure out how to remap <C-w><S-k> in NvimTree
 
 " bufferline
-highlight BufferLineBackground ctermfg=DarkGrey
-highlight BufferLineNumbers ctermfg=DarkGrey
-
-highlight BufferLineBufferSelected cterm=bold,underline ctermfg=cyan
-highlight BufferLineNumbersSelected cterm=bold,underline ctermfg=cyan
-highlight BufferLineIndicatorSelected cterm=bold,underline ctermfg=cyan
-
-highlight BufferLineTruncMarker ctermfg=cyan
-
-" this is reverse by default, which flips all of the above
-highlight TabLineFill cterm=none
+"highlight BufferLineBackground ctermfg=DarkGrey
+"highlight BufferLineNumbers ctermfg=DarkGrey
+"
+"highlight BufferLineBufferSelected cterm=bold,underline ctermfg=cyan
+"highlight BufferLineNumbersSelected cterm=bold,underline ctermfg=cyan
+"highlight BufferLineIndicatorSelected cterm=bold,underline ctermfg=cyan
+"
+"highlight BufferLineTruncMarker ctermfg=cyan
+"
+" " this is reverse by default, which flips all of the above
+"highlight TabLineFill cterm=none
 
 " ∆ is <A-j>, ¬ is <A-l>
 noremap ∆ <Cmd>BufferLineCyclePrev<CR>
@@ -419,6 +420,8 @@ endfunction
 
 " \h manually enable hex editing
 noremap <silent> <Leader>h <Cmd>call ToggleHex()<CR>
+
+noremap <silent> <Leader>H <Cmd>bufdo ParseHex<CR>
 
 function ToggleHex()
 	if &ft == "my_hex"

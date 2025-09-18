@@ -1,11 +1,11 @@
 brew "fish"                 # shell but rust
 brew "neovim"          # vim but... NOT RUST???
 brew "lsd"                     # ls but rust
-brew "jj"                     # git but rust
+brew "jj", args: ["HEAD"]     # git but rust (head until 13.0.0)
 brew "bat"                    # cat but rust
 brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
-brew "tokei", args: ["HEAD"] # cloc but rust
+brew "tokei", args: ["HEAD"] # cloc but rust (head until 0.34.0)
 brew "helix"                  # vim but rust
 brew "nushell"              # shell but rust
 brew "uutils-coreutils" # coreutils but rust
@@ -20,6 +20,9 @@ brew "typst"                  # tex but rust
 brew "fd"                    # find but rust
 brew "bottom"                 # top but rust
 brew "macchina"          # neofetch but rust
+brew "sd"                     # sed but rust
+brew "biodiff"           # vbindiff but rust
+brew "rip2"                    # rm but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
@@ -30,6 +33,8 @@ brew "http-server"
 brew "pipx"
 # brew "swiftly"
 brew "optipng" # optimize png file sizes
+brew "rnr" # bulk rename files
+brew "imessage-exporter"
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
@@ -71,6 +76,7 @@ cask "ghidra"
 cask "netnewswire"
 cask "obsidian"
 cask "raycast"
+cask "signal"
 cask "steam"
 cask "textual"
 cask "iina" # vlc but swift
