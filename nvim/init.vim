@@ -149,11 +149,9 @@ noremap <Leader>c "*
 
 " yank to clipboard
 noremap <Leader>y "*y
-noremap \c "*y
 
 " put from clipboard
 noremap <Leader>p "*p
-noremap \p "*p
 
 " cut to clipboard
 noremap \x "*ygvd
@@ -203,8 +201,12 @@ function ToggleSpellChecking()
 	end
 endfunction
 
+" TODO: put all the lsp commands together
 " replace current word in file
-noremap \r yiw*#<Cmd>redraw<CR>:%s/\<<C-r>"\>//I<left><left>
+" TODO: integrate with coc document.renameCurrentWord
+" or the lsp "grn"
+"noremap \r yiw*#<Cmd>redraw<CR>:%s/\<<C-r>"\>//I<left><left>
+noremap \r <Cmd>lua vim.lsp.buf.rename()<CR>
 
 " misc settings
 set ruler
@@ -356,6 +358,9 @@ let g:coc_snippet_prev="<S-Tab>"
 nnoremap <C-Space> <Cmd>lua vim.lsp.buf.hover()<CR>
 "inoremap <silent><expr> <C-Space> pumvisible() ? "\<C-x>\<C-z>" : "\<Cmd>lua vim.lsp.completion.get()\<CR>"
 inoremap <silent><expr> <C-Space> pumvisible() ? "\<C-x>\<C-z>" : "\<C-x>\<C-o>"
+" TODO: for the built-in lsp, <C-s> or vim.lsp.buf.signature_help
+
+nnoremap <Leader>? <Cmd>lua vim.lsp.buf.code_action()<CR>
 
 "set completeitemalign=abbr
 set completeopt=menu,menuone,noinsert,popup
@@ -500,7 +505,7 @@ map <Leader>mfc <Leader>mfr32ggdGiiiddiiiiddiiiiddiiiiddiiiiddiiiiddiiiiddgg
 
 augroup dex_syntax_highlighting
 	autocmd!
-	autocmd BufNewFile,BufRead *.dex.txt,*.dep.txt set ft=dex
+	autocmd BufNewFile,BufRead *.dex,*.dep set ft=dex
 augroup END
 
 augroup grd_syntax_highlighting
@@ -516,6 +521,12 @@ augroup END
 augroup brewfile_syntax_highlighting
 	autocmd!
 	autocmd BufNewFile,BufRead brewfile set ft=ruby
+augroup END
+
+augroup daya_syntax_highlighting
+	autocmd!
+	autocmd BufNewFile,BufRead *.daya set ft=swift
+	autocmd BufNewFile,BufRead *.daya LspStop
 augroup END
 
 augroup ft_coq

@@ -12,6 +12,7 @@ switch (uname)
 end
 
 fish_add_path ~/.cargo/bin
+fish_add_path ~/.mint/bin
 # pipx installs here
 fish_add_path ~/.local/bin
 # ruby gems install here
@@ -127,7 +128,7 @@ set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/
 set -g cardr $swdr/carbonizer
 set -g magedr $swdr/mage
 
-alias plan "$VISUAL $prdr/my\ lang\ planning.swift"
+alias plan "$VISUAL $prdr/daya/my\ lang\ planning.daya"
 
 alias swpl "cd $homedr/Desktop; $VISUAL test.swift"
 

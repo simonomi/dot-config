@@ -240,9 +240,10 @@ return {
 		config = function()
 			vim.diagnostic.config {
 				signs = false,
+				severity_sort = true,
 				virtual_text = {
 					spacing = 0
-				},
+				}
 			}
 			
 			vim.api.nvim_create_autocmd("LspAttach", {

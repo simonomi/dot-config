@@ -10,8 +10,10 @@ setlocal commentstring=//%s
 syntax match dexDefault ".*" contains=dexArgument,dexUnknown
 highlight link dexDefault Keyword
 
-syntax region dexArgument start="<" end=">" contains=dexKeyword,dexNumber
+syntax region dexArgument start="<" end=">" contains=dexNumber
 highlight link dexArgument Structure
+
+" i've thought about having true/false keywords, but they blend in too much
 
 syntax match dexNumber "\<-\?[0-9]\+\>" contained
 syntax match dexNumber "\<-\?0x[0-9a-fA-F]\+\>" contained

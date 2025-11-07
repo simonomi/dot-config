@@ -1,11 +1,11 @@
 brew "fish"                 # shell but rust
 brew "neovim"          # vim but... NOT RUST???
 brew "lsd"                     # ls but rust
-brew "jj", args: ["HEAD"]     # git but rust (head until 13.0.0)
+brew "jj"                     # git but rust
 brew "bat"                    # cat but rust
 brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
-brew "tokei", args: ["HEAD"] # cloc but rust (head until 0.34.0)
+brew "tokei", args: ["HEAD"] # cloc but rust (head until 13.0.0)
 brew "helix"                  # vim but rust
 brew "nushell"              # shell but rust
 brew "uutils-coreutils" # coreutils but rust
