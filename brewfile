@@ -35,6 +35,7 @@ brew "pipx"
 brew "optipng" # optimize png file sizes
 brew "rnr" # bulk rename files
 brew "imessage-exporter"
+brew "xdelta"
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
