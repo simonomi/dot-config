@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	if (count of input) &gt; 0 then		tell application "Terminal"			do script ("nvim \"" &amp; POSIX path of first item of input as text) &amp; "\"; exit"			activate		end tell	end ifend run</string>
+					<string>on run {input, parameters}	if (count of input) &gt; 0 then		tell application "Terminal"			do script ("nvim \"" &amp; POSIX path of first item of input as text) &amp; "\"; exit"			activate		end tell	else		tell application "Terminal"			do script "nvim; exit"			activate		end tell	end ifend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,12 +102,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>309.000000:620.000000</string>
+				<string>380.750000:491.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
