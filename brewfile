@@ -14,7 +14,6 @@ brew "starship"            # prompt but rust
 brew "hyperfine"     # benchmarking but rust
 brew "zoxide"                  # cd but rust
 brew "just"                  # meke but rust
-cask "espanso"      # text expander but rust
 brew "bacon"              # fswatch but rust
 brew "typst"                  # tex but rust
 brew "fd"                    # find but rust

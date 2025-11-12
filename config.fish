@@ -191,32 +191,32 @@ alias paste fish_clipboard_paste
 alias lorem "cat $homedr/Documents/misc/lorem\ ipsum.txt"
 alias box "nvim -R $homedr/Documents/misc/box\ drawing\ characters.txt"
 
-alias fix_cursor "printf '\033[6 q'"
+alias fixCursor "printf '\033[6 q'"
 
-abbr -a xcode_file_templates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"'
+abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"'
 
 # TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
 # - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
 # - manually listing out brew --cellar kinda works, but that doesnt work for installed-only, and casks doesnt work because of symlinks
 # - running du -shL on casks breaks bc calibre has an infinite loop
 # - brew info --json --installed doesnt include sizes, or it'd be perfect
-function brew_size
+function brewSize
 	export HOMEBREW_NO_ANALYTICS=true
 	export HOMEBREW_NO_GITHUB_API=true
 	brew info (brew leaves; brew list --casks) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
-function brew_size_all
+function brewSizeAll
 	export HOMEBREW_NO_ANALYTICS=true
 	export HOMEBREW_NO_GITHUB_API=true
 	brew info (brew list) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
-function brew_not_in_bundle
+function brewNotInBundle
 	nu -c "let bundle = brew bundle list --all | lines; (brew leaves) ++ \"\n\" ++ (brew list --casks) | lines | where \$it not-in \$bundle | collect | to text --no-newline"
 end
 
-function convert_all_bmps
+function convertAllBmps
 	for file in (fd --extension bmp)
 		magick "$file" "$(path change-extension png $file)"
 	end
