@@ -1,43 +1,48 @@
-"ui.background" = "light-gray"
-"ui.cursor" = { bg = "light-gray" }
-"ui.cursor.match" = { bg = "242" }
+"ui.background" = "light-grey"
+"ui.cursor" = { bg = "light-grey" }
+"ui.cursor.match" = { bg = "select-grey" }
 "ui.cursor.primary.select" = { bg = "yellow" }
-"ui.gutter.selected" = { bg = "gray" }
-"ui.linenr" = "light-gray"
+"ui.gutter.selected" = { bg = "dark-grey" }
+"ui.linenr" = "light-grey"
 "ui.linenr.selected" = { fg = "yellow", modifiers = ["bold"] }
 
-"ui.statusline" = { fg = "white", bg = "238" }
-"ui.statusline.inactive" = { fg = "light-gray", bg = "238" }
+"ui.statusline" = { fg = "white", bg = "ui-grey" }
+"ui.statusline.inactive" = { fg = "light-grey", bg = "ui-grey" }
 "ui.statusline.normal" = { fg = "black", bg = "blue" }
 "ui.statusline.insert" = { fg = "black", bg = "green" }
 "ui.statusline.select" = { fg = "black", bg = "yellow" }
 
-"ui.bufferline" = { bg = "238" }
-"ui.bufferline.active" = { bg = "242" }
+"ui.bufferline" = { bg = "ui-grey" }
+"ui.bufferline.active" = { bg = "select-grey" }
 "ui.bufferline.background" = { bg = "black" }
 
-"ui.popup" = { bg = "gray" }
-"ui.help" = { bg = "gray" }
+"ui.popup" = { bg = "dark-grey" }
+"ui.help" = { bg = "dark-grey" }
 
 "ui.text" = "white"
-"ui.text.focus" = { bg = "gray" }
-"ui.text.inactive" = "gray"
+"ui.text.focus" = { bg = "grey" }
+"ui.text.inactive" = "grey"
 
-"ui.virtual.whitespace" = { fg = "gray" }
+"ui.virtual.whitespace" = { fg = "dark-grey" }
 "ui.virtual.jump-label" = { fg = "blue", modifiers = ["bold", "underlined"] }
 
-"ui.menu" = { fg = "white", bg = "gray" }
+"ui.menu" = { fg = "white", bg = "dark-grey" }
 "ui.menu.selected" = { modifiers = ["reversed"] }
 
-"ui.selection" = { bg = "242" }
+"ui.selection" = { bg = "select-grey" }
 
-warning = "yellow"
 error = "203"
+warning = "yellow"
 info = "blue"
-hint = "gray"
+hint = "light-grey"
 diagnostic = { bg = "blue" }
-"diagnostic.error" = { fg = "black", bg = "203" }
-"diagnostic.warning" = { fg = "black", bg = "yellow" }
+# "diagnostic.error" = { fg = "black", bg = "203" }
+"diagnostic.error" = { bg = "dark-grey" }
+# "diagnostic.warning" = { fg = "black", bg = "yellow" }
+"diagnostic.warning" = { bg = "dark-grey" }
+# "diagnostic.info" = { fg = "black", bg = "blue" }
+"diagnostic.info" = { bg = "dark-grey" }
+"diagnostic.hint" = { bg = "dark-grey" }
 
 # attribute
 type = "blue"
@@ -46,7 +51,7 @@ constructor = "light-magenta"
 constant = "light-magenta"
 "constant.numeric" = "light-yellow"
 string = "light-red"
-comment = "gray"
+comment = "grey"
 variable = "81"
 "variable.builtin" = "light-magenta"
 label = "light-magenta"
@@ -64,12 +69,19 @@ special = "cyan"
 "markup.list" = "light-yellow"
 "markup.bold" = { fg = "light-cyan", modifiers = ["bold"] }
 "markup.italic" = { fg = "light-magenta", modifiers = ["italic"] }
-"markup.strikethrough" = { fg = "light-gray", modifiers = ["crossed_out"] }
+"markup.strikethrough" = { fg = "light-grey", modifiers = ["crossed_out"] }
 "markup.link" = "81"
 "markup.link.text" = "light-cyan"
-"markup.quote" = "light-gray"
-"markup.raw" = "light-gray"
+"markup.quote" = "light-grey"
+"markup.raw" = "light-grey"
 
 "diff.plus.gutter" = "green"
 "diff.minus.gutter" = "red"
 "diff.delta.gutter" = "blue"
+
+[palette]
+grey = "#6C7986"
+dark-grey = "8"
+ui-grey = "238"
+select-grey  = "242"
+light-grey = "7"

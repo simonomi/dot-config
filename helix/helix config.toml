@@ -29,7 +29,8 @@ nnbsp = "all"
 
 [editor.whitespace.characters]
 tab = "╶"
-tabpad = "─" # TODO: make "─" continue, and "╴" end
+tabpad = "─"
+tabend = "╴" # TODO: PR
 
 [editor.gutters]
 layout = ["line-numbers", "diff"]
@@ -61,19 +62,24 @@ b = "move_prev_sub_word_start"
 "^" = ["collapse_selection", "extend_to_line_start"]
 "$" = ["collapse_selection", "extend_to_line_end"]
 
-tab = "jump_view_up"
-C-j = "jump_view_left"
-C-k = "jump_view_down"
-C-l = "jump_view_right"
+# tab = "jump_view_up"
+# C-j = "jump_view_left"
+# C-k = "jump_view_down"
+# C-l = "jump_view_right"
+
+C-y = "scroll_up"
+C-e = "scroll_down"
 
 h = "insert_mode"
 H = "insert_at_line_start"
 C-h = "jump_forward"
 
-"∆" = "goto_previous_buffer"
-"¬" = "goto_next_buffer"
+# "∆" = "goto_previous_buffer"
+# "¬" = "goto_next_buffer"
+C-j = "goto_previous_buffer"
+C-l = "goto_next_buffer"
 
-"'" = "extend_line_below"
+# "'" = "extend_line_below"
 X = "extend_line_above"
 
 G = "goto_last_line"
@@ -82,31 +88,35 @@ Q = "replay_macro"
 
 J = "join_selections_space"
 
+C-space = "hover"
+
+esc = ["collapse_selection", "keep_primary_selection"]
+
 # TODO: these are ok but id rather they didnt select the entire line
 I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 
 # fix Alt- keybinds
-"≥" = "repeat_last_motion"
+# "≥" = "repeat_last_motion"
 # TODO: alt-`, alt=u
-"¨" = "later"
-"∂" = "delete_selection_noyank"
-"ç" = "change_selection_noyank"
-"»" = "shell_pipe_to"
-"⁄" = "shell_append_output"
-"ß" = "split_selection_on_newline"
-"–" = "merge_selections"
-"—" = "merge_consecutive_selections"
-"…" = "flip_selections"
-"Ú" = "ensure_selections_forward"
-"≤" = "remove_primary_selection"
-"Ç" = "copy_selection_on_prev_line"
-"·" = "rotate_selection_contents_backward"
-"‚" = "rotate_selection_contents_forward"
-"≈" = "shrink_to_line_bounds"
-"Ô" = "join_selections"
-"" = "remove_selections"
-"ø" = "expand_selection"
+# "¨" = "later"
+# "∂" = "delete_selection_noyank"
+# "ç" = "change_selection_noyank"
+# "»" = "shell_pipe_to"
+# "⁄" = "shell_append_output"
+# "ß" = "split_selection_on_newline"
+# "–" = "merge_selections"
+# "—" = "merge_consecutive_selections"
+# "…" = "flip_selections"
+# "Ú" = "ensure_selections_forward"
+# "≤" = "remove_primary_selection"
+# "Ç" = "copy_selection_on_prev_line"
+# "·" = "rotate_selection_contents_backward"
+# "‚" = "rotate_selection_contents_forward"
+# "≈" = "shrink_to_line_bounds"
+# "Ô" = "join_selections"
+# "" = "remove_selections"
+# "ø" = "expand_selection"
 # todo: alt-i
 
 [keys.normal.space]

@@ -21,6 +21,12 @@ command = ["swift", "test", "-Xswiftc", "-color-diagnostics"]
 need_stdout = true
 watch = ["Package.swift", "Sources", "Tests"]
 
+[jobs.rust-check]
+command = ["cargo", "check"]
+
+[jobs.clippy]
+command = ["cargo", "clippy"]
+
 # default config:
 
 # This is a preferences file for the bacon tool

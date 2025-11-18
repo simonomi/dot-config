@@ -13,7 +13,7 @@ brew "xh"                    # curl but rust
 brew "starship"            # prompt but rust
 brew "hyperfine"     # benchmarking but rust
 brew "zoxide"                  # cd but rust
-brew "just"                  # meke but rust
+brew "just"                  # make but rust
 brew "bacon"              # fswatch but rust
 brew "typst"                  # tex but rust
 brew "fd"                    # find but rust
@@ -22,6 +22,7 @@ brew "macchina"          # neofetch but rust
 brew "sd"                     # sed but rust
 brew "biodiff"           # vbindiff but rust
 brew "rip2"                    # rm but rust
+brew "zellij"                # tmux but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
@@ -35,6 +36,7 @@ brew "optipng" # optimize png file sizes
 brew "rnr" # bulk rename files
 brew "imessage-exporter"
 brew "xdelta"
+brew "imagemagick"
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
@@ -47,7 +49,6 @@ brew "vscode-langservers-extracted" # html, css, javascript, json
 # possible additions
 # aria2
 # ffmpeg
-# imagemagick
 
 ### MARK: mac app store
 brew "mas"
@@ -69,7 +70,7 @@ mas "Numbers", id: 409203825
 
 ### MARK: other apps
 cask "blender"
-cask "calibre"
+# cask "calibre"
 cask "discord"
 cask "ghidra"
 # cask "godot"

@@ -109,7 +109,7 @@ alias kondo "kondo --default --ignored-dirs \$cardr"
 # FIXME: once helix fixes its own cursor, delete this
 function hx
 	command hx $argv
-	fix_cursor
+	fixCursor
 end
 
 alias "..." "cd ../.."
@@ -183,7 +183,7 @@ abbr -a gv "git-visit"
 alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift | xargs -r open"
 
 abbr -a bi "brew install"
-abbr -a be "brew bundle edit; fix_cursor"
+abbr -a be "brew bundle edit"
 
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste

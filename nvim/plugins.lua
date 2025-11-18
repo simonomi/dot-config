@@ -1,8 +1,8 @@
 return {
-	{ -- lsp
-		"neoclide/coc.nvim",
-		branch = "release"
-	},
+	-- { -- lsp
+	-- 	"neoclide/coc.nvim",
+	-- 	branch = "release"
+	-- },
 	{ -- fancy status bar!
 		"nvim-lualine/lualine.nvim",
 		opts = {
