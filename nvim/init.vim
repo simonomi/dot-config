@@ -398,9 +398,13 @@ nnoremap <silent> <Leader>e <Cmd>NvimTreeFindFileToggle<CR>
 " " this is reverse by default, which flips all of the above
 "highlight TabLineFill cterm=none
 
-" ∆ is <A-j>, ¬ is <A-l>
-noremap ∆ <Cmd>BufferLineCyclePrev<CR>
-noremap ¬ <Cmd>BufferLineCycleNext<CR>
+" ∆ is <A-j>, ¬ is <A-l> " not anymore!
+"noremap ∆ <Cmd>BufferLineCyclePrev<CR>
+"noremap ¬ <Cmd>BufferLineCycleNext<CR>
+noremap <A-j> <Cmd>BufferLineCyclePrev<CR>
+noremap <A-l> <Cmd>BufferLineCycleNext<CR>
+noremap <C-j> <Cmd>BufferLineCyclePrev<CR>
+noremap <C-l> <Cmd>BufferLineCycleNext<CR>
 
 " terminal remaps
 tnoremap <C-w> <C-\><C-n><C-w>

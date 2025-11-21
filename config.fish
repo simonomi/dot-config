@@ -103,6 +103,7 @@ alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
 
 abbr -a opsw "open Package.swift"
+abbr -a opxc "open (fd -e xcodeproj)"
 
 alias kondo "kondo --default --ignored-dirs \$cardr"
 

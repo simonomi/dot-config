@@ -58,9 +58,10 @@ w = "move_next_sub_word_start"
 e = "move_next_sub_word_end"
 b = "move_prev_sub_word_start"
 
-0 = ["collapse_selection", "extend_to_first_nonwhitespace"]
-"^" = ["collapse_selection", "extend_to_line_start"]
-"$" = ["collapse_selection", "extend_to_line_end"]
+# learn to use t⏎ and T⏎ instead
+# 0 = ["collapse_selection", "extend_to_first_nonwhitespace"]
+# "^" = ["collapse_selection", "extend_to_line_start"]
+# "$" = ["collapse_selection", "extend_to_line_end"]
 
 # tab = "jump_view_up"
 # C-j = "jump_view_left"
