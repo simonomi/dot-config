@@ -30,7 +30,7 @@ switch (uname)
 end
 
 export HOMEBREW_NO_ENV_HINTS=true
-export EDITOR=nvim
+export EDITOR=hx
 export VISUAL=$EDITOR
 export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"

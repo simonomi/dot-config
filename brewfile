@@ -23,6 +23,8 @@ brew "sd"                     # sed but rust
 brew "biodiff"           # vbindiff but rust
 brew "rip2"                    # rm but rust
 brew "zellij"                # tmux but rust
+brew "procs"                   # ps but rust
+brew "doge"                   # dig but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
