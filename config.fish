@@ -194,7 +194,7 @@ alias box "nvim -R $homedr/Documents/misc/box\ drawing\ characters.txt"
 
 alias fixCursor "printf '\033[6 q'"
 
-abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates"'
+abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
 # TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
 # - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name

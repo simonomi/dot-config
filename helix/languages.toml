@@ -1,4 +1,8 @@
 [[language]]
+name = "swift"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
 name = "rust"
 auto-format = false # rustfmt doesn't have an option to leave trailing whitespace
 indent = { tab-width = 4, unit = "\t" }
