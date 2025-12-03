@@ -1,4 +1,16 @@
 [[language]]
+name = "dex"
+scope = "source.dex"
+injection-regex = "dex"
+file-types = ["dex"]
+comment-tokens = "//"
+grammar = "dex"
+
+[[grammar]]
+name = "dex"
+source = { git = "", rev = "main" }
+
+[[language]]
 name = "swift"
 indent = { tab-width = 4, unit = "\t" }
 
@@ -69,6 +81,45 @@ indent = { tab-width = 4, unit = "\t" }
 [[language]]
 name = "ruby"
 indent = { tab-width = 4, unit = "\t" }
+file-types = [
+  "rb",
+  "rake",
+  "irb",
+  "gemspec",
+  "rabl",
+  "jbuilder",
+  "jb",
+  "podspec",
+  "rjs",
+  "rbi",
+  "rbs",
+  { glob = "rakefile" },
+  { glob = "gemfile" },
+  { glob = "Rakefile" },
+  { glob = "Gemfile" },
+  { glob = "Podfile" },
+  { glob = "Vagrantfile" },
+  { glob = "Brewfile" },
+  { glob = "brewfile" },
+  { glob = "Guardfile" },
+  { glob = "Capfile" },
+  { glob = "Cheffile" },
+  { glob = "Hobofile" },
+  { glob = "Appraisals" },
+  { glob = "Rantfile" },
+  { glob = "Berksfile" },
+  { glob = "Berksfile.lock" },
+  { glob = "Thorfile" },
+  { glob = "Puppetfile" },
+  { glob = "Fastfile" },
+  { glob = "Appfile" },
+  { glob = "Deliverfile" },
+  { glob = "Matchfile" },
+  { glob = "Scanfile" },
+  { glob = "Snapfile" },
+  { glob = "Gymfile" },
+  { glob = ".irbrc" },
+]
 
 [[language]]
 name = "markdown"

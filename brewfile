@@ -45,7 +45,8 @@ cask "gpg-suite" # could i use gpg instead?
 
 # lsps
 brew "tinymist" # typst
-brew "lua-language-server" # lua
+brew "lua-language-server"
+brew "typescript-language-server"
 brew "vscode-langservers-extracted" # html, css, javascript, json
 
 # possible additions

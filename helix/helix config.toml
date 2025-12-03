@@ -7,6 +7,7 @@ theme = "helix_theme"
 scrolloff = 3
 shell = ["fish", "-c"]
 line-number = "relative"
+true-color = true
 bufferline = "multiple"
 color-modes = true
 end-of-line-diagnostics = "hint"
@@ -161,9 +162,9 @@ w = "extend_next_sub_word_start"
 e = "extend_next_sub_word_end"
 b = "extend_prev_sub_word_start"
 
-0 = "extend_to_first_nonwhitespace"
-"^" = "extend_to_line_start"
-"$" = "extend_to_line_end"
+# 0 = "extend_to_first_nonwhitespace"
+# "^" = "extend_to_line_start"
+# "$" = "extend_to_line_end"
 
 G = "goto_last_line"
 
