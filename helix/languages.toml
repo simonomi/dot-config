@@ -8,7 +8,8 @@ grammar = "dex"
 
 [[grammar]]
 name = "dex"
-source = { git = "", rev = "main" }
+source = { git = "https://github.com/simonomi/tree-sitter-dex", rev = "e305747488025e8882e7c85c3ce4e70ede82a70a" }
+# source = { path = "/Users/simonomi/Documents/programming/tree-sitter/tree-sitter-dex" }
 
 [[language]]
 name = "swift"

@@ -21,9 +21,11 @@ mkdir -p ~/.config/jj
 ln -sfw "$(pwd)/jj config.toml" ~/.config/jj/config.toml
 
 mkdir -p ~/.config/helix/themes
+mkdir -p ~/.config/helix/runtime/queries/dex
 ln -sfw "$(pwd)/helix/helix config.toml" ~/.config/helix/config.toml
 ln -swf "$(pwd)/helix/languages.toml" ~/.config/helix/languages.toml
 ln -sfw "$(pwd)/helix/helix_theme.toml" ~/.config/helix/themes/helix_theme.toml
+ln -sfw "$(pwd)/helix/queries/dex/highlights.scm" ~/.config/helix/runtime/queries/dex/highlights.scm
 
 ln -sfw "$(pwd)/starship.toml" ~/.config/starship.toml
 
