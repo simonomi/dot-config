@@ -25,6 +25,8 @@ brew "rip2"                    # rm but rust
 brew "zellij"                # tmux but rust
 brew "procs"                   # ps but rust
 brew "doge"                   # dig but rust
+brew "viddy"                # watch but rust
+brew "watchexec"          # fswatch but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
@@ -35,6 +37,7 @@ brew "http-server"
 brew "pipx"
 # brew "swiftly"
 brew "optipng" # optimize png file sizes
+brew "svgo" # optimize svg file sizes
 brew "rnr" # bulk rename files
 brew "imessage-exporter"
 brew "xdelta"

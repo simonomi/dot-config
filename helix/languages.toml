@@ -125,3 +125,8 @@ file-types = [
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "json"
+auto-format = false
+indent = { tab-width = 4, unit = "\t" }
