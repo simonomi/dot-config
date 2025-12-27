@@ -27,6 +27,7 @@ brew "procs"                   # ps but rust
 brew "doge"                   # dig but rust
 brew "viddy"                # watch but rust
 brew "watchexec"          # fswatch but rust
+cask "espanso"      # text expander but rust
 
 brew "kondo" # cleanup build files
 brew "node" # needed for coc-nvim, among others
@@ -60,7 +61,6 @@ brew "vscode-langservers-extracted" # html, css, javascript, json
 brew "mas"
 
 mas "Apple Developer", id: 640199958
-mas "Auto HD + FPS for YouTube", id: 1546729687
 mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
