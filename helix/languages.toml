@@ -1,4 +1,24 @@
 [[language]]
+name = "usd"
+scope = "source.usda"
+injection-regex = "usd"
+file-types = ["usda"]
+comment-tokens = "//"
+grammar = "usd"
+
+[[grammar]]
+name = "usd"
+source = { git = "https://github.com/ColinKennedy/tree-sitter-usd", rev = "4e0875f724d94d0c2ff36f9b8cb0b12f8b20d216" }
+
+[[language]]
+name = "dep"
+scope = "source.dep"
+injection-regex = "dep"
+file-types = ["dep"]
+comment-tokens = "//"
+grammar = "dex"
+
+[[language]]
 name = "dex"
 scope = "source.dex"
 injection-regex = "dex"

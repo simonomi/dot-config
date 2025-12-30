@@ -1,0 +1,16 @@
+(prim_type) @keyword
+(orderer) @keyword
+(custom) @keyword
+(uniform) @keyword
+(comment) @comment
+(bool) @constant.builtin.boolean
+(float) @constant.numeric.float
+(integer) @constant.numeric.integer
+(string) @string
+(asset_path) @string.special.path
+(prim_path) @string.special.path
+(qualified_identifier) @variable
+(identifier) @variable
+(attribute_property) @variable
+(attribute_type) @type
+(relationship_type) @type

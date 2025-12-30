@@ -71,6 +71,7 @@ end
 
 bind / expand-abbr self-insert
 bind \; expand-abbr self-insert
+bind \- expand-abbr self-insert
 
 # set -g icldr /Users/simonomi/Library/Mobile\\ Documents/com\\\~apple\\\~CloudDocs
 set -g icldr /Users/simonomi/Library/Mobile\\\ Documents/com\\\~apple\\\~CloudDocs
@@ -195,6 +196,8 @@ alias box "nvim -R $homedr/Documents/misc/box\ drawing\ characters.txt"
 alias fixCursor "printf '\033[6 q'"
 
 abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
+
+abbr -a "ytdl" "yt-dlp -f \"bestaudio,bestvideo*\" -o \"%(title)s.%(ext)s\""
 
 # TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
 # - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
