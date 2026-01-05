@@ -108,6 +108,8 @@ abbr -a opxc "open (fd -e xcodeproj)"
 
 alias kondo "kondo --default --ignored-dirs \$cardr"
 
+alias localip="ipconfig getifaddr en0"
+
 # FIXME: once helix fixes its own cursor, delete this
 function hx
 	command hx $argv
@@ -197,7 +199,8 @@ alias fixCursor "printf '\033[6 q'"
 
 abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
-abbr -a "ytdl" "yt-dlp -f \"bestaudio,bestvideo*\" -o \"%(title)s.%(ext)s\""
+# abbr -a "ydl" "yt-dlp -f \"bestaudio,bestvideo*\" -o \"%(title)s.%(ext)s\""
+abbr -a "ydl" "yt-dlp"
 
 # TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
 # - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
@@ -214,6 +217,12 @@ function brewSizeAll
 	export HOMEBREW_NO_ANALYTICS=true
 	export HOMEBREW_NO_GITHUB_API=true
 	brew info (brew list) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
+end
+
+function brewSizeOf
+	export HOMEBREW_NO_ANALYTICS=true
+	export HOMEBREW_NO_GITHUB_API=true
+	brew info (echo $argv; brew deps $argv) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brewNotInBundle

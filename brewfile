@@ -5,7 +5,7 @@ brew "jj"                     # git but rust
 brew "bat"                    # cat but rust
 brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
-brew "tokei", args: ["HEAD"] # cloc but rust (head until 13.0.0)
+brew "tokei"                 # cloc but rust
 brew "helix"                  # vim but rust
 brew "nushell"              # shell but rust
 brew "uutils-coreutils" # coreutils but rust
@@ -43,6 +43,7 @@ brew "rnr" # bulk rename files
 brew "imessage-exporter"
 brew "xdelta"
 brew "imagemagick"
+brew "webdav"
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
