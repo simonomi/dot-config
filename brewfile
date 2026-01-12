@@ -44,6 +44,7 @@ brew "imessage-exporter"
 brew "xdelta"
 brew "imagemagick"
 brew "webdav"
+brew "syncthing"
 
 cask "gpg-suite" # could i use gpg instead?
                  # gpg-suite is suppost to work with keychain...
