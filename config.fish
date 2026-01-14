@@ -110,6 +110,8 @@ alias kondo "kondo --default --ignored-dirs \$cardr"
 
 alias localip="ipconfig getifaddr en0"
 
+abbr -a r trash
+
 # FIXME: once helix fixes its own cursor, delete this
 function hx
 	command hx $argv

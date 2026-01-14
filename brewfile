@@ -78,7 +78,6 @@ mas "Numbers", id: 409203825
 
 ### MARK: other apps
 cask "blender"
-# cask "calibre"
 cask "discord"
 cask "ghidra"
 # cask "godot"
