@@ -93,6 +93,9 @@ A-N = "extend_search_prev"
 "}" = ["goto_next_paragraph", "collapse_selection"]
 "{" = ["goto_prev_paragraph", "move_visual_line_up"]
 
+"~" = "switch_to_uppercase"
+"A-`" = "switch_case"
+
 [keys.normal.space]
 w = ":update"
 q = ":quit"

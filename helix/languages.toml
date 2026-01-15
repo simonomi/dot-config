@@ -1,4 +1,8 @@
 [[language]]
+name = "kdl"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
 name = "usd"
 scope = "source.usda"
 injection-regex = "usd"

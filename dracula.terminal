@@ -128,6 +128,15 @@
 	Y3QIERokKTI3SUxRU1ddZGp3fp2foaaxusLFAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAA
 	AAAAAAAAAM4=
 	</data>
+	<key>ANSIWhiteColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
+	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC43NDkwMTk2MDc4IDAuNzQ5MDE5NjA3
+	OCAwLjc0OTAxOTYwNzgAEAKAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
+	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
+	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	</data>
 	<key>ANSIYellowColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
@@ -145,8 +154,8 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
-	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC4xMTc2NTgxMTU5IDAuMTIyMTUyNzIz
-	NCAwLjE1OTc3ODM3MTUAEAGAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
+	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC4xMTc2NDcwNTg4IDAuMTIxNTY4NjI3
+	NSAwLjE2MDc4NDMxMzcAEAGAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
 	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
@@ -167,6 +176,8 @@
 	</data>
 	<key>CursorType</key>
 	<integer>2</integer>
+	<key>DynamicANSIForegroundColors</key>
+	<true/>
 	<key>EastAsianAmbiguousWide</key>
 	<false/>
 	<key>Font</key>
@@ -179,7 +190,7 @@
 	AAAAAAAAAAAAAAAAAAAA0w==
 	</data>
 	<key>ProfileCurrentVersion</key>
-	<real>2.0699999999999998</real>
+	<real>2.0899999999999999</real>
 	<key>RunCommandAsShell</key>
 	<true/>
 	<key>ScrollAlternateScreen</key>
@@ -202,7 +213,7 @@
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
-	<true/>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<true/>
 	<key>ShowRepresentedURLInTabTitle</key>
@@ -210,6 +221,12 @@
 	<key>ShowRepresentedURLInTitle</key>
 	<false/>
 	<key>ShowRepresentedURLPathInTitle</key>
+	<false/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTitle</key>
+	<false/>
+	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>TerminalType</key>
 	<string>xterm-256color</string>
@@ -230,6 +247,8 @@
 	WCRjbGFzc2VzV05TQ29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1ddZGp3foWHiY6Z
 	oqqtAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
 	</data>
+	<key>UseBrightBold</key>
+	<false/>
 	<key>columnCount</key>
 	<integer>100</integer>
 	<key>keyMapBoundKeys</key>
@@ -367,6 +386,10 @@
 			<key>ProcessName</key>
 			<string>-fish</string>
 		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>starship</string>
+		</dict>
 	</array>
 	<key>rowCount</key>
 	<integer>25</integer>
@@ -375,6 +398,6 @@
 	<key>type</key>
 	<string>Window Settings</string>
 	<key>useOptionAsMetaKey</key>
-	<false/>
+	<true/>
 </dict>
 </plist>

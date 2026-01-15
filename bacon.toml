@@ -21,6 +21,9 @@ command = ["swift", "test", "-Xswiftc", "-color-diagnostics"]
 need_stdout = true
 watch = ["Package.swift", "Sources", "Tests"]
 
+[jobs.rust]
+command = ["cargo", "build"]
+
 [jobs.rust-check]
 command = ["cargo", "check"]
 

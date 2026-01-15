@@ -15,8 +15,6 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/.mint/bin
 # pipx installs here
 fish_add_path ~/.local/bin
-# ruby gems install here
-fish_add_path (gem environment home)/bin
 
 source ~/python_virtual_environment/bin/activate.fish
 
@@ -51,6 +49,7 @@ fish_add_path "$JAVA_HOME/bin" # jdk tools dir
 fish_add_path "$ANDROID_HOME/platform-tools" # sdk platform tools
 fish_add_path "$ANDROID_HOME/build-tools" # sdk tools ?
 
+# why is this necessary? its kinda hacky
 switch (hostname)
 	case saphira.local
 		set signingKey (git config --system user.signingKey)
@@ -111,6 +110,8 @@ alias kondo "kondo --default --ignored-dirs \$cardr"
 alias localip="ipconfig getifaddr en0"
 
 abbr -a r trash
+
+abbr -a st "syncthing browser"
 
 # FIXME: once helix fixes its own cursor, delete this
 function hx
