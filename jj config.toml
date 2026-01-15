@@ -15,3 +15,10 @@ log = "ancestors(@::, 4):: | ancestors(present(main)::, 2):: | ancestors(present
 [signing]
 behavior = "own"
 backend = "gpg"
+
+[revset-aliases]
+"closest_bookmark(to)" = "heads(::to & bookmarks())"
+"closest_pushable(to)" = "heads(::to & mutable() & ~description(\"\") & ~empty())"
+
+[aliases]
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]
