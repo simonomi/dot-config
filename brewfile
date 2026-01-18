@@ -45,6 +45,7 @@ brew "xdelta"
 brew "imagemagick"
 brew "webdav"
 brew "syncthing"
+brew "cobalt"
 
 # lsps
 brew "tinymist" # typst

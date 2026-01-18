@@ -23,3 +23,18 @@ matches:
         params:
           format: "%Y-%m-%d %H:%M"
 
+  - trigger: ":blogpost"
+    replace: "- title: post title\nslug: post-title\ndate: {{mydate}}\ntime: {{time}}\ntimezone: \"{{timezone}}\""
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+      - name: time
+        type: date
+        params:
+          format: "%H:%M"
+      - name: timezone
+        type: date
+        params:
+          format: "%:::z"
