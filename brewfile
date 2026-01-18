@@ -46,9 +46,6 @@ brew "imagemagick"
 brew "webdav"
 brew "syncthing"
 
-cask "gpg-suite" # could i use gpg instead?
-                 # gpg-suite is suppost to work with keychain...
-
 # lsps
 brew "tinymist" # typst
 brew "lua-language-server"
@@ -67,6 +64,7 @@ mas "Ivory", id: 6444602274
 mas "Noir", id: 1592917505
 mas "Pixen", id: 525180431
 mas "Telegram", id: 747648890
+mas "TestFlight", id: 899247664
 # mas "Unwatched", id: 6477287463 # disabled bc im using testflight version
 mas "Userscripts", id: 1463298887
 mas "Wipr 2", id: 1662217862
@@ -79,7 +77,7 @@ mas "Numbers", id: 409203825
 ### MARK: other apps
 cask "blender"
 cask "discord"
-cask "ghidra"
+brew "ghidra" # used to be cask, now formula??
 # cask "godot"
 cask "netnewswire"
 cask "obsidian"

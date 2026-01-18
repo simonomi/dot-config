@@ -8,7 +8,7 @@ ln -sfw "$(pwd)/nvim/init.vim" ~/.config/nvim/init.vim
 ln -sfw "$(pwd)/nvim/nvim.lua" ~/.config/nvim/nvim.lua
 ln -sfw "$(pwd)/nvim/plugins.lua" ~/.config/nvim/lua/plugins/plugins.lua
 ln -sfw "$(pwd)/nvim/coc-settings.json" ~/.config/nvim/coc-settings.json
-for file in (l "$(pwd)/nvim/syntax")
+for file in (ls "$(pwd)/nvim/syntax")
 	ln -sfw "$(pwd)/nvim/syntax/$file" ~/.config/nvim/syntax/$file
 end
 
@@ -25,7 +25,6 @@ mkdir -p ~/.config/helix/runtime/queries/dex
 ln -sfw "$(pwd)/helix/helix config.toml" ~/.config/helix/config.toml
 ln -swf "$(pwd)/helix/languages.toml" ~/.config/helix/languages.toml
 ln -sfw "$(pwd)/helix/helix_theme.toml" ~/.config/helix/themes/helix_theme.toml
-# ln -sfw "$(pwd)/helix/queries/dex/highlights.scm" ~/.config/helix/runtime/queries/dex/highlights.scm
 for file in helix/queries/*.scm;
 	mkdir -p ~/.config/helix/runtime/queries/(basename -s .scm $file)/
 	ln -sfw "$(pwd)/$file" ~/.config/helix/runtime/queries/(basename -s .scm $file)/highlights.scm

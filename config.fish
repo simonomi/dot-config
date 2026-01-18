@@ -1,8 +1,3 @@
-# TODO: add custom fish_title function
-# - if not running command, show path
-# - if running nvim, show file name
-# - if running other command... show everything?
-
 # Set PATH, MANPATH, etc., for Homebrew.
 switch (uname)
 	case Darwin
@@ -16,7 +11,9 @@ fish_add_path ~/.mint/bin
 # pipx installs here
 fish_add_path ~/.local/bin
 
-source ~/python_virtual_environment/bin/activate.fish
+if test -e ~/python_virtual_environment/bin/activate.fish
+	source ~/python_virtual_environment/bin/activate.fish
+end
 
 switch (uname)
 	case Darwin
@@ -42,27 +39,18 @@ switch (uname)
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
 end
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export ANDROID_HOME="/Users/simonomi/Library/Android/sdk"
-export ANDROID_NDK_HOME="/Users/simonomi/Library/Android/sdk/ndk/29.0.14033849"
-fish_add_path "$JAVA_HOME/bin" # jdk tools dir
-fish_add_path "$ANDROID_HOME/platform-tools" # sdk platform tools
-fish_add_path "$ANDROID_HOME/build-tools" # sdk tools ?
-
-# why is this necessary? its kinda hacky
-switch (hostname)
-	case saphira.local
-		set signingKey (git config --system user.signingKey)
-		if test -z $signingKey
-			echo "setting git signing key, sudo required"
-			sudo git config --system user.signingKey 375A7BA7
-		end
+if command -q starship
+	starship init fish | source
 end
 
-starship init fish | source
-zoxide init fish | source
+if command -q zoxide
+	zoxide init fish | source
+end
 
 set fish_greeting
+
+# used to be blue, now white by default, i prefer blue
+set fish_color_command blue
 
 if status is-interactive
 	tabs -4
@@ -72,12 +60,7 @@ bind / expand-abbr self-insert
 bind \; expand-abbr self-insert
 bind \- expand-abbr self-insert
 
-# set -g icldr /Users/simonomi/Library/Mobile\\ Documents/com\\\~apple\\\~CloudDocs
-set -g icldr /Users/simonomi/Library/Mobile\\\ Documents/com\\\~apple\\\~CloudDocs
-# set -g icldr "/Users/simonomi/Library/Mobile Documents/com~apple~CloudDocs"
-set homedr "/Users/simonomi"
-
-set dot_config_dir "$homedr/Documents/dot\ config"
+set dot_config_dir "~/Documents/dot\ config"
 
 alias frc "$VISUAL $dot_config_dir/config.fish"
 alias fishrc "$VISUAL $dot_config_dir/config.fish"
@@ -122,22 +105,22 @@ end
 alias "..." "cd ../.."
 alias "...." "cd ../../.."
 
-set -g prdr "$homedr/Documents/programming"
+set -g prdr "~/Documents/programming"
 set -g pydr $prdr/python
 set -g rsdr $prdr/rust
 set -g swdr $prdr/swift
 set -g hsdr $prdr/haskell
 set -g texdr $prdr/latex
 set -g webdr $prdr/websites
-set -g witdr $homedr/Documents/college
-set -g bookdr $homedr/Documents/books
+set -g witdr ~/Documents/college
+set -g bookdr ~/Documents/books
 set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/Documents/main"
 set -g cardr $swdr/carbonizer
 set -g magedr $swdr/mage
 
 alias plan "$VISUAL $prdr/daya/my\ lang\ planning.daya"
 
-alias swpl "cd $homedr/Desktop; $VISUAL test.swift"
+alias swpl "cd ~/Desktop; $VISUAL test.swift"
 
 abbr -a u update
 
@@ -149,7 +132,7 @@ function update
 	brew cleanup --scrub
 end
 
-alias ascii "cat $icldr/Documents/misc/ascii.txt"
+alias ascii "cat ~/Documents/misc/ascii.txt"
 
 alias hide "chflags hidden"
 alias unhide "chflags nohidden"
@@ -195,8 +178,8 @@ abbr -a be "brew bundle edit"
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste
 
-alias lorem "cat $homedr/Documents/misc/lorem\ ipsum.txt"
-alias box "nvim -R $homedr/Documents/misc/box\ drawing\ characters.txt"
+alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
+alias box "nvim -R ~/Documents/misc/box\ drawing\ characters.txt"
 
 alias fixCursor "printf '\033[6 q'"
 
