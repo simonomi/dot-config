@@ -48,3 +48,7 @@ for file in espanso/**.*;
 	mkdir -p ~/.config/(dirname $file)
 	ln -sfw "$(pwd)/$file" ~/.config/$file
 end
+
+if test -e ~/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings
+	cp "$(pwd)/xcode.idekeybindings" ~/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings
+end
