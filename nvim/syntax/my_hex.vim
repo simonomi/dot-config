@@ -3,6 +3,8 @@ if exists("b:current_syntax")
 	finish
 endif
 
+set termguicolors
+
 syntax match my_hexByte00 "00"
 syntax match my_hexByte0 "0[1-9a-fA-F]"
 syntax match my_hexByte1 "1[0-9a-fA-F]"

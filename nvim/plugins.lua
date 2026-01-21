@@ -121,7 +121,8 @@ return {
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs",
 		opts = {
-			ensure_installed = { "swift", "rust", "json", "markdown", "nu", "lua", "typst", "comment", "vim", "html", "css", "javascript" },
+			-- ensure_installed = { "swift", "rust", "json", "markdown", "nu", "lua", "typst", "comment", "vim", "html", "css", "javascript" },
+			ensure_installed = { "rust", "json", "markdown", "nu", "lua", "typst", "comment", "vim", "html", "css", "javascript" },
 			highlight = {
 				enable = true,
 				disable = { "swift", "typst" }

@@ -31,6 +31,8 @@ catch /^Vim\%((\a\+)\)\=:E185/
 	" do nothing—colorscheme doesnt exist
 endtry
 
+set notermguicolors
+
 "     k            i
 "   h   l   ->   j   l
 "     j            k

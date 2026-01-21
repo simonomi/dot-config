@@ -87,7 +87,7 @@ K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 "*" = "search_selection"
 "A-*" = "search_selection_detect_word_boundaries"
 
-A-n = "extend_search_next"
+# A-n = "extend_search_next"
 A-N = "extend_search_prev"
 
 "}" = ["goto_next_paragraph", "collapse_selection"]
@@ -95,6 +95,11 @@ A-N = "extend_search_prev"
 
 "~" = "switch_to_uppercase"
 "A-`" = "switch_case"
+
+"C-h" = "jump_forward"
+
+"A-h" = "shrink_selection"
+"A-H" = "select_all_children"
 
 [keys.normal.space]
 w = ":update"
