@@ -6,6 +6,7 @@ switch (uname)
 		eval "$(/home/linuxbrew/.linuxbrew/Homebrew/bin/brew shellenv)"
 end
 
+fish_add_path ~/.rustup/toolchains/*/bin/
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.mint/bin
 # pipx installs here
@@ -96,27 +97,13 @@ abbr -a r trash
 
 abbr -a st "syncthing browser"
 
-# FIXME: once helix fixes its own cursor, delete this
-function hx
-	command hx $argv
-	fixCursor
-end
-
 alias "..." "cd ../.."
 alias "...." "cd ../../.."
 
 set -g prdr "~/Documents/programming"
 set -g pydr $prdr/python
-set -g rsdr $prdr/rust
 set -g swdr $prdr/swift
-set -g hsdr $prdr/haskell
-set -g texdr $prdr/latex
-set -g webdr $prdr/websites
-set -g witdr ~/Documents/college
-set -g bookdr ~/Documents/books
-set -g obsdr "/Users/simonomi/Library/Mobile\\ Documents/iCloud\\~md\\~obsidian/Documents/main"
 set -g cardr $swdr/carbonizer
-set -g magedr $swdr/mage
 
 alias plan "$VISUAL $prdr/daya/my\ lang\ planning.daya"
 
@@ -179,8 +166,6 @@ alias paste fish_clipboard_paste
 alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
 alias box "nvim -R ~/Documents/misc/box\ drawing\ characters.txt"
 
-alias fixCursor "printf '\033[6 q'"
-
 abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
 # abbr -a "ydl" "yt-dlp -f \"bestaudio,bestvideo*\" -o \"%(title)s.%(ext)s\""
@@ -191,6 +176,7 @@ abbr -a "ydl" "yt-dlp"
 # - manually listing out brew --cellar kinda works, but that doesnt work for installed-only, and casks doesnt work because of symlinks
 # - running du -shL on casks breaks bc calibre has an infinite loop
 # - brew info --json --installed doesnt include sizes, or it'd be perfect
+# - there's now `brew info --size`, but no coloring !
 function brewSize
 	export HOMEBREW_NO_ANALYTICS=true
 	export HOMEBREW_NO_GITHUB_API=true

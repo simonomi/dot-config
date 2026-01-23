@@ -34,7 +34,7 @@ brew "node" # needed for coc-nvim, among others
 brew "periphery" # find unused swift code
 brew "sl" # steam locomotive!
 brew "http-server"
-# TODO: rustup?
+brew "rustup"
 brew "pipx"
 # brew "swiftly"
 brew "optipng" # optimize png file sizes
