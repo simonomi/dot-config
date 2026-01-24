@@ -1,3 +1,4 @@
 (?d)/programming/swift/*/.build
 (?d)/programming/rust/*/target
 (?d).DS_Store
+(?d)*.xcuserstate

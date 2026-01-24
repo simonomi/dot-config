@@ -142,6 +142,9 @@ abbr -a js "jj status"
 abbr -a jd --set-cursor "jj describe -m \"%\""
 abbr -a jn --set-cursor "jj new -m \"%\""
 abbr -a jl "jj log -r \"all()\""
+abbr -a jt "jj tug"
+abbr -a jp "jj push"
+abbr -a jtp "jj tug && jj push"
 
 abbr -a ga "git add"
 abbr -a gc --set-cursor "git commit -m \"%\""
@@ -164,7 +167,7 @@ alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste
 
 alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
-alias box "nvim -R ~/Documents/misc/box\ drawing\ characters.txt"
+alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
 
 abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
