@@ -24,33 +24,17 @@ matches:
           format: "%Y-%m-%d %H:%M"
 
   - trigger: ":blognow"
-    replace: "date: {{mydate}}\ntime: {{time}}\ntimezone: \"{{timezone}}\""
+    replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%Y-%m-%d"
-      - name: time
-        type: date
-        params:
-          format: "%H:%M"
-      - name: timezone
-        type: date
-        params:
-          format: "%:::z"
+          format: "%Y-%m-%d %H:%M:%S %z"
 
   - trigger: ":blogpost"
-    replace: "- title: post title\nslug: post-title\ndate: {{mydate}}\ntime: {{time}}\ntimezone: \"{{timezone}}\""
+    replace: "---\nlayout: blogpost.html\ntitle: new post\nslug: new-post\npermalink: /blog/new-post/\npublished_date: {{mydate}}\n---\n\n"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%Y-%m-%d"
-      - name: time
-        type: date
-        params:
-          format: "%H:%M"
-      - name: timezone
-        type: date
-        params:
-          format: "%:::z"
+          format: "%Y-%m-%d %H:%M:%S %z"

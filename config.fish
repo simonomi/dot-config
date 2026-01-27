@@ -111,6 +111,8 @@ alias swpl "cd ~/Desktop; $VISUAL test.swift"
 
 abbr -a u update
 
+alias ding "tput bel"
+
 function update
 	brew update-if-needed
 	set output (brew bundle check) && echo $output || brew bundle install --verbose

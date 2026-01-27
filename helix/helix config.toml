@@ -104,6 +104,7 @@ A-N = "extend_search_prev"
 [keys.normal.space]
 w = ":update"
 q = ":quit"
+Q = ":quit!"
 c = ":config-reload"
 x = ":write-quit"
 
