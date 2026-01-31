@@ -78,7 +78,7 @@ J = "join_selections_space"
 
 C-space = "hover"
 
-esc = ["collapse_selection", "keep_primary_selection"]
+# esc = ["collapse_selection", "keep_primary_selection"]
 
 # TODO: these are ok but id rather they didnt select the entire line
 I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
