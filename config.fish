@@ -2,23 +2,26 @@
 switch (uname)
 	case Darwin
 		eval "$(/opt/homebrew/bin/brew shellenv)"
+		export XDG_CONFIG_HOME="/Users/simonomi/.config"
+		export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 	case Linux
 		eval "$(/home/linuxbrew/.linuxbrew/Homebrew/bin/brew shellenv)"
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
+		export LESS="--RAW-CONTROL-CHARS --ignore-case --tabs=4"
 end
 
 # path
-fish_add_path ~/.rustup/toolchains/*/bin/
+if test -e ~/.rustup
+	fish_add_path ~/.rustup/toolchains/*/bin/
+end
 fish_add_path ~/.cargo/bin
 
 # environment variables
 export HOMEBREW_NO_ENV_HINTS=true
 export EDITOR=hx
 export VISUAL=$EDITOR
-export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
-export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
+export HOMEBREW_BUNDLE_FILE="~/Documents/dot-config/brewfile"
 export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
-export XDG_CONFIG_HOME="/Users/simonomi/.config"
 
 # custom tool inits
 if command -q starship
@@ -44,7 +47,7 @@ bind \; expand-abbr self-insert
 bind \- expand-abbr self-insert
 
 # path variables
-set --local dot_config_dir "~/Documents/dot\ config"
+set --local dot_config_dir "~/Documents/dot-config"
 
 set --global prdr "$HOME/Documents/programming"
 set --global pydr $prdr/python

@@ -23,7 +23,7 @@ ln -sfw "$(pwd)/jj config.toml" ~/.config/jj/config.toml
 mkdir -p ~/.config/helix/themes
 mkdir -p ~/.config/helix/runtime/queries/dex
 ln -sfw "$(pwd)/helix/helix config.toml" ~/.config/helix/config.toml
-ln -swf "$(pwd)/helix/languages.toml" ~/.config/helix/languages.toml
+ln -sfw "$(pwd)/helix/languages.toml" ~/.config/helix/languages.toml
 ln -sfw "$(pwd)/helix/helix_theme.toml" ~/.config/helix/themes/helix_theme.toml
 for file in helix/queries/*.scm;
 	mkdir -p ~/.config/helix/runtime/queries/(basename -s .scm $file)/
@@ -38,7 +38,7 @@ mkdir -p ~/.config/macchina
 ln -sfw "$(pwd)/macchina.toml" ~/.config/macchina/macchina.toml
 
 mkdir -p ~/.config/rustfmt
-ln -swf "$(pwd)/rustfmt.toml" ~/.config/rustfmt/rustfmt.toml
+ln -sfw "$(pwd)/rustfmt.toml" ~/.config/rustfmt/rustfmt.toml
 
 ln -sfw "$(pwd)/gitconfig" ~/.gitconfig
 
