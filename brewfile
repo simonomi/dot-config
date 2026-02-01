@@ -7,8 +7,6 @@ brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
 brew "tokei"                 # cloc but rust
 brew "helix"                  # vim but rust
-brew "nushell"              # shell but rust
-brew "uutils-coreutils" # coreutils but rust
 brew "xh"                    # curl but rust
 brew "starship"            # prompt but rust
 brew "hyperfine"     # benchmarking but rust
@@ -21,7 +19,6 @@ brew "bottom"                 # top but rust
 brew "macchina"          # neofetch but rust
 brew "sd"                     # sed but rust
 brew "biodiff"           # vbindiff but rust
-brew "rip2"                    # rm but rust
 brew "zellij"                # tmux but rust
 brew "procs"                   # ps but rust
 brew "doge"                   # dig but rust
@@ -30,12 +27,10 @@ brew "watchexec"          # fswatch but rust
 cask "espanso"      # text expander but rust
 
 brew "kondo" # cleanup build files
-brew "node" # needed for coc-nvim, among others
 brew "periphery" # find unused swift code
 brew "sl" # steam locomotive!
 brew "http-server"
 brew "rustup"
-brew "pipx"
 # brew "swiftly"
 brew "optipng" # optimize png file sizes
 brew "svgo" # optimize svg file sizes
@@ -43,9 +38,11 @@ brew "rnr" # bulk rename files
 brew "imessage-exporter"
 brew "xdelta"
 brew "imagemagick"
-brew "webdav"
-brew "syncthing"
+brew "webdav" if OS.mac?
+brew "syncthing" if OS.mac?
 brew "cobalt"
+brew "transmission-cli"
+brew "ffmpeg"
 
 # lsps
 brew "tinymist" # typst
@@ -53,39 +50,36 @@ brew "lua-language-server"
 brew "typescript-language-server"
 brew "vscode-langservers-extracted" # html, css, javascript, json
 
-# possible additions
-# aria2
-# ffmpeg
-
-### MARK: mac app store
-brew "mas"
-
-mas "Apple Developer", id: 640199958
-mas "Ivory", id: 6444602274
-mas "Noir", id: 1592917505
-mas "Pixen", id: 525180431
-mas "Telegram", id: 747648890
-mas "TestFlight", id: 899247664
-# mas "Unwatched", id: 6477287463 # disabled bc im using testflight version
-mas "Userscripts", id: 1463298887
-mas "Wipr 2", id: 1662217862
-
-mas "Xcode", id: 497799835
-mas "Pages", id: 409201541
-mas "Numbers", id: 409203825
-# mas "Keynote", id: 409183694 # almost 800MB
-
-### MARK: other apps
-cask "blender"
-cask "discord"
-brew "ghidra" # used to be cask, now formula??
-# cask "godot"
-cask "netnewswire"
-cask "obsidian"
-cask "raycast"
-cask "signal"
-cask "steam"
-cask "textual"
-cask "iina" # vlc but swift
-cask "inkscape"
-
+if OS.mac?
+	### MARK: mac app store
+	brew "mas"
+	
+	mas "Apple Developer", id: 640199958
+	mas "Ivory", id: 6444602274
+	mas "Noir", id: 1592917505
+	mas "Pixen", id: 525180431
+	mas "Telegram", id: 747648890
+	mas "TestFlight", id: 899247664
+	# mas "Unwatched", id: 6477287463 # disabled bc im using testflight version
+	mas "Userscripts", id: 1463298887
+	mas "Wipr 2", id: 1662217862
+	
+	mas "Xcode", id: 497799835
+	mas "Pages", id: 409201541
+	mas "Numbers", id: 409203825
+	# mas "Keynote", id: 409183694 # almost 800MB
+	
+	### MARK: other apps
+	cask "blender"
+	cask "discord"
+	brew "ghidra" # used to be cask, now formula??
+	# cask "godot"
+	cask "netnewswire"
+	cask "obsidian"
+	cask "raycast"
+	cask "signal"
+	cask "steam"
+	cask "textual"
+	cask "iina" # vlc but swift
+	cask "inkscape"
+end

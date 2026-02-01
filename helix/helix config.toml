@@ -1,6 +1,3 @@
-# TODO: add custom languages
-# see https://docs.helix-editor.com/guides/adding_languages.html
-
 theme = "helix_theme"
 
 [editor]
@@ -31,7 +28,7 @@ nnbsp = "all"
 [editor.whitespace.characters]
 tab = "╶"
 tabpad = "─"
-tabend = "╴" # TODO: PR
+tabend = "╴" # TODO: this does nothing unless my PR is merged
 
 [editor.gutters]
 layout = ["line-numbers", "diff"]
@@ -39,14 +36,12 @@ layout = ["line-numbers", "diff"]
 [editor.gutters.line-numbers]
 min-width = 1
 
-# TODO: change diff symbol to │ or ┃, then remove spacer
-
 [editor.soft-wrap]
 enable = true
 max-indent-retain = 0
 wrap-indicator = ""
 
-# inline means on the line below, actually *inline* is "end-of-line"
+# inline means on the line below, actually *inline* is called "end-of-line"
 [editor.inline-diagnostics]
 cursor-line = "hint"
 
@@ -78,16 +73,15 @@ J = "join_selections_space"
 
 C-space = "hover"
 
-# esc = ["collapse_selection", "keep_primary_selection"]
-
 # TODO: these are ok but id rather they didnt select the entire line
+# they also don't work with selections on adjacent lines
 I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 
 "*" = "search_selection"
 "A-*" = "search_selection_detect_word_boundaries"
 
-# A-n = "extend_search_next"
+A-n = "extend_search_next"
 A-N = "extend_search_prev"
 
 "}" = ["goto_next_paragraph", "collapse_selection"]
@@ -139,11 +133,14 @@ i = "extend_visual_line_up"
 j = "extend_char_left"
 k = "extend_visual_line_down"
 
+h = "insert_mode"
+H = "insert_at_line_start"
+
 w = "extend_next_sub_word_start"
 e = "extend_next_sub_word_end"
 b = "extend_prev_sub_word_start"
 
-G = "goto_last_line"
+G = "extend_to_last_line"
 
 [keys.select.g]
 c = "toggle_comments"

@@ -1,30 +1,17 @@
-# Set PATH, MANPATH, etc., for Homebrew.
+# per-OS stuff
 switch (uname)
 	case Darwin
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	case Linux
 		eval "$(/home/linuxbrew/.linuxbrew/Homebrew/bin/brew shellenv)"
+		export XDG_CONFIG_HOME="/home/simonomi/.config"
 end
 
+# path
 fish_add_path ~/.rustup/toolchains/*/bin/
 fish_add_path ~/.cargo/bin
-fish_add_path ~/.mint/bin
-# pipx installs here
-fish_add_path ~/.local/bin
 
-if test -e ~/python_virtual_environment/bin/activate.fish
-	source ~/python_virtual_environment/bin/activate.fish
-end
-
-switch (uname)
-	case Darwin
-		# source ~/.swiftly/env.fish
-		export SHELL=(which fish)
-	case Linux
-		# source ~/.local/share/swiftly/env.fish
-		export SHELL=(which fish)
-end
-
+# environment variables
 export HOMEBREW_NO_ENV_HINTS=true
 export EDITOR=hx
 export VISUAL=$EDITOR
@@ -33,13 +20,7 @@ export HOMEBREW_BUNDLE_FILE="~/Documents/dot config/brewfile"
 export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
 export XDG_CONFIG_HOME="/Users/simonomi/.config"
 
-switch (uname)
-	case Darwin
-		export XDG_CONFIG_HOME="/Users/simonomi/.config"
-	case Linux
-		export XDG_CONFIG_HOME="/home/simonomi/.config"
-end
-
+# custom tool inits
 if command -q starship
 	starship init fish | source
 end
@@ -48,6 +29,7 @@ if command -q zoxide
 	zoxide init fish | source
 end
 
+# fish settings
 set fish_greeting
 
 # used to be blue, now white by default, i prefer blue
@@ -61,8 +43,15 @@ bind / expand-abbr self-insert
 bind \; expand-abbr self-insert
 bind \- expand-abbr self-insert
 
-set dot_config_dir "~/Documents/dot\ config"
+# path variables
+set --local dot_config_dir "~/Documents/dot\ config"
 
+set --global prdr "$HOME/Documents/programming"
+set --global pydr $prdr/python
+set --global swdr $prdr/swift
+set --global cardr $swdr/carbonizer
+
+# abbrs and aliases
 alias frc "$VISUAL $dot_config_dir/config.fish"
 alias fishrc "$VISUAL $dot_config_dir/config.fish"
 alias src "source $dot_config_dir/config.fish"
@@ -81,45 +70,36 @@ alias hlang "hx $dot_config_dir/helix/languages.toml"
 
 alias nurc "$VISUAL $dot_config_dir/config.nu"
 
-abbr -a cd z
+abbr --add cd z
 
 alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
 
-abbr -a opsw "open Package.swift"
-abbr -a opxc "open (fd -e xcodeproj)"
+abbr --add opsw "open Package.swift"
+abbr --add opxc "open (fd -e xcodeproj)"
 
 alias kondo "kondo --default --ignored-dirs \$cardr"
 
 alias localip="ipconfig getifaddr en0"
 
-abbr -a r trash
+abbr --add r trash
 
-abbr -a st "syncthing browser"
+abbr --add st "syncthing browser"
 
 alias "..." "cd ../.."
 alias "...." "cd ../../.."
-
-set -g prdr "~/Documents/programming"
-set -g pydr $prdr/python
-set -g swdr $prdr/swift
-set -g cardr $swdr/carbonizer
+alias "....." "cd ../../../.."
+alias "......" "cd ../../../../.."
+alias "......." "cd ../../../../../.."
+alias "........" "cd ../../../../../../.."
 
 alias plan "$VISUAL $prdr/daya/my\ lang\ planning.daya"
 
 alias swpl "cd ~/Desktop; $VISUAL test.swift"
 
-abbr -a u update
+abbr --add u update
 
 alias ding "tput bel"
-
-function update
-	brew update-if-needed
-	set output (brew bundle check) && echo $output || brew bundle install --verbose
-	brew upgrade
-	brew autoremove
-	brew cleanup --scrub
-end
 
 alias ascii "cat ~/Documents/misc/ascii.txt"
 
@@ -131,39 +111,39 @@ alias jfmt "python $pydr/json_formatter.py"
 alias :q exit
 alias q exit
 
-abbr -a b brew
-abbr -a c cargo
-abbr -a d "nvim -d"
-abbr -a g git
-abbr -a h hx
-abbr -a j jj
-abbr -a n nvim
-abbr -a s swift
+abbr --add b brew
+abbr --add c cargo
+abbr --add d "nvim -d"
+abbr --add g git
+abbr --add h hx
+abbr --add j jj
+abbr --add n nvim
+abbr --add s swift
 
-abbr -a js "jj status"
-abbr -a jd --set-cursor "jj describe -m \"%\""
-abbr -a jn --set-cursor "jj new -m \"%\""
-abbr -a jl "jj log -r \"all()\""
-abbr -a jt "jj tug"
-abbr -a jp "jj push"
-abbr -a jtp "jj tug && jj push"
+abbr --add js "jj status"
+abbr --add jd --set-cursor "jj describe -m \"%\""
+abbr --add jn --set-cursor "jj new -m \"%\""
+abbr --add jl "jj log -r \"all()\""
+abbr --add jt "jj tug"
+abbr --add jp "jj push"
+abbr --add jtp "jj tug && jj push"
 
-abbr -a ga "git add"
-abbr -a gc --set-cursor "git commit -m \"%\""
-abbr -a gac --set-cursor "git commit -am \"%\""
-abbr -a gcl --set-cursor "git clone \"%\""
-abbr -a gf "git fetch"
-abbr -a gfs "git fetch && git status"
-abbr -a gp "git push"
-abbr -a gpl "git pull"
-abbr -a gr "git rebase"
-abbr -a gs "git status"
-abbr -a gd "git diff"
-abbr -a gv "git-visit"
+abbr --add ga "git add"
+abbr --add gc --set-cursor "git commit -m \"%\""
+abbr --add gac --set-cursor "git commit -am \"%\""
+abbr --add gcl --set-cursor "git clone \"%\""
+abbr --add gf "git fetch"
+abbr --add gfs "git fetch && git status"
+abbr --add gp "git push"
+abbr --add gpl "git pull"
+abbr --add gr "git rebase"
+abbr --add gs "git status"
+abbr --add gd "git diff"
+abbr --add gv "git-visit"
 alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift | xargs -r open"
 
-abbr -a bi "brew install"
-abbr -a be "brew bundle edit"
+abbr --add bi "brew install"
+abbr --add be "brew bundle edit"
 
 alias copy fish_clipboard_copy
 alias paste fish_clipboard_paste
@@ -171,10 +151,18 @@ alias paste fish_clipboard_paste
 alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
 alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
 
-abbr -a xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
+abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
-# abbr -a "ydl" "yt-dlp -f \"bestaudio,bestvideo*\" -o \"%(title)s.%(ext)s\""
-abbr -a "ydl" "yt-dlp"
+abbr --add "ydl" "yt-dlp"
+
+# custom functions
+function update
+	brew update-if-needed
+	set output (brew bundle check) && echo $output || brew bundle install --verbose
+	brew upgrade
+	brew autoremove
+	brew cleanup --scrub
+end
 
 # TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
 # - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
