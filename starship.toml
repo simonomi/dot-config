@@ -16,6 +16,12 @@ style = "bright-white"
 min_time = 500
 show_milliseconds = true
 
+# for if swift isn't available to compile the custom one
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)"
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+
 [custom.directory]
 format = "$output"
 shell = "/Users/simonomi/Documents/programming/swift/custom-directory-prompt/custom directory prompt"

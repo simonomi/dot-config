@@ -5,7 +5,7 @@ switch (uname)
 		export XDG_CONFIG_HOME="/Users/simonomi/.config"
 		export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 	case Linux
-		eval "$(/home/linuxbrew/.linuxbrew/Homebrew/bin/brew shellenv)"
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
 		export LESS="--RAW-CONTROL-CHARS --ignore-case --tabs=4"
 end
@@ -30,6 +30,10 @@ end
 
 if command -q zoxide
 	zoxide init fish | source
+end
+
+if test -e ~/.local/share/swiftly/env.fish
+	source ~/.local/share/swiftly/env.fish
 end
 
 # fish settings
@@ -72,8 +76,6 @@ alias hxlang "hx $dot_config_dir/helix/languages.toml"
 alias hlang "hx $dot_config_dir/helix/languages.toml"
 
 alias nurc "$VISUAL $dot_config_dir/config.nu"
-
-abbr --add cd z
 
 alias l "lsd --literal"
 alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
