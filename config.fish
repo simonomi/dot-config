@@ -1,11 +1,11 @@
 # per-OS stuff
 switch (uname)
 	case Darwin
-		eval "$(/opt/homebrew/bin/brew shellenv)"
+		eval "$(/opt/homebrew/bin/brew shellenv fish)"
 		export XDG_CONFIG_HOME="/Users/simonomi/.config"
 		export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 	case Linux
-		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 		export XDG_CONFIG_HOME="/home/simonomi/.config"
 		export LESS="--RAW-CONTROL-CHARS --ignore-case --tabs=4"
 end
