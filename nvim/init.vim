@@ -309,8 +309,8 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
-highlight LineNrBelow ctermfg=gray
-highlight LineNrAbove ctermfg=gray
+highlight LineNrBelow ctermfg=gray guifg=gray
+highlight LineNrAbove ctermfg=gray guifg=gray
 
 " fold column
 set foldcolumn=auto
@@ -545,13 +545,13 @@ augroup END
 
 " change syntax highlighting colors
 highlight Comment ctermfg=8 " 8 *should* be the same as darkgrey, but isn't, and is prettier
-highlight Number ctermfg=yellow
-highlight Identifier ctermfg=lightblue
-highlight String ctermfg=red
-highlight Character ctermfg=red
+highlight Number ctermfg=yellow guifg=#d0bf69
+highlight Identifier ctermfg=lightblue guifg=#41a1c0
+highlight String ctermfg=red guifg=#fc6a5d
+highlight Character ctermfg=red guifg=#fc6a5d
 highlight Delimiter ctermfg=none
-highlight Boolean cterm=bold ctermfg=magenta
-highlight Statement cterm=bold ctermfg=magenta
+highlight Boolean cterm=bold ctermfg=magenta guifg=#fc5fa3
+highlight Statement cterm=bold ctermfg=magenta guifg=#fc5fa3
 highlight Operator cterm=none ctermfg=none
 
 " pop-up menu colors

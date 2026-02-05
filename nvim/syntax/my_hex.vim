@@ -64,21 +64,20 @@ highlight my_hexByteF guifg=#ff4dff " pink
 highlight my_hexByteFF guifg=white
 
 syntax match my_hexAddress "^[0-9a-f]\+"
-"highlight default link my_hexAddress Constant
 highlight my_hexAddress guifg=#8abbc3
 
 if !exists("b:no_ascii")
-	syntax match my_hexAscii "  .\{,16\}$"hs=s+2 contains=my_hexNull,my_hexASCIINonGraphic,my_hexNonASCII,my_hexFFCharacter
+	syntax match my_hexAscii "  [^\t\r\n]\{,16\}$"hs=s+2 contains=my_hexNull,my_hexASCIINonGraphic,my_hexNonASCII,my_hexFFCharacter
 	highlight default link my_hexASCII String
 endif
 
 syntax match my_hexNull "⋄" contained
 highlight my_hexNull ctermfg=darkgrey guifg=#aeaeae
 
-syntax match my_hexASCIINonGraphic "•" contained
+syntax match my_hexASCIINonGraphic "[•⠁⠈⠉⠂⠃⠊⠋⠐⠙⠒⠚⠛⠄⠅⠌⠍⠆⠇⠎⠏⠔⠕⠜⠝⠖⠗⠞⠟⡿]" contained
 highlight my_hexASCIINonGraphic ctermfg=green guifg=#50fa7b
 
-syntax match my_hexNonASCII "×" contained
+syntax match my_hexNonASCII "[×⢀⢁⢈⢉⢂⢃⢊⢋⢐⢑⢘⢙⢒⢓⢚⢛⢄⢅⢌⢍⢆⢇⢎⢏⢔⢕⢜⢝⢖⢗⢞⢟⢠⢡⢨⢩⢢⢣⢪⢫⢰⢱⢸⢹⢲⢳⢺⢻⢤⢥⢬⢭⢦⢧⢮⢯⢴⢵⢼⢽⢶⢷⢾⢿⣀⣁⣈⣉⣂⣃⣊⣋⣐⣑⣘⣙⣒⣓⣚⣛⣄⣅⣌⣍⣆⣇⣎⣏⣔⣕⣜⣝⣖⣗⣞⣟⣠⣡⣨⣩⣢⣣⣪⣫⣰⣱⣸⣹⣲⣳⣺⣻⣤⣥⣬⣭⣦⣧⣮⣯⣴⣵⣼⣽⣶⣷⣾]" contained
 highlight my_hexNonASCII ctermfg=yellow guifg=#f1fa8c
 
 syntax match my_hexFFCharacter "╳" contained
