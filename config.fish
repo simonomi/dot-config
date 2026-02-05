@@ -130,6 +130,7 @@ abbr --add jd --set-cursor "jj describe -m \"%\""
 abbr --add jn --set-cursor "jj new -m \"%\""
 abbr --add jl "jj log -r \"all()\""
 abbr --add jt "jj tug"
+abbr --add jf "jj fetch"
 abbr --add jp "jj push"
 abbr --add jtp "jj tug && jj push"
 
@@ -159,6 +160,9 @@ alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
 abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
 abbr --add "ydl" "yt-dlp"
+
+abbr --add "ta" --set-cursor "transmission-remote --add \"%\""
+abbr --add "tr" --set-cursor "transmission-remote -t % --remove"
 
 # custom functions
 function update

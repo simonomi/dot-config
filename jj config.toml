@@ -23,4 +23,5 @@ key = "~/.ssh/id_ed25519.pub"
 
 [aliases]
 tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]
+fetch = ["git", "fetch"]
 push = ["git", "push"]
