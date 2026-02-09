@@ -162,7 +162,10 @@ abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Li
 abbr --add "ydl" "yt-dlp"
 
 abbr --add "ta" --set-cursor "transmission-remote --add \"%\""
-abbr --add "tr" --set-cursor "transmission-remote -t % --remove"
+abbr --add "td" --set-cursor "transmission-remote -t % --remove"
+abbr --add "tr" "transmission-remote"
+
+alias bks "cd ~/Documents/books; webdav"
 
 # custom functions
 function update
