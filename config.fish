@@ -159,11 +159,12 @@ alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
 
 abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
 
-abbr --add "ydl" "yt-dlp"
+abbr --add ydl "yt-dlp"
 
-abbr --add "ta" --set-cursor "transmission-remote --add \"%\""
-abbr --add "td" --set-cursor "transmission-remote -t % --remove"
-abbr --add "tr" "transmission-remote"
+abbr --add tr "transmission-remote"
+abbr --add tl "transmission-remote --list"
+abbr --add ta --set-cursor "transmission-remote --add \"%\""
+abbr --add td --set-cursor "transmission-remote -t % --remove"
 
 alias bks "cd ~/Documents/books; webdav"
 
