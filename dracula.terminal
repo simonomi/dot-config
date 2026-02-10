@@ -161,6 +161,8 @@
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<true/>
+	<key>Bell</key>
+	<false/>
 	<key>CommandString</key>
 	<string></string>
 	<key>ConvertNewlinesOnPaste</key>
@@ -248,6 +250,8 @@
 	oqqtAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
 	</data>
 	<key>UseBrightBold</key>
+	<false/>
+	<key>VisualBellOnlyWhenMuted</key>
 	<false/>
 	<key>columnCount</key>
 	<integer>100</integer>
@@ -389,6 +393,10 @@
 		<dict>
 			<key>ProcessName</key>
 			<string>starship</string>
+		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>ssh</string>
 		</dict>
 	</array>
 	<key>rowCount</key>
