@@ -49,6 +49,7 @@ brew "ffmpeg"
 # lsps
 brew "tinymist" # typst
 brew "lua-language-server"
+brew "yaml-language-server"
 brew "typescript-language-server"
 brew "vscode-langservers-extracted" # html, css, javascript, json
 
