@@ -165,6 +165,7 @@ abbr --add tr "transmission-remote"
 abbr --add tl "transmission-remote --list"
 abbr --add ta --set-cursor "transmission-remote --add \"%\""
 abbr --add td --set-cursor "transmission-remote -t % --remove"
+abbr --add v "viddy -w transmission-remote --list"
 
 alias bks "cd ~/Documents/books; webdav"
 

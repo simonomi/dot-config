@@ -153,3 +153,5 @@ l = "extend_to_line_end"
 w = "extend_next_word_start"
 e = "extend_next_word_end"
 b = "extend_prev_word_start"
+
+s = "extend_to_word"
