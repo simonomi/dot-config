@@ -1,6 +1,7 @@
 [user]
 	name = alice pellerin
 	email = thealicepellerin@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
 [pull]
 	rebase = true
 [core]
@@ -8,7 +9,7 @@
 	excludesfile = ~/.gitignore_global
 [commit]
 	gpgsign = true
-	signingkey = /Users/simonomi/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [gpg]
 	format = ssh
 # do NOT redirect https to ssh. it breaks xcode
