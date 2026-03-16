@@ -1,4 +1,8 @@
 [[language]]
+name = "lua"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
 name = "kdl"
 indent = { tab-width = 4, unit = "\t" }
 

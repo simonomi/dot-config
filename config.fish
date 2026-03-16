@@ -169,6 +169,8 @@ abbr --add v "viddy -w transmission-remote --list"
 
 alias bks "cd ~/Documents/books; webdav"
 
+alias rot13 "tr \"[a-zA-Z]\" \"[n-za-mN-ZA-M]\""
+
 # custom functions
 function update
 	brew update-if-needed

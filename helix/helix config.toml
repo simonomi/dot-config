@@ -95,6 +95,9 @@ A-N = "extend_search_prev"
 "A-h" = "shrink_selection"
 "A-H" = "select_all_children"
 
+"A-j" = "select_prev_sibling"
+"A-l" = "select_next_sibling"
+
 [keys.normal.space]
 w = ":update"
 q = ":quit"
@@ -127,6 +130,10 @@ k = "scroll_down"
 i = "jump_view_up"
 j = "jump_view_left"
 k = "jump_view_down"
+
+[keys.insert]
+"A-_" = "@—"
+"A-minus" = "@–"
 
 [keys.select]
 i = "extend_visual_line_up"
