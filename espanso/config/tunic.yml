@@ -2,4 +2,3 @@ filter_title: "Secret Legend"
 
 extra_includes:
   - "../match/_tunic.yml"
-

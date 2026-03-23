@@ -1,7 +1,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = "${custom.directory}${custom.directory_linux}$status$character"
-right_format = "$cmd_duration$git_metrics$package$hostname$time"
+right_format = "$cmd_duration$git_metrics$hostname$time"
 
 add_newline = false
 
@@ -40,10 +40,6 @@ disabled = false
 [hostname]
 format = "[$ssh_symbol$hostname]($style) "
 ssh_symbol = " "
-
-[package]
-format = "[$symbol$version]($style) "
-symbol = "󰏗 "
 
 [status]
 format = "[\\[$status\\]]($style)"

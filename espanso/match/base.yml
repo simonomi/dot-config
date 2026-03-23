@@ -41,28 +41,29 @@ matches:
         params:
           format: "%Y-%m-%d %H:%M:%S %z"
 
-  - trigger: ".code"
-    replace: "/banner from code {{paste}}\n/banner save "
-    force_mode: keys
-    vars:
-      - name: "paste"
-        type: clipboard
+# TODO: add extra filter like with tunic
+  # - trigger: ".code"
+  #   replace: "/banner from code {{paste}}\n/banner save "
+  #   force_mode: keys
+  #   vars:
+  #     - name: "paste"
+  #       type: clipboard
 
-  - trigger: ".put"
-    replace: "<img src=\"{{url}}.png\" class=\"inline-banner\">"
-    vars:
-      - name: "url"
-        type: shell
-        params:
-          # cmd: "string replace \"?writing=\" \"image/\" (paste)"
-          # shell: fish
-          # cmd: "pbpaste | str replace \"?writing=\" \"image/\""
-          # shell: nu
-          cmd: '/opt/homebrew/bin/fish -c "paste | sd \\\\?writing= image/ | sd .png\\|undefined/ \"\""'
-  - trigger: ".def"
-    replace: "{{put}}:::"
-    vars:
-      - name: "put"
-        type: match
-        params:
-          trigger: ".put"
+  # - trigger: ".put"
+  #   replace: "<img src=\"{{url}}.png\" class=\"inline-banner\">"
+  #   vars:
+  #     - name: "url"
+  #       type: shell
+  #       params:
+  #         # cmd: "string replace \"?writing=\" \"image/\" (paste)"
+  #         # shell: fish
+  #         # cmd: "pbpaste | str replace \"?writing=\" \"image/\""
+  #         # shell: nu
+  #         cmd: '/opt/homebrew/bin/fish -c "paste | sd \\\\?writing= image/ | sd .png\\|undefined/ \"\""'
+  # - trigger: ".def"
+  #   replace: "{{put}}:::"
+  #   vars:
+  #     - name: "put"
+  #       type: match
+  #       params:
+  #         trigger: ".put"

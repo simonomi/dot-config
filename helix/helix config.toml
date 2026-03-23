@@ -64,6 +64,7 @@ C-j = "goto_previous_buffer"
 C-l = "goto_next_buffer"
 
 X = "extend_line_above"
+"A-x" = ["goto_line_start", "extend_to_line_end"]
 
 G = "goto_last_line"
 q = "record_macro"
@@ -78,11 +79,14 @@ C-space = "hover"
 I = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 K = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 
+"A-k" = "keep_selections"
+
 "*" = "search_selection"
 "A-*" = "search_selection_detect_word_boundaries"
 
-A-n = "extend_search_next"
-A-N = "extend_search_prev"
+# these are just vn and vN
+# A-n = "extend_search_next"
+# A-N = "extend_search_prev"
 
 "}" = ["goto_next_paragraph", "collapse_selection"]
 "{" = ["goto_prev_paragraph", "move_visual_line_up"]
@@ -148,6 +152,8 @@ e = "extend_next_sub_word_end"
 b = "extend_prev_sub_word_start"
 
 G = "extend_to_last_line"
+
+X = "extend_line_above"
 
 [keys.select.g]
 c = "toggle_comments"

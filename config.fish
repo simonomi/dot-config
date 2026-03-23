@@ -22,6 +22,7 @@ export EDITOR=hx
 export VISUAL=$EDITOR
 export HOMEBREW_BUNDLE_FILE="~/Documents/dot-config/brewfile"
 export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
+export LESSCHARSET="utf-8"
 
 # custom tool inits
 if command -q starship
@@ -151,8 +152,8 @@ alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swif
 abbr --add bi "brew install"
 abbr --add be "brew bundle edit"
 
-alias copy fish_clipboard_copy
-alias paste fish_clipboard_paste
+alias copy "fish_clipboard_copy"
+alias paste "fish_clipboard_paste"
 
 alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
 alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
@@ -170,6 +171,12 @@ abbr --add v "viddy -w transmission-remote --list"
 alias bks "cd ~/Documents/books; webdav"
 
 alias rot13 "tr \"[a-zA-Z]\" \"[n-za-mN-ZA-M]\""
+
+alias meth "bat | math"
+
+alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
+
+abbr --add x "hexapoda"
 
 # custom functions
 function update

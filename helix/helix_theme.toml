@@ -81,7 +81,7 @@ special = "cyan"
 
 [palette]
 grey = "#6C7986"
+light-grey = "7"
 dark-grey = "8"
 ui-grey = "238"
 select-grey  = "242"
-light-grey = "7"

@@ -72,7 +72,7 @@ if !exists("b:no_ascii")
 endif
 
 syntax match my_hexNull "⋄" contained
-highlight my_hexNull ctermfg=darkgrey guifg=#aeaeae
+highlight my_hexNull ctermfg=darkgrey guifg=#a0a0a0
 
 syntax match my_hexASCIINonGraphic "[•⠁⠈⠉⠂⠃⠊⠋⠐⠙⠒⠚⠛⠄⠅⠌⠍⠆⠇⠎⠏⠔⠕⠜⠝⠖⠗⠞⠟⡿]" contained
 highlight my_hexASCIINonGraphic ctermfg=green guifg=#50fa7b
