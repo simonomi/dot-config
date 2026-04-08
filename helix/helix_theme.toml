@@ -47,16 +47,16 @@ diagnostic = { bg = "blue" }
 # attribute
 type = "blue"
 "type.builtin" = "blue"
-constructor = "light-magenta"
-constant = "light-magenta"
+constructor = "magenta"
+constant = "magenta"
 "constant.numeric" = "light-yellow"
-string = "light-red"
+string = "red"
 comment = "grey"
 variable = "81"
-"variable.builtin" = "light-magenta"
-label = "light-magenta"
+"variable.builtin" = "magenta"
+label = "magenta"
 # punctuation
-keyword = "light-magenta"
+keyword = "magenta"
 "keyword.directive" = "yellow"
 # operator
 function = "green"

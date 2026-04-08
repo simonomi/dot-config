@@ -2,12 +2,12 @@
 switch (uname)
 	case Darwin
 		eval "$(/opt/homebrew/bin/brew shellenv fish)"
-		export XDG_CONFIG_HOME="/Users/simonomi/.config"
-		export LESS="--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
+		set -gx XDG_CONFIG_HOME "/Users/simonomi/.config"
+		set -gx LESS "--RAW-CONTROL-CHARS --incsearch --ignore-case --use-color --tabs=4"
 	case Linux
 		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
-		export XDG_CONFIG_HOME="/home/simonomi/.config"
-		export LESS="--RAW-CONTROL-CHARS --ignore-case --tabs=4"
+		set -gx XDG_CONFIG_HOME "/home/simonomi/.config"
+		set -gx LESS "--RAW-CONTROL-CHARS --ignore-case --tabs=4"
 end
 
 # path
@@ -17,12 +17,12 @@ end
 fish_add_path ~/.cargo/bin
 
 # environment variables
-export HOMEBREW_NO_ENV_HINTS=true
-export EDITOR=hx
-export VISUAL=$EDITOR
-export HOMEBREW_BUNDLE_FILE="~/Documents/dot-config/brewfile"
-export BACON_PREFS="/Users/simonomi/.config/bacon.toml"
-export LESSCHARSET="utf-8"
+set -gx HOMEBREW_NO_ENV_HINTS true
+set -gx EDITOR "hx"
+set -gx VISUAL $EDITOR
+set -gx HOMEBREW_BUNDLE_FILE "~/Documents/dot-config/brewfile"
+set -gx BACON_PREFS "/Users/simonomi/.config/bacon.toml"
+set -gx LESSCHARSET "utf-8"
 
 # custom tool inits
 if command -q starship
@@ -194,20 +194,20 @@ end
 # - brew info --json --installed doesnt include sizes, or it'd be perfect
 # - there's now `brew info --size`, but no coloring !
 function brewSize
-	export HOMEBREW_NO_ANALYTICS=true
-	export HOMEBREW_NO_GITHUB_API=true
+	set -x HOMEBREW_NO_ANALYTICS true
+	set -x HOMEBREW_NO_GITHUB_API true
 	brew info (brew leaves; brew list --casks) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brewSizeAll
-	export HOMEBREW_NO_ANALYTICS=true
-	export HOMEBREW_NO_GITHUB_API=true
+	set -x HOMEBREW_NO_ANALYTICS true
+	set -x HOMEBREW_NO_GITHUB_API true
 	brew info (brew list) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brewSizeOf
-	export HOMEBREW_NO_ANALYTICS=true
-	export HOMEBREW_NO_GITHUB_API=true
+	set -x HOMEBREW_NO_ANALYTICS true
+	set -x HOMEBREW_NO_GITHUB_API true
 	brew info (echo $argv; brew deps $argv) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 

@@ -1,3 +1,7 @@
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
 [[language]]
 name = "lua"
 indent = { tab-width = 4, unit = "\t" }
@@ -48,6 +52,9 @@ name = "rust"
 auto-format = false # rustfmt doesn't have an option to leave trailing whitespace
 indent = { tab-width = 4, unit = "\t" }
 
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
 [[language]]
 name = "fish"
 auto-format = false # fish_indent doesnt have a flag for using tabs
@@ -65,6 +72,7 @@ indent = { tab-width = 4, unit = "\t" }
 name = "html"
 auto-format = false
 indent = { tab-width = 4, unit = "\t" }
+language-servers = ["vscode-html-language-server", "superhtml", "codebook"]
 
 [[language]]
 name = "css"
@@ -153,8 +161,10 @@ file-types = [
 [[language]]
 name = "markdown"
 indent = { tab-width = 4, unit = "\t" }
+language-servers = ["marksman", "markdown-oxide", "rumdl", "codebook"]
 
 [[language]]
 name = "json"
 auto-format = false
 indent = { tab-width = 4, unit = "\t" }
+comment-tokens = "//"
