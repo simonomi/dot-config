@@ -147,10 +147,12 @@ abbr --add gr "git rebase"
 abbr --add gs "git status"
 abbr --add gd "git diff"
 abbr --add gv "git-visit"
-alias git-visit "git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift | xargs -r open"
+alias git-visit "open (git remote get-url origin | $swdr/git\ ssh\ url\ to\ https.swift)"
+abbr --add cv "code-visit"
+alias code-visit "open (git remote get-url codeberg | $swdr/git\ ssh\ url\ to\ https.swift)"
 
 abbr --add bi "brew install"
-abbr --add be "brew bundle edit"
+abbr --add be "$VISUAL $HOMEBREW_BUNDLE_FILE"
 
 alias copy "fish_clipboard_copy"
 alias paste "fish_clipboard_paste"
@@ -179,6 +181,8 @@ alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
 abbr --add x "hexapoda"
 
 alias conflicts "fd \"\\.sync-conflict\" --hidden --exclude .stversions/"
+
+abbr --add --set-cursor code "jj git remote add codeberg \"%\"; jj bookmark track main --remote=codeberg"
 
 # custom functions
 function update

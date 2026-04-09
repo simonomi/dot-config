@@ -16,7 +16,8 @@ log = "ancestors(@::, 4):: | ancestors(present(main)::, 2):: | ancestors(present
 
 [git]
 fetch = ["origin", "codeberg"]
-# push can only be one commit for now
+# push can only be one remote for now :/
+# push = ["origin", "codeberg"]
 
 [signing]
 behavior = "own"
