@@ -139,6 +139,10 @@ k = "jump_view_down"
 "A-_" = "@—"
 "A-minus" = "@–"
 
+# this breaks indenting on whitespace-only lines >:(
+# "tab" = "indent"
+"S-tab" = "unindent"
+
 [keys.select]
 i = "extend_visual_line_up"
 j = "extend_char_left"

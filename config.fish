@@ -178,6 +178,8 @@ alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
 
 abbr --add x "hexapoda"
 
+alias conflicts "fd \"\\.sync-conflict\" --hidden --exclude .stversions/"
+
 # custom functions
 function update
 	brew update-if-needed

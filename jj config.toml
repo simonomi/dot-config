@@ -14,6 +14,10 @@ merge-editor = ":builtin"
 [revsets]
 log = "ancestors(@::, 4):: | ancestors(present(main)::, 2):: | ancestors(present(master)::, 2)::"
 
+[git]
+fetch = ["origin", "codeberg"]
+# push can only be one commit for now
+
 [signing]
 behavior = "own"
 backend = "ssh"
