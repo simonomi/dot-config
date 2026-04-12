@@ -1,6 +1,9 @@
+# https://docs.helix-editor.com/themes.html
+
 "ui.background" = "light-grey"
-"ui.cursor" = { bg = "light-grey" }
-"ui.cursor.match" = { bg = "select-grey" }
+"ui.cursor" = { bg = "secondary-selection-tail-grey" }
+"ui.cursor.match" = { bg = "selection-tail-grey" }
+"ui.cursor.primary" = { bg = "light-grey" }
 "ui.cursor.primary.select" = { bg = "yellow" }
 "ui.gutter.selected" = { bg = "dark-grey" }
 "ui.linenr" = "light-grey"
@@ -13,7 +16,7 @@
 "ui.statusline.select" = { fg = "black", bg = "yellow" }
 
 "ui.bufferline" = { bg = "ui-grey" }
-"ui.bufferline.active" = { bg = "select-grey" }
+"ui.bufferline.active" = { bg = "selection-tail-grey" }
 "ui.bufferline.background" = { bg = "black" }
 
 "ui.popup" = { bg = "dark-grey" }
@@ -29,7 +32,7 @@
 "ui.menu" = { fg = "white", bg = "dark-grey" }
 "ui.menu.selected" = { modifiers = ["reversed"] }
 
-"ui.selection" = { bg = "select-grey" }
+"ui.selection" = { bg = "selection-tail-grey" }
 
 error = "203"
 warning = "yellow"
@@ -84,4 +87,5 @@ grey = "#6C7986"
 light-grey = "7"
 dark-grey = "8"
 ui-grey = "238"
-select-grey  = "242"
+selection-tail-grey  = "242"
+secondary-selection-tail-grey  = "246"

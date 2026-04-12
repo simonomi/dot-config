@@ -7,6 +7,7 @@ brew "hexyl"                  # xxd but rust
 brew "ripgrep"               # grep but rust
 brew "tokei"                 # cloc but rust
 brew "helix", args: ["HEAD"]  # vim but rust
+                 # head until 26.* for my PR
 brew "xh"                    # curl but rust
 brew "starship"            # prompt but rust
 brew "hyperfine"     # benchmarking but rust
@@ -53,8 +54,10 @@ brew "lua-language-server"
 brew "yaml-language-server"
 brew "typescript-language-server"
 brew "vscode-langservers-extracted" # html, css, javascript, json
-brew "taplo" # toml
+brew "superhtml"
+brew "tombi" # toml
 brew "codebook-lsp" # spellchecking
+brew "fish-lsp"
 
 if OS.mac?
 	### MARK: mac app store

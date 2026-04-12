@@ -34,6 +34,7 @@ if command -q zoxide
 end
 
 if test -e ~/.local/share/swiftly/env.fish
+	# @fish-lsp-disable-next-line 1004
 	source ~/.local/share/swiftly/env.fish
 end
 
@@ -132,8 +133,8 @@ abbr --add jn --set-cursor "jj new -m \"%\""
 abbr --add jl "jj log -r \"all()\""
 abbr --add jt "jj tug"
 abbr --add jf "jj fetch"
-abbr --add jp "jj push"
-abbr --add jtp "jj tug && jj push"
+abbr --add jp "jj push --remote origin && jj push --remote codeberg"
+abbr --add jtp "jj tug && jj push --remote origin && jj push --remote codeberg"
 
 abbr --add ga "git add"
 abbr --add gc --set-cursor "git commit -m \"%\""
@@ -225,4 +226,132 @@ function convertAllBmps
 	for file in (fd --extension bmp)
 		magick "$file" "$(path change-extension png $file)"
 	end
+end
+
+set -g fish_color_selection white --background=brblack
+
+function fish_user_key_bindings
+	fish_vi_key_bindings insert
+	
+	# Add a way to switch from insert to normal (command) mode.
+	# Note if we are paging, we want to stay in insert mode
+	# See #2871
+	set -l on_escape "
+		if commandline -P
+			commandline -f cancel
+		else
+			set fish_bind_mode default
+			set fish_cursor_selection_mode inclusive
+			if test (commandline --cursor) -gt (commandline --selection-start || echo -1)
+				commandline -f backward-char
+			end
+			commandline -f repaint-mode
+		end
+	"
+	bind --mode insert escape $on_escape
+	
+	bind --mode default --sets-mode visual v "
+		set -g fish_color_selection yellow --background=brblack
+		if not commandline --selection-start > /dev/null
+			commandline -f begin-selection
+		end
+		commandline -f repaint-mode
+	"
+	
+	bind --mode default j "fish_vi_run_count end-selection backward-char begin-selection"
+	bind --mode default l "fish_vi_run_count end-selection forward-char begin-selection"
+	
+	bind --mode default i "fish_vi_run_count end-selection up-or-search begin-selection"
+	bind --mode default k "fish_vi_run_count end-selection down-or-search begin-selection"
+	
+	# TODO: fix web for beginning/end of line
+	# TODO: fix web in general, currently selects too much
+	
+	bind --mode default w "fish_vi_run_count end-selection begin-selection forward-word-vi"
+	bind --mode default W "fish_vi_run_count end-selection begin-selection forward-bigword-vi"
+	
+	bind --mode default e "fish_vi_run_count end-selection begin-selection forward-word-end"
+	bind --mode default E "fish_vi_run_count end-selection begin-selection forward-bigword-end"
+	
+	bind --mode default b "fish_vi_run_count end-selection begin-selection backward-word"
+	bind --mode default B "fish_vi_run_count end-selection begin-selection backward-bigword"
+	
+	bind --mode default g,e "fish_vi_run_count end-selection begin-selection backward-word-end"
+	bind --mode default g,E "fish_vi_run_count end-selection begin-selection backward-bigword-end"
+	
+	bind --mode default g,j "end-selection" "beginning-of-line" "begin-selection"
+	bind --mode default g,l "end-selection" "end-of-line" "begin-selection"
+	
+	bind --mode default ";" "end-selection"
+	bind --mode default "alt-;" "swap-selection-start-stop"
+	
+	bind --sets-mode insert h "
+		if test (commandline --cursor) -gt (commandline --selection-start || echo -1)
+			commandline -f swap-selection-start-stop
+		end
+		commandline -f repaint-mode
+	"
+	bind --sets-mode insert H "beginning-of-line" "repaint-mode"
+	
+	bind --sets-mode insert a "
+		set fish_cursor_end_mode exclusive
+		set fish_cursor_selection_mode exclusive
+		if test (commandline --cursor) = (commandline --selection-start || echo -1)
+			commandline -f swap-selection-start-stop
+		end
+		commandline -f forward-single-char
+		commandline -f repaint-mode
+	"
+	bind --sets-mode insert A "set fish_cursor_end_mode exclusive" "set fish_cursor_selection_mode exclusive" "end-selection" "end-of-line" "repaint-mode"
+	
+	# for some reason, these characters weren't binding to just ""
+	# TODO: its probably to do with abbrs, those are broken now
+	for character in "" " " ";" "<" ">" "|" ")" "&"
+		bind --mode insert "$character" "self-insert" "
+			commandline -f backward-char
+			commandline -f forward-char
+			if test (commandline --cursor) = (commandline --selection-start || echo -1)
+				commandline -f swap-selection-start-stop
+				commandline -f forward-char
+				commandline -f swap-selection-start-stop
+			end
+		"
+	end
+	
+	bind --mode default d "kill-selection" "end-selection"
+	bind --mode default --sets-mode insert c "kill-selection" "end-selection" "repaint-mode"
+	
+	bind U redo
+	
+	# visual mode
+	bind --mode visual --sets-mode default v "set -g fish_color_selection white --background=brblack" "repaint-mode"
+	
+	bind --mode visual j "backward-char"
+	
+	bind --mode visual j "backward-char"
+	bind --mode visual l "forward-char"
+	
+	bind --mode visual i "up-line"
+	bind --mode visual k "down-line"
+	
+	bind --mode visual w "fish_vi_run_count forward-word-vi"
+	bind --mode visual W "fish_vi_run_count forward-bigword-vi"
+	
+	bind --mode visual e "fish_vi_run_count forward-word-end"
+	bind --mode visual E "fish_vi_run_count forward-bigword-end"
+	
+	bind --mode visual b "fish_vi_run_count backward-word"
+	bind --mode visual B "fish_vi_run_count backward-bigword"
+	
+	bind --mode visual g,e "fish_vi_run_count backward-word-end"
+	bind --mode visual g,E "fish_vi_run_count backward-bigword-end"
+	
+	bind --mode visual g,j "beginning-of-line"
+	bind --mode visual g,l "end-of-line"
+	
+	bind --mode visual ";" "begin-selection"
+	bind --mode visual "alt-;" "swap-selection-start-stop"
+	
+	bind --mode visual --sets-mode insert h "repaint-mode"
+	bind --mode visual --sets-mode insert H "end-selection" "beginning-of-line" "repaint-mode"
 end

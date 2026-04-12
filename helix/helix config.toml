@@ -108,6 +108,7 @@ q = ":quit"
 Q = ":quit!"
 c = ":config-reload"
 x = ":write-quit"
+l = ":lsp-workspace-command"
 
 [keys.normal.g]
 i = "move_line_up"
