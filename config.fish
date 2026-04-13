@@ -48,10 +48,6 @@ if status is-interactive
 	tabs -4
 end
 
-bind / expand-abbr self-insert
-bind \; expand-abbr self-insert
-bind \- expand-abbr self-insert
-
 # path variables
 set --local dot_config_dir "~/Documents/dot-config"
 
@@ -230,7 +226,7 @@ end
 
 set -g fish_color_selection white --background=brblack
 
-function fish_user_key_bindings
+function not_fish_user_key_bindings
 	fish_vi_key_bindings insert
 	
 	# Add a way to switch from insert to normal (command) mode.
@@ -270,19 +266,39 @@ function fish_user_key_bindings
 	bind --mode default w "fish_vi_run_count end-selection begin-selection forward-word-vi"
 	bind --mode default W "fish_vi_run_count end-selection begin-selection forward-bigword-vi"
 	
-	bind --mode default e "fish_vi_run_count end-selection begin-selection forward-word-end"
+	bind --mode default e "
+		if test (commandline --cursor) != (math (commandline | wc -c) - 2)
+			fish_vi_run_count end-selection begin-selection forward-word-end
+		end
+	"
 	bind --mode default E "fish_vi_run_count end-selection begin-selection forward-bigword-end"
 	
-	bind --mode default b "fish_vi_run_count end-selection begin-selection backward-word"
-	bind --mode default B "fish_vi_run_count end-selection begin-selection backward-bigword"
+	bind --mode default b "
+		if test (commandline --cursor) != 0
+			fish_vi_run_count end-selection begin-selection backward-word
+		end
+	"
+	bind --mode default B "
+		if test (commandline --cursor) != 0
+			fish_vi_run_count end-selection begin-selection backward-bigword
+		end
+	"
 	
-	bind --mode default g,e "fish_vi_run_count end-selection begin-selection backward-word-end"
-	bind --mode default g,E "fish_vi_run_count end-selection begin-selection backward-bigword-end"
+	bind --mode default g,e "
+		if test (commandline --cursor) != 0
+			fish_vi_run_count end-selection begin-selection backward-word-end
+		end
+	"
+	bind --mode default g,E "
+		if test (commandline --cursor) != 0
+			fish_vi_run_count end-selection begin-selection backward-bigword-end
+		end
+	"
 	
 	bind --mode default g,j "end-selection" "beginning-of-line" "begin-selection"
 	bind --mode default g,l "end-selection" "end-of-line" "begin-selection"
 	
-	bind --mode default ";" "end-selection"
+	bind --mode default ";" "begin-selection"
 	bind --mode default "alt-;" "swap-selection-start-stop"
 	
 	bind --sets-mode insert h "
@@ -291,7 +307,7 @@ function fish_user_key_bindings
 		end
 		commandline -f repaint-mode
 	"
-	bind --sets-mode insert H "beginning-of-line" "repaint-mode"
+	bind --sets-mode insert H "beginning-of-line" "begin-selection" "repaint-mode"
 	
 	bind --sets-mode insert a "
 		set fish_cursor_end_mode exclusive
@@ -304,12 +320,16 @@ function fish_user_key_bindings
 	"
 	bind --sets-mode insert A "set fish_cursor_end_mode exclusive" "set fish_cursor_selection_mode exclusive" "end-selection" "end-of-line" "repaint-mode"
 	
-	# for some reason, these characters weren't binding to just ""
-	# TODO: its probably to do with abbrs, those are broken now
-	for character in "" " " ";" "<" ">" "|" ")" "&"
-		bind --mode insert "$character" "self-insert" "
-			commandline -f backward-char
+	bind --mode insert "" "self-insert" "backward-char" "forward-char" "
+		if test (commandline --cursor) = (commandline --selection-start || echo -1)
+			commandline -f swap-selection-start-stop
 			commandline -f forward-char
+			commandline -f swap-selection-start-stop
+		end
+	"
+	
+	for character in " " ";" "<" ">" "|" ")" "&" "/" "-"
+		bind --mode insert "$character" "self-insert" "expand-abbr" "backward-char" "forward-char" "
 			if test (commandline --cursor) = (commandline --selection-start || echo -1)
 				commandline -f swap-selection-start-stop
 				commandline -f forward-char

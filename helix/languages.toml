@@ -1,5 +1,9 @@
 # https://github.com/helix-editor/helix/blob/master/languages.toml
 
+[[language]]
+name = "xml"
+indent = { tab-width = 4, unit = "\t" }
+
 [language-server.codebook]
 command = "codebook-lsp"
 args = ["serve"]
