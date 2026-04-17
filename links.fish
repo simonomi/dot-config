@@ -42,6 +42,9 @@ ln -sfw "$(pwd)/rustfmt.toml" ~/.config/rustfmt/rustfmt.toml
 
 ln -sfw "$(pwd)/gitconfig" ~/.gitconfig
 
+mkdir -p ~/.config/tombi
+ln -sfw "$(pwd)/tombi.toml" ~/.config/tombi/config.toml
+
 # TODO: remove original espanso path in application support?
 mkdir -p ~/.config/espanso
 for file in espanso/**.*;
