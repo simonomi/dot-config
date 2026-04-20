@@ -23,10 +23,14 @@ title = 'FF Tech Wiki'
 url = 'https://simonomi.dev/fftechwiki/'
 
 [[custom_links]]
+sf_symbol_color = '#FF4245'
+sf_symbol_name = 'lizard.fill'
 title = 'ghidraRun'
 url = 'file:///opt/homebrew/Cellar/ghidra/12.0.4/bin/ghidraRun'
 
 [[custom_links]]
+sf_symbol_color = '#FF375F'
+sf_symbol_name = 'gamecontroller.fill'
 title = 'NITRO Programming Manual'
 url = 'file:///Users/simonomi/Documents/ff1/NitroSDK/NITRO_Programming_Manual_V1_44.pdf'
 
