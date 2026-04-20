@@ -30,7 +30,6 @@ if OS.mac?
 end
 
 brew "kondo" # cleanup build files
-brew "periphery" # find unused swift code
 brew "sl" # steam locomotive!
 brew "asciiquarium"
 brew "http-server"

@@ -181,6 +181,8 @@ alias conflicts "fd \"\\.sync-conflict\" --hidden --exclude .stversions/"
 
 abbr --add --set-cursor code "jj git remote add codeberg \"%\"; jj bookmark track main --remote=codeberg"
 
+alias brewSize "brew info --sizes | \"$swdr/color-code-file-sizes/color code file sizes\""
+
 # custom functions
 function update
 	brew update-if-needed
@@ -188,30 +190,6 @@ function update
 	brew upgrade
 	brew autoremove
 	brew cleanup --scrub
-end
-
-# TODO: these are very slow and pretty unoptimal, but there doesn't seem to be a better way
-# - brew info (brew list) would be *very slightly* faster, but would break with xargs and getting the right name
-# - manually listing out brew --cellar kinda works, but that doesnt work for installed-only, and casks doesnt work because of symlinks
-# - running du -shL on casks breaks bc calibre has an infinite loop
-# - brew info --json --installed doesnt include sizes, or it'd be perfect
-# - there's now `brew info --size`, but no coloring !
-function brewSize
-	set -x HOMEBREW_NO_ANALYTICS true
-	set -x HOMEBREW_NO_GITHUB_API true
-	brew info (brew leaves; brew list --casks) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
-end
-
-function brewSizeAll
-	set -x HOMEBREW_NO_ANALYTICS true
-	set -x HOMEBREW_NO_GITHUB_API true
-	brew info (brew list) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
-end
-
-function brewSizeOf
-	set -x HOMEBREW_NO_ANALYTICS true
-	set -x HOMEBREW_NO_GITHUB_API true
-	brew info (echo $argv; brew deps $argv) | rg "^$(brew --prefix)/(Cellar|Caskroom)/([^/]*)/[^ ]* \(([0-9,]+ files, (.*B)|(.*B))\)( \*)?" -r "\$2$(echo \t)\$4\$5" | sort --sort=human-numeric --reverse --key=2 | column -t | $swdr/color-code-file-sizes/color\ code\ file\ sizes
 end
 
 function brewNotInBundle
