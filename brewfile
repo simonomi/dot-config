@@ -19,13 +19,13 @@ brew "fd"                    # find but rust
 brew "bottom"                 # top but rust
 brew "macchina"          # neofetch but rust
 brew "sd"                     # sed but rust
-brew "biodiff"           # vbindiff but rust
 brew "zellij"                # tmux but rust
 brew "procs"                   # ps but rust
 brew "doge"                   # dig but rust
 brew "viddy"                # watch but rust
 brew "watchexec"          # fswatch but rust
 if OS.mac?
+	brew "biodiff"       # vbindiff but rust
 	cask "espanso"  # text expander but rust
 end
 

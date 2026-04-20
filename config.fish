@@ -215,7 +215,14 @@ function brewSizeOf
 end
 
 function brewNotInBundle
-	nu -c "let bundle = brew bundle list --all | lines; (brew leaves) ++ \"\n\" ++ (brew list --casks) | lines | where \$it not-in \$bundle | collect | to text --no-newline"
+	set -l bundle (brew bundle list --all)
+	set -l installed (brew leaves; brew list --casks)
+	
+	for item in $installed
+		if not contains $item $bundle
+			echo $item
+		end
+	end
 end
 
 function convertAllBmps
