@@ -183,6 +183,8 @@ abbr --add --set-cursor code "jj git remote add codeberg \"%\"; jj bookmark trac
 
 alias brewSize "brew info --sizes | \"$swdr/color-code-file-sizes/color code file sizes\""
 
+alias urlSchemes "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -dump URLSchemeBinding"
+
 # custom functions
 function update
 	brew update-if-needed
