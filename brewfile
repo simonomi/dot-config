@@ -90,4 +90,5 @@ if OS.mac?
 	cask "textual"
 	cask "iina" # vlc but swift
 	cask "inkscape"
+	cask "maccy"
 end

@@ -1,0 +1,161 @@
+# TinyStart Settings
+# Edit this file to customize TinyStart behavior.
+# Changes take effect after restarting TinyStart.
+
+additional_applications_directories = [ '/Users/simonomi/Documents/ff1/tools' ]
+custom_folders = []
+drag_to_position_enabled = false
+emoji_frecency_rows = 2
+emoji_hotkey_key_code = 49
+emoji_hotkey_modifiers = 4352
+emoji_skin_tone = 'light'
+excluded_application_paths = []
+global_hotkey_key_code = 49
+global_hotkey_modifiers = 256
+launcher_scale = 'regular'
+picker_position = 'center'
+shortcuts_enabled_by_default = false
+shortcuts_hide_disabled_in_settings = false
+show_menu_bar_icon = false
+
+[[custom_links]]
+title = 'FF Tech Wiki'
+url = 'https://simonomi.dev/fftechwiki/'
+
+[[custom_links]]
+title = 'ghidraRun'
+url = 'file:///opt/homebrew/Cellar/ghidra/12.0.4/bin/ghidraRun'
+
+[[custom_links]]
+title = 'NITRO Programming Manual'
+url = 'file:///Users/simonomi/Documents/ff1/NitroSDK/NITRO_Programming_Manual_V1_44.pdf'
+
+[[custom_search_engines]]
+name = 'Amazon'
+shorthand = 'am'
+show_as_fallback_search_option = false
+url_template = 'https://www.amazon.com/s?k=%s'
+
+[[custom_search_engines]]
+name = "Anna's Archive"
+shorthand = 'anna'
+show_as_fallback_search_option = false
+url_template = 'https://annas-archive.gl/search?index=&page=1&sort=&ext=epub&lang=en&display=&q=%s'
+
+[[custom_search_engines]]
+name = 'App Store'
+shorthand = 'app'
+show_as_fallback_search_option = false
+url_template = 'https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=%s'
+
+[[custom_search_engines]]
+name = 'DuckDuckGo'
+shorthand = 'd'
+show_as_fallback_search_option = true
+url_template = 'https://duckduckgo.com/?q=%s'
+
+[[custom_search_engines]]
+name = 'Fossil Fighters Wiki'
+shorthand = 'ff'
+show_as_fallback_search_option = false
+url_template = 'https://fossilfighters.fandom.com/wiki/Special:Search?query=%s'
+
+[[custom_search_engines]]
+name = 'Google'
+shorthand = 'g'
+show_as_fallback_search_option = false
+url_template = 'https://www.google.com/search?q=%s'
+
+[[custom_search_engines]]
+name = 'Google Images'
+shorthand = 'im'
+show_as_fallback_search_option = false
+url_template = 'https://google.com/search?q=%s&tbm=isch'
+
+[[custom_search_engines]]
+name = 'Google Translate'
+shorthand = 'tr'
+show_as_fallback_search_option = false
+url_template = 'https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate'
+
+[[custom_search_engines]]
+name = 'Jisho'
+shorthand = 'j'
+show_as_fallback_search_option = false
+url_template = 'https://jisho.org/search/%s'
+
+[[custom_search_engines]]
+name = 'Maps'
+shorthand = 'map'
+show_as_fallback_search_option = false
+url_template = 'http://maps.apple.com/?q=%s'
+
+[[custom_search_engines]]
+name = 'Minecraft Wiki'
+shorthand = 'm'
+show_as_fallback_search_option = false
+url_template = 'https://minecraft.wiki/w/%s'
+
+[[custom_search_engines]]
+name = 'Music'
+shorthand = 'mu'
+show_as_fallback_search_option = false
+url_template = 'https://music.apple.com/us/search?term=%s'
+
+[[custom_search_engines]]
+name = 'Sea of Thieves Wiki'
+shorthand = 'sot'
+show_as_fallback_search_option = false
+url_template = 'https://seaofthieves.wiki.gg/wiki/Special:Search?search=%s'
+
+[[custom_search_engines]]
+name = 'Skyblock Wiki'
+shorthand = 'sky'
+show_as_fallback_search_option = false
+url_template = 'https://wiki.hypixel.net/index.php?search=%s'
+
+[[custom_search_engines]]
+name = 'Stardew Valley Wiki'
+shorthand = 'star'
+show_as_fallback_search_option = false
+url_template = 'https://stardewvalleywiki.com/mediawiki/index.php?search=%s'
+
+[[custom_search_engines]]
+name = 'Terraria Wiki'
+shorthand = 't'
+show_as_fallback_search_option = false
+url_template = 'https://terraria.wiki.gg/wiki/Special:Search?search=%s&go=Go'
+
+[[custom_search_engines]]
+name = 'TMDB'
+shorthand = 'tmdb'
+show_as_fallback_search_option = false
+url_template = 'https://www.themoviedb.org/search?query=%s'
+
+[[custom_search_engines]]
+name = 'Unicode character inspector'
+shorthand = 'uni'
+show_as_fallback_search_option = false
+url_template = 'https://apps.timwhitlock.info/unicode/inspect?s=%s'
+
+[[custom_search_engines]]
+name = 'Wikipedia'
+shorthand = 'w'
+show_as_fallback_search_option = true
+url_template = 'https://en.wikipedia.org/w/index.php?search=%s'
+
+[[custom_search_engines]]
+name = 'Wiktionary'
+shorthand = 'df'
+show_as_fallback_search_option = false
+url_template = 'https://en.wiktionary.org/w/index.php?search=%s'
+
+[[custom_search_engines]]
+name = 'YouTube'
+shorthand = 'y'
+show_as_fallback_search_option = false
+url_template = 'https://www.youtube.com/results?search_query=%s'
+
+[[custom_shortcuts]]
+identifier = '014B68BE-737A-47AD-9BA1-692E31FE88C6'
+is_enabled = false

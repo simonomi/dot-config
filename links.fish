@@ -45,6 +45,9 @@ ln -sfw "$(pwd)/gitconfig" ~/.gitconfig
 mkdir -p ~/.config/tombi
 ln -sfw "$(pwd)/tombi.toml" ~/.config/tombi/config.toml
 
+mkdir -p ~/.config/tinystart
+ln -sfw "$(pwd)/tinystart.toml" ~/.config/tinystart/settings.toml
+
 # TODO: remove original espanso path in application support?
 mkdir -p ~/.config/espanso
 for file in espanso/**.*;
