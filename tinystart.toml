@@ -49,6 +49,12 @@ show_as_fallback_search_option = false
 url_template = 'https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=%s'
 
 [[custom_search_engines]]
+name = 'ChatGPT'
+shorthand = 'chat'
+show_as_fallback_search_option = false
+url_template = 'https://chatgpt.com/?q=%s'
+
+[[custom_search_engines]]
 name = 'DuckDuckGo'
 shorthand = 'd'
 show_as_fallback_search_option = true
