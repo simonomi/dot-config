@@ -176,7 +176,7 @@ file-types = [
 
 [[language]]
 name = "markdown"
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 2, unit = "\t" }
 language-servers = ["marksman", "markdown-oxide", "rumdl", "codebook"]
 
 [[language]]

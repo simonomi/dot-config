@@ -23,6 +23,12 @@ title = 'FF Tech Wiki'
 url = 'https://simonomi.dev/fftechwiki/'
 
 [[custom_links]]
+sf_symbol_color = '#FF9230'
+sf_symbol_name = 'lizard.fill'
+title = 'Fossil Fighters'
+url = 'file:///Users/simonomi/ff1/Fossil Fighters.nds'
+
+[[custom_links]]
 sf_symbol_color = '#FF4245'
 sf_symbol_name = 'lizard.fill'
 title = 'ghidraRun'
