@@ -119,6 +119,12 @@ show_as_fallback_search_option = false
 url_template = 'https://music.apple.com/us/search?term=%s'
 
 [[custom_search_engines]]
+name = 'Nyaa'
+shorthand = 'nyaa'
+show_as_fallback_search_option = false
+url_template = 'https://nyaa.si/?q=%s'
+
+[[custom_search_engines]]
 name = 'Sea of Thieves Wiki'
 shorthand = 'sot'
 show_as_fallback_search_option = false
@@ -141,6 +147,12 @@ name = 'Terraria Wiki'
 shorthand = 't'
 show_as_fallback_search_option = false
 url_template = 'https://terraria.wiki.gg/wiki/Special:Search?search=%s&go=Go'
+
+[[custom_search_engines]]
+name = 'The Pirate Bay'
+shorthand = 'p'
+show_as_fallback_search_option = false
+url_template = 'https://thepiratebay.org/search.php?q=%s'
 
 [[custom_search_engines]]
 name = 'TMDB'

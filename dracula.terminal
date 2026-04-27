@@ -398,6 +398,10 @@
 			<key>ProcessName</key>
 			<string>ssh</string>
 		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>numbat</string>
+		</dict>
 	</array>
 	<key>rowCount</key>
 	<integer>25</integer>

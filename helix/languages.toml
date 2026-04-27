@@ -1,6 +1,10 @@
 # https://github.com/helix-editor/helix/blob/master/languages.toml
 
 [[language]]
+name = "yaml"
+auto-format = false
+
+[[language]]
 name = "xml"
 indent = { tab-width = 4, unit = "\t" }
 
