@@ -23,6 +23,7 @@ set -gx VISUAL $EDITOR
 set -gx HOMEBREW_BUNDLE_FILE "~/Documents/dot-config/brewfile"
 set -gx BACON_PREFS "/Users/simonomi/.config/bacon.toml"
 set -gx LESSCHARSET "utf-8"
+set -gx EZA_ICONS_AUTO 1
 
 # custom tool inits
 if command -q starship
@@ -75,8 +76,8 @@ alias hlang "hx $dot_config_dir/helix/languages.toml"
 
 alias nurc "$VISUAL $dot_config_dir/config.nu"
 
-alias l "lsd --literal"
-alias ll "lsd --literal --color always --almost-all --ignore-glob \".DS_Store\" --total-size --long --blocks date,size,name --sort size"
+alias l "eza --no-quotes"
+alias ll "eza --no-quotes --long --sort size --total-size --binary --almost-all --ignore-glob .DS_Store --no-permissions --no-user --time-style long-iso"
 
 abbr --add opsw "open Package.swift"
 abbr --add opxc "open (fd -e xcodeproj)"
@@ -173,7 +174,7 @@ alias rot13 "tr \"[a-zA-Z]\" \"[n-za-mN-ZA-M]\""
 
 alias meth "bat | math"
 
-alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
+# alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
 
 abbr --add x "hexapoda"
 
@@ -184,6 +185,10 @@ abbr --add --set-cursor code "jj git remote add codeberg \"%\"; jj bookmark trac
 alias brewSize "brew info --sizes | \"$swdr/color-code-file-sizes/color code file sizes\""
 
 alias urlSchemes "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -dump URLSchemeBinding"
+
+alias gitPushTags "git push --tags origin && git push --tags codeberg"
+
+abbr --add gpt "gitPushTags"
 
 # custom functions
 function update
