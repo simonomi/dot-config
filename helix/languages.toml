@@ -79,14 +79,10 @@ name = "typst"
 indent = { tab-width = 4, unit = "\t" }
 
 [language-server.tinymist.config]
-lint = {
-	enabled = true,
-	when = "onType"
-}
-preview.background = {
-	enabled = true,
-	args = ["--open"],
-}
+lint.enabled = true
+lint.when = "onType"
+preview.background.enabled = true
+preview.background.args = ["--open"]
 
 [[language]]
 name = "html"

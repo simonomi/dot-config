@@ -41,11 +41,11 @@ brew "rnr" # bulk rename files
 brew "imessage-exporter"
 brew "xdelta"
 brew "imagemagick"
-brew "webdav" if OS.mac?
 brew "syncthing" if OS.mac?
 brew "cobalt"
 brew "transmission-cli"
 brew "ffmpeg"
+brew "numbat"
 
 # lsps
 brew "tinymist" # typst
