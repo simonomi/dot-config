@@ -219,7 +219,7 @@ function convertAllBmps
 end
 
 function addTorrent --argument-names magnetURL downloadPath
-	set -l result (transmission-remote --add "$magnetURL" -w "$downloadPath" --json)
+	set -l result (transmission-remote --add "$magnetURL" -w "(path resolve $downloadPath)" --json)
 	
 	echo added torrent (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
 end
