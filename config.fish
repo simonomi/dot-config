@@ -164,9 +164,11 @@ abbr --add ydl "yt-dlp"
 
 abbr --add tr "transmission-remote"
 abbr --add tl "transmission-remote --list"
-abbr --add ta --set-cursor "transmission-remote --add \"%\""
+abbr --add ta "addTorrent"
+abbr --add ts "addShow"
+abbr --add tm "addMovie"
 abbr --add td --set-cursor "transmission-remote -t % --remove"
-abbr --add v "viddy -w transmission-remote --list"
+abbr --add v "viddy --no-title --unfold transmission-remote --list"
 
 alias bks "cd ~/Documents/books; webdav"
 
@@ -214,6 +216,24 @@ function convertAllBmps
 	for file in (fd --extension bmp)
 		magick "$file" "$(path change-extension png $file)"
 	end
+end
+
+function addTorrent --argument-names magnetURL downloadPath
+	set -l result (transmission-remote --add "$magnetURL" -w "$downloadPath" --json)
+	
+	echo added torrent (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
+end
+
+function addShow --argument-names magnetURL
+	set -l result (transmission-remote --add "$magnetURL" -w "/mnt/raid array/shows" --json)
+	
+	echo added show (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
+end
+
+function addMovie --argument-names magnetURL
+	set -l result (transmission-remote --add "$magnetURL" -w "/mnt/raid array/movies" --json)
+	
+	echo added movie (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
 end
 
 set -g fish_color_selection white --background=brblack
