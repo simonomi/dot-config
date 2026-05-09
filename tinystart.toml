@@ -3,6 +3,7 @@
 # Changes take effect after restarting TinyStart.
 
 additional_applications_directories = [ '/Users/simonomi/Documents/ff1/tools' ]
+clear_search_field = 'immediately'
 custom_folders = []
 drag_to_position_enabled = false
 emoji_frecency_rows = 2
@@ -13,6 +14,7 @@ excluded_application_paths = []
 global_hotkey_key_code = 49
 global_hotkey_modifiers = 256
 launcher_scale = 'regular'
+open_folders_in_forklift = false
 picker_position = 'center'
 shortcuts_enabled_by_default = false
 shortcuts_hide_disabled_in_settings = false
@@ -33,6 +35,10 @@ sf_symbol_color = '#FF4245'
 sf_symbol_name = 'lizard.fill'
 title = 'ghidraRun'
 url = 'file:///opt/homebrew/Cellar/ghidra/12.0.4/bin/ghidraRun'
+
+[[custom_links]]
+title = 'golem'
+url = 'http://HomeNAS.local:8096'
 
 [[custom_links]]
 sf_symbol_color = '#FF375F'
