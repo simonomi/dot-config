@@ -224,7 +224,7 @@ function addTorrent --argument-names magnetURL downloadPath
 		return 1
 	end
 	
-	set -l result (transmission-remote --add "$magnetURL" -w "$(path resolve $downloadPath)" --json)
+	set -l result (transmission-remote --add "$magnetURL" -w "$(path resolve \"$downloadPath)\"" --json)
 	
 	set -l error (echo $result | jq -e --color-output .error)
 	
@@ -253,7 +253,7 @@ function addShow --argument-names magnetURL
 		return 1
 	end
 	
-	addTorrent magnetURL "/mnt/raid array/shows"
+	addTorrent $magnetURL "/mnt/raid array/shows"
 end
 
 function addMovie --argument-names magnetURL
@@ -262,7 +262,7 @@ function addMovie --argument-names magnetURL
 		return 1
 	end
 	
-	addTorrent magnetURL "/mnt/raid array/movies"
+	addTorrent $magnetURL "/mnt/raid array/movies"
 end
 
 set -g fish_color_selection white --background=brblack
