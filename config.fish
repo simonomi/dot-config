@@ -219,21 +219,50 @@ function convertAllBmps
 end
 
 function addTorrent --argument-names magnetURL downloadPath
-	set -l result (transmission-remote --add "$magnetURL" -w "(path resolve $downloadPath)" --json)
+	if test (count $argv) != 2
+		echo "usage: $(set_color blue)addTorrent $(set_color cyan){magnetURL} {downloadPath}$(set_color normal)"
+		return 1
+	end
 	
-	echo added torrent (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
+	set -l result (transmission-remote --add "$magnetURL" -w "$(path resolve $downloadPath)" --json)
+	
+	set -l error (echo $result | jq -e --color-output .error)
+	
+	if test $status = 0
+		echo -n "$(set_color red)error:$(set_color normal) "
+		string join \n $error
+		return 1
+	end
+	
+	set -l torrentAdded (echo $result | jq -e .result.torrent_added)
+	
+	if test $status = 0
+		echo added torrent (set_color green)(echo "$torrentAdded" | jq .id)(set_color normal): (set_color cyan)(echo "$torrentAdded" | jq .name)(set_color normal)
+	end
+	
+	set -l duplicateTorrent (echo $result | jq -e .result.torrent_duplicate)
+	
+	if test $status = 0
+		echo torrent (set_color green)(echo "$duplicateTorrent" | jq .id)(set_color normal) already added: (set_color cyan)(echo "$duplicateTorrent" | jq .name)(set_color normal)
+	end
 end
 
 function addShow --argument-names magnetURL
-	set -l result (transmission-remote --add "$magnetURL" -w "/mnt/raid array/shows" --json)
+	if test (count $argv) != 1
+		echo "usage: $(set_color blue)addShow $(set_color cyan){magnetURL}$(set_color normal)"
+		return 1
+	end
 	
-	echo added show (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
+	addTorrent magnetURL "/mnt/raid array/shows"
 end
 
 function addMovie --argument-names magnetURL
-	set -l result (transmission-remote --add "$magnetURL" -w "/mnt/raid array/movies" --json)
+	if test (count $argv) != 1
+		echo "usage: $(set_color blue)addMovie $(set_color cyan){magnetURL}$(set_color normal)"
+		return 1
+	end
 	
-	echo added movie (set_color green)(echo "$result" | jq .result.torrent_added.id)(set_color normal): (set_color cyan)(echo "$result" | jq .result.torrent_added.name)(set_color normal)
+	addTorrent magnetURL "/mnt/raid array/movies"
 end
 
 set -g fish_color_selection white --background=brblack
