@@ -164,9 +164,9 @@ abbr --add ydl "yt-dlp"
 
 abbr --add tr "transmission-remote"
 abbr --add tl "transmission-remote --list"
-abbr --add ta "addTorrent"
-abbr --add ts "addShow"
-abbr --add tm "addMovie"
+abbr --add ta --set-cursor "addTorrent \"%\""
+abbr --add ts  --set-cursor "addShow \"%\""
+abbr --add tm  --set-cursor "addMovie \"%\""
 abbr --add td --set-cursor "transmission-remote -t % --remove"
 abbr --add v "viddy --no-title --unfold transmission-remote --list"
 
