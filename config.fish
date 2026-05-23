@@ -34,6 +34,10 @@ if command -q zoxide
 	zoxide init fish | source
 end
 
+if command -q syncthing
+	syncthing install-completions | source
+end
+
 if test -e ~/.local/share/swiftly/env.fish
 	# @fish-lsp-disable-next-line 1004
 	source ~/.local/share/swiftly/env.fish
@@ -62,12 +66,6 @@ alias frc "$VISUAL $dot_config_dir/config.fish"
 alias fishrc "$VISUAL $dot_config_dir/config.fish"
 alias src "source $dot_config_dir/config.fish"
 
-alias nrc "nvim $dot_config_dir/nvim/init.vim"
-alias nvimrc "nvim $dot_config_dir/nvim/init.vim"
-
-alias nvimlua "nvim $dot_config_dir/nvim/nvim.lua"
-alias nlua "nvim $dot_config_dir/nvim/plugins.lua"
-
 alias hxrc "hx $dot_config_dir/helix/helix\ config.toml"
 alias hrc "hx $dot_config_dir/helix/helix\ config.toml"
 
@@ -79,8 +77,7 @@ alias nurc "$VISUAL $dot_config_dir/config.nu"
 alias l "eza --no-quotes"
 alias ll "eza --no-quotes --long --sort size --total-size --binary --almost-all --ignore-glob .DS_Store --no-permissions --no-user --time-style long-iso"
 
-abbr --add opsw "open Package.swift"
-abbr --add opxc "open (fd -e xcodeproj)"
+alias op "open (fd Package.swift; fd -e xcodeproj)"
 
 alias kondo "kondo --default --ignored-dirs \$cardr"
 
@@ -117,11 +114,9 @@ alias q exit
 
 abbr --add b brew
 abbr --add c cargo
-abbr --add d "nvim -d"
 abbr --add g git
 abbr --add h hx
 abbr --add j jj
-abbr --add n nvim
 abbr --add s swift
 
 abbr --add js "jj status"
@@ -158,7 +153,7 @@ alias paste "fish_clipboard_paste"
 alias lorem "cat ~/Documents/misc/lorem\ ipsum.txt"
 alias box "cat ~/Documents/misc/box\ drawing\ characters.txt"
 
-abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"; fd -e swift'
+abbr --add xcodeFileTemplates 'cd "/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/MultiPlatform"; fd -e swift'
 
 abbr --add ydl "yt-dlp"
 
@@ -170,13 +165,13 @@ abbr --add tm  --set-cursor "addMovie \"%\""
 abbr --add td --set-cursor "transmission-remote -t % --remove"
 abbr --add v "viddy --no-title --unfold transmission-remote --list"
 
-alias bks "cd ~/Documents/books; webdav"
+alias bks "cd ~/books; webdav"
 
 alias rot13 "tr \"[a-zA-Z]\" \"[n-za-mN-ZA-M]\""
 
 alias meth "bat | math"
 
-# alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
+alias hexapoda "~/Documents/programming/rust/hexapoda/target/debug/hexapoda"
 
 abbr --add x "hexapoda"
 
