@@ -46,6 +46,7 @@ brew "cobalt"
 brew "transmission-cli"
 brew "ffmpeg"
 brew "numbat"
+brew "hexapoda"
 
 # lsps
 brew "tinymist" # typst

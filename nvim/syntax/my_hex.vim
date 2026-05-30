@@ -44,7 +44,7 @@ highlight my_hexByteF ctermfg=200
 highlight my_hexByteFF ctermfg=white
 
 " calculated with oklch L0.75 C0.37 H...
-highlight my_hexByte00 guifg=#a0a0a0
+highlight my_hexByte00 guifg=#808080
 highlight my_hexByte0 guifg=#ff71a9 " red
 highlight my_hexByte1 guifg=#ff7a78 " salmon
 highlight my_hexByte2 guifg=#ff8123 " red-orange
