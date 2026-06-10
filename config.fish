@@ -219,7 +219,7 @@ function addTorrent --argument-names magnetURL downloadPath
 		return 1
 	end
 	
-	set -l result (transmission-remote --add "$magnetURL" -w "$(path resolve \"$downloadPath)\"" --json)
+	set -l result (transmission-remote --add "$magnetURL" -w "$(path resolve $downloadPath)" --json)
 	
 	set -l error (echo $result | jq -e --color-output .error)
 	
