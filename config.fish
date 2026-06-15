@@ -214,7 +214,9 @@ function convertAllBmps
 end
 
 function addTorrent --argument-names magnetURL downloadPath
-	if test (count $argv) != 2
+	if test (count $argv) = 1
+		set -f downloadPath "."
+	else if test (count $argv) != 2
 		echo "usage: $(set_color blue)addTorrent $(set_color cyan){magnetURL} {downloadPath}$(set_color normal)"
 		return 1
 	end
