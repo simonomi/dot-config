@@ -85,7 +85,6 @@ if OS.mac?
 	# cask "godot"
 	cask "netnewswire"
 	cask "obsidian"
-	cask "raycast"
 	cask "signal"
 	cask "steam"
 	cask "textual"

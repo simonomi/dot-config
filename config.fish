@@ -262,6 +262,22 @@ function addMovie --argument-names magnetURL
 	addTorrent $magnetURL "/mnt/raid array/movies"
 end
 
+function zedit --argument-names zipFile
+	if test (count $argv) != 1
+		echo "usage: $(set_color blue)zedit $(set_color cyan){zipFile}$(set_color normal)"
+		return 1
+	end
+	
+	set -l resolvedZipFile (path resolve $zipFile)
+	set -l unzippedPath "/tmp/$(path basename --no-extension $zipFile)"
+	
+	rm -r $unzippedPath
+	unzip $zipFile -d $unzippedPath
+	fish --init-command "cd \"$unzippedPath\""
+	rm $zipFile
+	fish -c "cd \"$unzippedPath\"; zip \"$resolvedZipFile\" **"
+end
+
 set -g fish_color_selection white --background=brblack
 
 function not_fish_user_key_bindings
