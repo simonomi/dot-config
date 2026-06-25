@@ -9,13 +9,16 @@ drag_to_position_enabled = false
 emoji_frecency_rows = 2
 emoji_hotkey_key_code = 49
 emoji_hotkey_modifiers = 4352
+emoji_picker_globe_key_enabled = false
 emoji_skin_tone = 'light'
 excluded_application_paths = []
 global_hotkey_key_code = 49
 global_hotkey_modifiers = 256
 launcher_scale = 'regular'
+open_folders_in_bloom = false
 open_folders_in_forklift = false
 picker_position = 'center'
+search_engine_defaults_version = 2
 shortcuts_enabled_by_default = false
 shortcuts_hide_disabled_in_settings = false
 show_menu_bar_icon = false
@@ -69,6 +72,18 @@ name = 'ChatGPT'
 shorthand = 'chat'
 show_as_fallback_search_option = false
 url_template = 'https://chatgpt.com/?q=%s'
+
+[[custom_search_engines]]
+name = 'Claude'
+shorthand = 'cl'
+show_as_fallback_search_option = false
+url_template = 'https://claude.ai/new?q=%s'
+
+[[custom_search_engines]]
+name = 'Dictionary'
+shorthand = 'def'
+show_as_fallback_search_option = false
+url_template = 'dict://%s'
 
 [[custom_search_engines]]
 name = 'DuckDuckGo'
