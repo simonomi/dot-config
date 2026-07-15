@@ -49,17 +49,9 @@ sf_symbol_name = 'gamecontroller.fill'
 title = 'NITRO Programming Manual'
 url = 'file:///Users/simonomi/Documents/ff1/NitroSDK/NITRO_Programming_Manual_V1_44.pdf'
 
-[[custom_search_engines]]
-name = 'Google Translate'
-shorthand = 'tr'
-show_as_fallback_search_option = false
-url_template = 'https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate'
-
-[[custom_search_engines]]
-name = 'Trakt'
-shorthand = 'trk'
-show_as_fallback_search_option = false
-url_template = 'https://app.trakt.tv/search?m=media&q=%s'
+[[custom_links]]
+title = 'numbat'
+url = 'file:///Users/simonomi/Documents/dot-config/numbat_clean.fish'
 
 [[custom_search_engines]]
 name = 'Amazon'
@@ -120,6 +112,12 @@ name = 'Google Images'
 shorthand = 'im'
 show_as_fallback_search_option = false
 url_template = 'https://google.com/search?q=%s&tbm=isch'
+
+[[custom_search_engines]]
+name = 'Google Translate'
+shorthand = 'tr'
+show_as_fallback_search_option = false
+url_template = 'https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate'
 
 [[custom_search_engines]]
 name = 'Jisho'
@@ -186,6 +184,12 @@ name = 'TMDB'
 shorthand = 'tmdb'
 show_as_fallback_search_option = false
 url_template = 'https://www.themoviedb.org/search?query=%s'
+
+[[custom_search_engines]]
+name = 'Trakt'
+shorthand = 'trk'
+show_as_fallback_search_option = false
+url_template = 'https://app.trakt.tv/search?m=media&q=%s'
 
 [[custom_search_engines]]
 name = 'Unicode character inspector'
