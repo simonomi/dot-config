@@ -108,7 +108,7 @@ alias hide "chflags hidden"
 alias unhide "chflags nohidden"
 
 alias python python3
-alias jfmt "python $pydr/json_formatter.py"
+alias xfmt "xmllint --format -"
 alias :q exit
 alias q exit
 
