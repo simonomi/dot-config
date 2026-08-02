@@ -49,6 +49,7 @@ brew "numbat"
 brew "hexapoda"
 
 # lsps
+# https://docs.helix-editor.com/lang-support.html
 brew "tinymist" # typst
 brew "lua-language-server"
 brew "yaml-language-server"

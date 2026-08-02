@@ -53,6 +53,14 @@ url = 'file:///Users/simonomi/Documents/ff1/NitroSDK/NITRO_Programming_Manual_V1
 title = 'numbat'
 url = 'file:///Users/simonomi/Documents/dot-config/numbat_clean.fish'
 
+[[custom_links]]
+title = 'speed test'
+url = 'https://fast.com'
+
+[[custom_links]]
+title = 'syncthing'
+url = 'http://localhost:8384'
+
 [[custom_search_engines]]
 name = 'Amazon'
 shorthand = 'am'
@@ -190,6 +198,12 @@ name = 'Trakt'
 shorthand = 'trk'
 show_as_fallback_search_option = false
 url_template = 'https://app.trakt.tv/search?m=media&q=%s'
+
+[[custom_search_engines]]
+name = 'Twitch'
+shorthand = 'tw'
+show_as_fallback_search_option = false
+url_template = 'https://www.twitch.tv/search?term=%s'
 
 [[custom_search_engines]]
 name = 'Unicode character inspector'
