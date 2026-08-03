@@ -1,3 +1,5 @@
+# https://docs.helix-editor.com/remapping.html
+
 theme = "helix_theme"
 
 [editor]
@@ -143,6 +145,9 @@ k = "jump_view_down"
 # this breaks indenting on whitespace-only lines >:(
 # "tab" = "indent"
 "S-tab" = "unindent"
+
+# for some reason, the terminal receives S-ret as A-ret
+"A-ret" = "insert_newline"
 
 [keys.select]
 i = "extend_visual_line_up"

@@ -48,6 +48,9 @@ ln -sfw "$(pwd)/tombi.toml" ~/.config/tombi/config.toml
 mkdir -p ~/.config/tinystart
 cp "$(pwd)/tinystart.toml" ~/.config/tinystart/settings.toml
 
+mkdir -p ~/Library/Application\ Support/com.colliderli.iina/input_conf
+ln -sfw "$(pwd)/iina.conf" ~/Library/Application\ Support/com.colliderli.iina/input_conf/iina.conf
+
 # TODO: remove original espanso path in application support?
 mkdir -p ~/.config/espanso
 for file in espanso/**.*;
