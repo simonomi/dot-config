@@ -1,5 +1,8 @@
 # https://github.com/helix-editor/helix/blob/master/languages.toml
 
+# authentication error fetching this one
+use-grammars = { except = ["gotmpl"] }
+
 [[language]]
 name = "yaml"
 auto-format = false

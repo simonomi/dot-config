@@ -61,3 +61,7 @@ end
 if test -e ~/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings
 	cp "$(pwd)/xcode.idekeybindings" ~/Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings
 end
+
+if test -e "~/Library/Application Support/PrismLauncher/prismlauncher.cfg"
+	cp "$(pwd)/prismlauncher.cfg" ~/Library/Application\ Support/PrismLauncher/prismlauncher.cfg
+end
